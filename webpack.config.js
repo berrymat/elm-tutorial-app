@@ -29,7 +29,7 @@ module.exports = {
       {
         test:    /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
-        loader:  'elm-webpack?verbose=true&warn=true',
+        loader:  'elm-webpack?verbose=true&warn=true&debug=true',
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -39,6 +39,11 @@ module.exports = {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader',
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/, 
+        loader: "file-loader?name=/img/[name].[ext]"
+      },
+
     ],
 
     noParse: /\.elm$/,

@@ -1,7 +1,7 @@
 module Players.List exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, attribute, href, id)
 import Html.Events exposing (onClick)
 import Players.Messages exposing (..)
 import Players.Models exposing (Player)
@@ -9,7 +9,7 @@ import Players.Models exposing (Player)
 
 view : List Player -> Html Msg
 view players =
-    div []
+    div [ class "fullview" ]
         [ nav players
         , list players
         ]
@@ -23,28 +23,33 @@ nav players =
 
 list : List Player -> Html Msg
 list players =
-    div [ class "p2" ]
-        [ table []
-            [ thead []
-                [ tr []
-                    [ th [] [ text "Id" ]
-                    , th [] [ text "Name" ]
-                    , th [] [ text "Level" ]
-                    , th [] [ text "Actions" ]
-                    ]
+    let
+        playerRows =
+            List.map playerRow players
+
+        headerRow =
+            div [ class "row header green" ]
+                [ div [ class "cell" ] [ text "Id" ]
+                , div [ class "cell" ] [ text "Name" ]
+                , div [ class "cell" ] [ text "Level" ]
+                , div [ class "cell" ] [ text "Actions" ]
                 ]
-            , tbody [] (List.map playerRow players)
+
+        allRows =
+            headerRow :: playerRows
+    in
+        div [ class "wrapper" ]
+            [ div [ class "table" ] allRows
             ]
-        ]
 
 
 playerRow : Player -> Html Msg
 playerRow player =
-    tr []
-        [ td [] [ text player.id ]
-        , td [] [ text player.name ]
-        , td [] [ text (toString player.level) ]
-        , td []
+    div [ class "row" ]
+        [ div [ class "cell" ] [ text player.id ]
+        , div [ class "cell" ] [ text player.name ]
+        , div [ class "cell" ] [ text (toString player.level) ]
+        , div [ class "cell" ]
             [ editBtn player ]
         ]
 
@@ -52,7 +57,7 @@ playerRow player =
 editBtn : Player -> Html.Html Msg
 editBtn player =
     button
-        [ class "btn regular"
+        [ class "btn regular p0"
         , onClick (ShowPlayer player.id)
         ]
         [ i [ class "fa fa-pencil mr1" ] [], text "Edit" ]

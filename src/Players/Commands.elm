@@ -5,7 +5,6 @@ import Json.Decode as Decode exposing (field)
 import Json.Encode as Encode
 import Players.Messages exposing (..)
 import Players.Models exposing (PlayerId, Player)
-import Players.Models exposing (PlayerId, Player)
 
 
 fetchAll : Cmd Msg

@@ -9,7 +9,7 @@ import Players.Models exposing (..)
 
 view : Player -> Html.Html Msg
 view model =
-    div []
+    div [ class "fullview" ]
         [ nav model
         , form model
         ]

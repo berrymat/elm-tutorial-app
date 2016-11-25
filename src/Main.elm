@@ -3,9 +3,8 @@ module Main exposing (..)
 import Messages exposing (Msg(..))
 import Models exposing (Model, initialModel)
 import Navigation exposing (Location)
-import Players.Commands exposing (fetchAll)
 import Routing exposing (Route)
-import Update exposing (update)
+import Update exposing (update, fetchData)
 import View exposing (view)
 
 
@@ -14,8 +13,13 @@ init location =
     let
         currentRoute =
             Routing.parseLocation location
+
+        model =
+            initialModel currentRoute
     in
-        ( initialModel currentRoute, Cmd.map PlayersMsg fetchAll )
+        ( model
+        , fetchData model
+        )
 
 
 subscriptions : Model -> Sub Msg

@@ -3,6 +3,7 @@ module Routing exposing (..)
 import Navigation exposing (Location)
 import Players.Models exposing (PlayerId)
 import Teams.Models exposing (TeamId)
+import Tree.Models exposing (NodeId)
 import UrlParser exposing (..)
 
 
@@ -11,7 +12,7 @@ type Route
     | PlayerRoute PlayerId
     | TeamsRoute
     | TeamRoute TeamId
-    | ContainerRoute
+    | ContainerRoute String NodeId
     | NotFoundRoute
 
 
@@ -23,7 +24,7 @@ matchers =
         , map PlayersRoute (s "players")
         , map TeamRoute (s "teams" </> string)
         , map TeamsRoute (s "teams")
-        , map ContainerRoute (s "container")
+        , map ContainerRoute (s "container" </> string </> s "path" </> string)
         ]
 
 

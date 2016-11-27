@@ -189,9 +189,46 @@ div.k-treeview {
 
 .body-content {
     background-color: #FFFFFF;
+    position: relative;
+}
+
+.body-content-sidebar {
+    background-color: #FFEFEF;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 280px;
+    bottom: 0;
+}
+
+.body-content-content {
+    background-color: #EFEFFF;
+    padding-left: 280px;
 }
 
 .fullview {
     padding-top: 52px;
 }
 
+abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted rgba(36, 36, 36, 0.8);
+}
+
+.body-path div {
+    display: inline-block;    
+}
+
+.path-item {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.clickable {
+    cursor: pointer;
+    color: #02a;
+}
+
+.clickable:hover {
+    text-decoration: underline;
+}

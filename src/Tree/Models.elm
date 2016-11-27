@@ -7,6 +7,7 @@ type alias NodeId =
 
 type alias TempNode =
     { id : NodeId
+    , type_ : String
     , name : String
     , hasChildren : Bool
     }
@@ -14,6 +15,15 @@ type alias TempNode =
 
 type alias TempChildren =
     { id : NodeId
+    , type_ : String
+    , children : List TempNode
+    }
+
+
+type alias TempRoot =
+    { id : NodeId
+    , type_ : String
+    , name : String
     , children : List TempNode
     }
 
@@ -25,8 +35,17 @@ type ChildrenState
     | Expanded
 
 
+type NodeType
+    = RootType
+    | CustomerType
+    | ClientType
+    | SiteType
+    | StaffType
+
+
 type alias Node =
     { id : NodeId
+    , nodeType : NodeType
     , name : String
     , selected : Bool
     , childrenState : ChildrenState
@@ -39,14 +58,34 @@ type ChildNodes
 
 
 type alias Tree =
-    { children : List Node
-    , selected : Maybe Node
+    { id : NodeId
+    , nodeType : NodeType
+    , name : String
+    , children : List Node
+    , path : List Node
     }
+
+
+convertNodeType : String -> Maybe NodeType
+convertNodeType type_ =
+    if type_ == "root" then
+        Just RootType
+    else if type_ == "customer" then
+        Just CustomerType
+    else if type_ == "client" then
+        Just ClientType
+    else if type_ == "site" then
+        Just SiteType
+    else if type_ == "staff" then
+        Just StaffType
+    else
+        Nothing
 
 
 new : Node
 new =
     { id = "0"
+    , nodeType = RootType
     , name = ""
     , selected = False
     , childrenState = NoChildren
@@ -56,6 +95,9 @@ new =
 
 initialTree : Tree
 initialTree =
-    { children = []
-    , selected = Nothing
+    { id = ""
+    , nodeType = RootType
+    , name = ""
+    , children = []
+    , path = []
     }

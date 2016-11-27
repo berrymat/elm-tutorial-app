@@ -9,6 +9,7 @@ import Routing exposing (Route(..), parseLocation)
 import Players.Commands
 import Teams.Commands
 import Container.Commands
+import Tree.Models exposing (convertNodeType)
 
 
 fetchData : Model -> Cmd Msg
@@ -32,8 +33,17 @@ fetchData model =
         TeamRoute id ->
             Cmd.none
 
-        ContainerRoute ->
-            Cmd.map ContainerMsg (Container.Commands.fetchAll model.container)
+        ContainerRoute type_ id ->
+            let
+                maybeNodeType =
+                    convertNodeType type_
+            in
+                case maybeNodeType of
+                    Just nodeType ->
+                        Cmd.map ContainerMsg (Container.Commands.fetchAll nodeType id model.container)
+
+                    Nothing ->
+                        Cmd.none
 
         NotFoundRoute ->
             Cmd.none

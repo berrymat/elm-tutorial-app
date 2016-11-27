@@ -74,7 +74,7 @@ page model =
         TeamRoute id ->
             teamEditPage model id
 
-        ContainerRoute ->
+        ContainerRoute type_ id ->
             Html.map ContainerMsg (Container.View.view model.container)
 
         NotFoundRoute ->

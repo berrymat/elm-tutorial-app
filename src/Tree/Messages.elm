@@ -5,7 +5,7 @@ import Tree.Models exposing (..)
 
 
 type Msg
-    = OnFetchTree (Result Http.Error (List TempNode))
+    = OnFetchRoot (Result Http.Error TempRoot)
     | OnFetchNode NodeId (Result Http.Error TempChildren)
     | ToggleNode NodeId
     | SelectNode NodeId

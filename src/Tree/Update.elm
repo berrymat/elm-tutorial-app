@@ -3,10 +3,9 @@ module Tree.Update exposing (..)
 import Tree.Messages exposing (Msg(..))
 import Tree.Models exposing (..)
 import Tree.Commands
-import Navigation
 
 
-selectNode : NodeId -> Node -> ( Node, Maybe Node )
+selectNode : NodeId -> Node -> ( Node, List Node )
 selectNode nodeId node =
     let
         (ChildNodes childNodes) =
@@ -15,22 +14,26 @@ selectNode nodeId node =
         results =
             List.map (selectNode nodeId) childNodes
 
-        ( newChildNodes, newSelectedNodes ) =
+        ( newChildNodes, newPathLists ) =
             List.unzip results
 
         newNode =
             { node | childNodes = ChildNodes newChildNodes, selected = node.id == nodeId }
 
-        selectedNode =
+        newPath =
             if newNode.selected then
-                Just newNode
+                [ newNode ]
             else
-                newSelectedNodes
-                    |> List.filter (\maybeNode -> maybeNode /= Maybe.Nothing)
-                    |> List.head
-                    |> Maybe.withDefault Nothing
+                let
+                    concatLists =
+                        List.concat newPathLists
+                in
+                    if List.isEmpty concatLists then
+                        concatLists
+                    else
+                        List.append concatLists [ newNode ]
     in
-        ( newNode, selectedNode )
+        ( newNode, newPath )
 
 
 select : NodeId -> Tree -> Tree
@@ -39,40 +42,13 @@ select nodeId tree =
         results =
             List.map (selectNode nodeId) tree.children
 
-        ( newChildren, newSelectedNodes ) =
+        ( newChildren, newPathLists ) =
             List.unzip results
 
-        selectedNode =
-            newSelectedNodes
-                |> List.filter (\maybeNode -> maybeNode /= Maybe.Nothing)
-                |> List.head
-                |> Maybe.withDefault Nothing
+        newPath =
+            List.concat newPathLists
     in
-        { tree | children = newChildren, selected = selectedNode }
-
-
-
-{-
-   toggleNode : NodeId -> Node -> Node
-   toggleNode nodeId node =
-       let
-           (ChildNodes childNodes) =
-               node.childNodes
-
-           newChildNodes =
-               List.map (toggleNode nodeId) childNodes
-
-           newNode =
-               { node | childNodes = ChildNodes newChildNodes, selected = node.id == nodeId }
-       in
-           newNode
-
-
-   toggle : NodeId -> Tree -> Tree
-   toggle nodeId tree =
-       toggleNode nodeId tree.root
--}
--- TODO: recursion
+        { tree | children = newChildren, path = newPath }
 
 
 toggleChildNodes : NodeId -> Node -> ( Node, Cmd Msg )
@@ -134,26 +110,34 @@ toggle nodeId tree =
 
 createNode : TempNode -> Node
 createNode tempNode =
-    { id = tempNode.id
-    , name = tempNode.name
-    , selected = False
-    , childrenState =
-        if tempNode.hasChildren then
-            Collapsed
-        else
-            NoChildren
-    , childNodes = ChildNodes []
-    }
-
-
-fetchedTree : List TempNode -> Tree
-fetchedTree tempNodes =
     let
-        nodes =
-            List.map createNode tempNodes
+        nodeType =
+            Maybe.withDefault RootType (convertNodeType tempNode.type_)
     in
-        { children = nodes
-        , selected = Nothing
+        { id = tempNode.id
+        , nodeType = nodeType
+        , name = tempNode.name
+        , selected = False
+        , childrenState =
+            if tempNode.hasChildren then
+                Collapsed
+            else
+                NoChildren
+        , childNodes = ChildNodes []
+        }
+
+
+fetchedRoot : TempRoot -> Tree
+fetchedRoot tempRoot =
+    let
+        nodeType =
+            Maybe.withDefault RootType (convertNodeType tempRoot.type_)
+    in
+        { id = tempRoot.id
+        , nodeType = nodeType
+        , name = tempRoot.name
+        , children = List.map createNode tempRoot.children
+        , path = []
         }
 
 
@@ -186,23 +170,31 @@ fetchedNode nodeId tempChildren tree =
         { tree | children = newChildren }
 
 
-update : Msg -> Tree -> ( Tree, Cmd Msg )
+update : Msg -> Tree -> ( Tree, Cmd Msg, List Node )
 update message tree =
     case message of
-        OnFetchTree (Ok tempNodes) ->
-            ( fetchedTree tempNodes, Cmd.none )
+        OnFetchRoot (Ok tempChildren) ->
+            ( fetchedRoot tempChildren, Cmd.none, tree.path )
 
-        OnFetchTree (Err error) ->
-            ( tree, Cmd.none )
+        OnFetchRoot (Err error) ->
+            ( tree, Cmd.none, tree.path )
 
         OnFetchNode nodeId (Ok tempChildren) ->
-            ( fetchedNode nodeId tempChildren tree, Cmd.none )
+            ( fetchedNode nodeId tempChildren tree, Cmd.none, tree.path )
 
         OnFetchNode nodeId (Err error) ->
-            ( tree, Cmd.none )
+            ( tree, Cmd.none, tree.path )
 
         ToggleNode nodeId ->
-            toggle nodeId tree
+            let
+                ( newTree, cmds ) =
+                    toggle nodeId tree
+            in
+                ( newTree, cmds, tree.path )
 
         SelectNode nodeId ->
-            ( select nodeId tree, Cmd.none )
+            let
+                newTree =
+                    select nodeId tree
+            in
+                ( newTree, Cmd.none, newTree.path )

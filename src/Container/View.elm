@@ -5,6 +5,7 @@ import Html.Attributes exposing (class, attribute, href, id, classList)
 import Html.Events exposing (onClick)
 import Container.Messages exposing (..)
 import Container.Models exposing (..)
+import Header.Models exposing (..)
 import Tree.View
 import Header.View
 
@@ -21,9 +22,12 @@ view container =
             [ div [ class "body-header" ]
                 [ Html.map
                     HeaderMsg
-                    (Header.View.view container.header)
+                    (Header.View.view container.headerInfo)
                 ]
-            , viewPath container
+            , div [ class "body-path" ]
+                [ viewPath container
+                , viewTabs container
+                ]
             , div [ class "body-content" ]
                 [ div [ class "body-content-sidebar" ] [ text "sidebar" ]
                 , div [ class "body-content-content" ]
@@ -77,8 +81,20 @@ viewPath container =
                     in
                         ( rootItem :: pathItems, { id = head.id, nodeType = head.nodeType, name = head.name } )
     in
-        div [ class "body-path p1" ]
+        div [ class "breadcrumb" ]
             [ div []
                 (List.map clickablePathItem items)
             , lastPathItem last
             ]
+
+
+viewTabs : Container -> Html Msg
+viewTabs container =
+    div [ class "tabs" ]
+        (List.map (tabItem container.tab) container.headerInfo.tabs)
+
+
+tabItem : Tab -> Tab -> Html Msg
+tabItem selected tab =
+    div [ classList [ ( "tab", True ), ( "active", selected.id == tab.id ), ( "clickable", selected.id /= tab.id ) ] ]
+        [ text tab.name ]

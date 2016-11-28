@@ -202,7 +202,7 @@ div.k-treeview {
 }
 
 .body-content-content {
-    background-color: #EFEFFF;
+    background-color: #FFFFFF;
     padding-left: 280px;
 }
 
@@ -212,7 +212,12 @@ div.k-treeview {
 
 abbr[title] {
     cursor: help;
-    border-bottom: 1px dotted rgba(36, 36, 36, 0.8);
+    border-bottom: 1px dotted #D5DEE5;
+}
+
+div.body-path {
+    display: flex;
+    border-bottom: 1px solid #D5DEE5;    
 }
 
 .body-path div {
@@ -231,4 +236,40 @@ abbr[title] {
 
 .clickable:hover {
     text-decoration: underline;
+}
+
+.breadcrumb {
+    flex: 1 1 auto;
+    padding: 0.5em;
+}
+
+.body-path div.tabs {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: flex-end;
+}
+
+.body-path div.tab {
+    margin-bottom: -1px;
+    margin-right: 0.25em;
+    background-color: white;
+    display: block;
+    padding: 0.35em 0.75em;
+    border-top-left-radius: 0.25em;    
+    border-top-right-radius: 0.25em;    
+}
+
+.body-path div.tab.active {
+    border-left: 1px solid #D5DEE5;
+    border-top: 1px solid #D5DEE5;
+    border-right: 1px solid #D5DEE5;
+}
+
+.body-path div.tab.clickable {
+    border-bottom: 1px solid #D5DEE5;
+}
+
+.body-path div.tab.clickable:hover {
+    background-color: #ddd;
+    text-decoration: none;
 }

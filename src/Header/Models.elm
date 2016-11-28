@@ -12,6 +12,12 @@ type Header
     | Empty
 
 
+type alias HeaderInfo =
+    { header : Header
+    , tabs : List Tab
+    }
+
+
 type alias Root =
     { id : NodeId
     , name : String
@@ -25,7 +31,6 @@ type alias Customer =
     , contact : String
     , phone : String
     , email : String
-    , tabs : List Tab
     }
 
 
@@ -63,6 +68,8 @@ type alias Tab =
     }
 
 
-initialHeader : Header
-initialHeader =
-    Empty
+initialHeaderInfo : HeaderInfo
+initialHeaderInfo =
+    { header = Empty
+    , tabs = []
+    }

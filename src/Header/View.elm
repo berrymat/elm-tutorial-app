@@ -6,9 +6,9 @@ import Header.Messages exposing (..)
 import Header.Models exposing (..)
 
 
-view : Header -> Html Msg
-view header =
-    case header of
+view : HeaderInfo -> Html Msg
+view headerInfo =
+    case headerInfo.header of
         RootHeader root ->
             headerRoot root
 

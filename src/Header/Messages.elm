@@ -6,8 +6,8 @@ import Tree.Models exposing (NodeId)
 
 
 type Msg
-    = OnFetchRoot NodeId (Result Http.Error Root)
-    | OnFetchCustomer NodeId (Result Http.Error Customer)
-    | OnFetchClient NodeId (Result Http.Error Client)
-    | OnFetchSite NodeId (Result Http.Error Site)
-    | OnFetchStaff NodeId (Result Http.Error Staff)
+    = OnFetchRoot NodeId (Result Http.Error HeaderInfo)
+    | OnFetchCustomer NodeId (Result Http.Error HeaderInfo)
+    | OnFetchClient NodeId (Result Http.Error HeaderInfo)
+    | OnFetchSite NodeId (Result Http.Error HeaderInfo)
+    | OnFetchStaff NodeId (Result Http.Error HeaderInfo)

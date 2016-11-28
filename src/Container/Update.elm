@@ -5,6 +5,7 @@ import Container.Models exposing (..)
 import Tree.Messages
 import Tree.Models exposing (..)
 import Tree.Update
+import Header.Models exposing (..)
 import Header.Commands
 import Header.Update
 import Navigation
@@ -57,7 +58,22 @@ update message container =
 
         HeaderMsg subMsg ->
             let
-                ( updatedHeader, cmd ) =
-                    Header.Update.update subMsg container.header
+                ( updatedHeaderInfo, cmd ) =
+                    Header.Update.update subMsg container.headerInfo
+
+                maybeTab =
+                    updatedHeaderInfo.tabs
+                        |> List.filter (\t -> t.id == container.tab.id)
+                        |> List.head
+
+                updatedTab =
+                    case maybeTab of
+                        Just tab ->
+                            tab
+
+                        Nothing ->
+                            updatedHeaderInfo.tabs
+                                |> List.head
+                                |> Maybe.withDefault (Tab "X" "X")
             in
-                ( { container | header = updatedHeader }, Cmd.map HeaderMsg cmd )
+                ( { container | headerInfo = updatedHeaderInfo, tab = updatedTab }, Cmd.map HeaderMsg cmd )

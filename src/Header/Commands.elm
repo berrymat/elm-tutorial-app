@@ -1,7 +1,7 @@
 module Header.Commands exposing (..)
 
 import Http
-import Json.Decode as Decode exposing (field)
+import Json.Decode as Decode exposing (field, at)
 import Header.Messages exposing (..)
 import Header.Models exposing (..)
 import Tree.Models exposing (NodeType(..), NodeId)
@@ -93,54 +93,78 @@ staffUrl nodeId =
 -- DECODERS
 
 
-rootDecoder : Decode.Decoder Root
+rootDecoder : Decode.Decoder HeaderInfo
 rootDecoder =
-    Decode.map2 Root
-        (field "id" Decode.string)
-        (field "name" Decode.string)
-
-
-customerDecoder : Decode.Decoder Customer
-customerDecoder =
-    Decode.map7 Customer
-        (field "id" Decode.string)
-        (field "name" Decode.string)
-        (field "address" Decode.string)
-        (field "contact" Decode.string)
-        (field "phone" Decode.string)
-        (field "email" Decode.string)
+    Decode.map2 HeaderInfo
+        (Decode.map RootHeader
+            (Decode.map2 Root
+                (field "id" Decode.string)
+                (field "name" Decode.string)
+            )
+        )
         (field "tabs" (Decode.list tabDecoder))
 
 
-clientDecoder : Decode.Decoder Client
+customerDecoder : Decode.Decoder HeaderInfo
+customerDecoder =
+    Decode.map2 HeaderInfo
+        (Decode.map CustomerHeader
+            (Decode.map6 Customer
+                (field "id" Decode.string)
+                (field "name" Decode.string)
+                (field "address" Decode.string)
+                (field "contact" Decode.string)
+                (field "phone" Decode.string)
+                (field "email" Decode.string)
+            )
+        )
+        (field "tabs" (Decode.list tabDecoder))
+
+
+clientDecoder : Decode.Decoder HeaderInfo
 clientDecoder =
-    Decode.map7 Client
-        (field "id" Decode.string)
-        (field "ref" Decode.string)
-        (field "name" Decode.string)
-        (field "address" Decode.string)
-        (field "contact" Decode.string)
-        (field "phone" Decode.string)
-        (field "email" Decode.string)
+    Decode.map2 HeaderInfo
+        (Decode.map ClientHeader
+            (Decode.map7 Client
+                (field "id" Decode.string)
+                (field "ref" Decode.string)
+                (field "name" Decode.string)
+                (field "address" Decode.string)
+                (field "contact" Decode.string)
+                (field "phone" Decode.string)
+                (field "email" Decode.string)
+            )
+        )
+        (field "tabs" (Decode.list tabDecoder))
 
 
-siteDecoder : Decode.Decoder Site
+siteDecoder : Decode.Decoder HeaderInfo
 siteDecoder =
-    Decode.map7 Site
-        (field "id" Decode.string)
-        (field "ref" Decode.string)
-        (field "name" Decode.string)
-        (field "address" Decode.string)
-        (field "contact" Decode.string)
-        (field "phone" Decode.string)
-        (field "email" Decode.string)
+    Decode.map2 HeaderInfo
+        (Decode.map SiteHeader
+            (Decode.map7 Site
+                (field "id" Decode.string)
+                (field "ref" Decode.string)
+                (field "name" Decode.string)
+                (field "address" Decode.string)
+                (field "contact" Decode.string)
+                (field "phone" Decode.string)
+                (field "email" Decode.string)
+            )
+        )
+        (field "tabs" (Decode.list tabDecoder))
 
 
-staffDecoder : Decode.Decoder Staff
+staffDecoder : Decode.Decoder HeaderInfo
 staffDecoder =
-    Decode.map2 Staff
-        (field "id" Decode.string)
-        (field "name" Decode.string)
+    Decode.map2 HeaderInfo
+        (Decode.map StaffHeader
+            (Decode.map2 Staff
+                (field "id" Decode.string)
+                (field "name" Decode.string)
+            )
+        )
+        (field "tabs" (Decode.list tabDecoder))
 
 
 tabDecoder : Decode.Decoder Tab

@@ -18,7 +18,7 @@ fetchAll nodeType nodeId container =
                 Cmd.none
 
         headerCmd =
-            if container.header == Empty then
+            if container.headerInfo.header == Empty then
                 Cmd.map HeaderMsg (Header.Commands.fetchHeader nodeType nodeId)
             else
                 Cmd.none

@@ -1,13 +1,14 @@
 module Container.Models exposing (..)
 
 import Tree.Models exposing (Tree, initialTree, Node, NodeType)
-import Header.Models exposing (Header, initialHeader)
+import Header.Models exposing (HeaderInfo, initialHeaderInfo, Tab)
 
 
 type alias Container =
     { tree : Tree
     , path : List Node
-    , header : Header
+    , headerInfo : HeaderInfo
+    , tab : Tab
     }
 
 
@@ -15,7 +16,8 @@ initialContainer : Container
 initialContainer =
     { tree = initialTree
     , path = []
-    , header = initialHeader
+    , headerInfo = initialHeaderInfo
+    , tab = Tab "" ""
     }
 
 

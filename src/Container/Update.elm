@@ -8,6 +8,8 @@ import Tree.Update
 import Header.Models exposing (..)
 import Header.Commands
 import Header.Update
+import Content.Commands
+import Content.Update
 import Navigation
 
 
@@ -49,6 +51,31 @@ update message container =
             in
                 updatePathFromTree container updatedTree cmdTree path
 
+        SelectTab tabType ->
+            let
+                nodeId =
+                    Header.Models.headerId container.headerInfo
+
+                maybeTab =
+                    container.headerInfo.tabs
+                        |> List.filter (\t -> t.tabType == tabType)
+                        |> List.head
+
+                updatedTab =
+                    case maybeTab of
+                        Just tab ->
+                            tab
+
+                        Nothing ->
+                            container.headerInfo.tabs
+                                |> List.head
+                                |> Maybe.withDefault (Tab EmptyTab "")
+
+                cmdContent =
+                    Content.Commands.fetchContent tabType nodeId
+            in
+                ( { container | tab = updatedTab }, Cmd.map ContentMsg cmdContent )
+
         TreeMsg subMsg ->
             let
                 ( updatedTree, cmdTree, path ) =
@@ -58,12 +85,15 @@ update message container =
 
         HeaderMsg subMsg ->
             let
-                ( updatedHeaderInfo, cmd ) =
+                ( updatedHeaderInfo, cmdHeader ) =
                     Header.Update.update subMsg container.headerInfo
+
+                nodeId =
+                    Header.Models.headerId updatedHeaderInfo
 
                 maybeTab =
                     updatedHeaderInfo.tabs
-                        |> List.filter (\t -> t.id == container.tab.id)
+                        |> List.filter (\t -> t.tabType == container.tab.tabType)
                         |> List.head
 
                 updatedTab =
@@ -74,6 +104,22 @@ update message container =
                         Nothing ->
                             updatedHeaderInfo.tabs
                                 |> List.head
-                                |> Maybe.withDefault (Tab "X" "X")
+                                |> Maybe.withDefault (Tab EmptyTab "")
+
+                cmdContent =
+                    Content.Commands.fetchContent updatedTab.tabType nodeId
+
+                cmdBatch =
+                    Cmd.batch
+                        [ Cmd.map HeaderMsg cmdHeader
+                        , Cmd.map ContentMsg cmdContent
+                        ]
             in
-                ( { container | headerInfo = updatedHeaderInfo, tab = updatedTab }, Cmd.map HeaderMsg cmd )
+                ( { container | headerInfo = updatedHeaderInfo, tab = updatedTab }, cmdBatch )
+
+        ContentMsg subMsg ->
+            let
+                ( updatedContent, cmdContent ) =
+                    Content.Update.update subMsg container.content
+            in
+                ( { container | content = updatedContent }, Cmd.map ContentMsg cmdContent )

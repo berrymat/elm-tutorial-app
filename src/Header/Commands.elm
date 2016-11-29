@@ -167,8 +167,20 @@ staffDecoder =
         (field "tabs" (Decode.list tabDecoder))
 
 
+createTab : NodeId -> String -> Tab
+createTab id name =
+    if id == "files" then
+        Tab FilesType name
+    else if id == "users" then
+        Tab UsersType name
+    else if id == "cases" then
+        Tab CasesType name
+    else
+        Tab FilesType name
+
+
 tabDecoder : Decode.Decoder Tab
 tabDecoder =
-    Decode.map2 Tab
+    Decode.map2 createTab
         (field "id" Decode.string)
         (field "name" Decode.string)

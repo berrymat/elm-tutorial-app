@@ -122,6 +122,72 @@
       ]
     }
   ],
+  "files": [
+    {
+      "id": "Customer.46.Client",
+      "name": "Files"
+    },
+    {
+      "id": "1",
+      "name": "Files"
+    },
+    {
+      "id": "2",
+      "name": "Files"
+    },
+    {
+      "id": "3",
+      "name": "Files"
+    },
+    {
+      "id": "4",
+      "name": "Files"
+    }
+  ],
+  "cases": [
+    {
+      "id": "Customer.46.Client",
+      "name": "Cases"
+    },
+    {
+      "id": "1",
+      "name": "Cases"
+    },
+    {
+      "id": "2",
+      "name": "Cases"
+    },
+    {
+      "id": "3",
+      "name": "Cases"
+    },
+    {
+      "id": "4",
+      "name": "Cases"
+    }
+  ],
+  "users": [
+    {
+      "id": "Customer.46.Client",
+      "name": "Users"
+    },
+    {
+      "id": "1",
+      "name": "Users"
+    },
+    {
+      "id": "2",
+      "name": "Users"
+    },
+    {
+      "id": "3",
+      "name": "Users"
+    },
+    {
+      "id": "4",
+      "name": "Users"
+    }
+  ],
   "node": [
     {
       "id": "Customer.46.Client",

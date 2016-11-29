@@ -62,8 +62,15 @@ type alias Staff =
     }
 
 
+type TabType
+    = FilesType
+    | UsersType
+    | CasesType
+    | EmptyTab
+
+
 type alias Tab =
-    { id : NodeId
+    { tabType : TabType
     , name : String
     }
 
@@ -73,3 +80,25 @@ initialHeaderInfo =
     { header = Empty
     , tabs = []
     }
+
+
+headerId : HeaderInfo -> NodeId
+headerId headerInfo =
+    case headerInfo.header of
+        RootHeader root ->
+            root.id
+
+        CustomerHeader customer ->
+            customer.id
+
+        ClientHeader client ->
+            client.id
+
+        SiteHeader site ->
+            site.id
+
+        StaffHeader staff ->
+            staff.id
+
+        Empty ->
+            ""

@@ -8,6 +8,7 @@ import Container.Models exposing (..)
 import Header.Models exposing (..)
 import Tree.View
 import Header.View
+import Content.View
 
 
 view : Container -> Html Msg
@@ -29,12 +30,9 @@ view container =
                 , viewTabs container
                 ]
             , div [ class "body-content" ]
-                [ div [ class "body-content-sidebar" ] [ text "sidebar" ]
-                , div [ class "body-content-content" ]
-                    (List.map
-                        (\n -> div [] [ text ("This is the body " ++ (toString n)) ])
-                        (List.range 0 100)
-                    )
+                [ Html.map
+                    ContentMsg
+                    (Content.View.view container.content)
                 ]
             ]
         ]
@@ -96,5 +94,12 @@ viewTabs container =
 
 tabItem : Tab -> Tab -> Html Msg
 tabItem selected tab =
-    div [ classList [ ( "tab", True ), ( "active", selected.id == tab.id ), ( "clickable", selected.id /= tab.id ) ] ]
+    div
+        [ classList
+            [ ( "tab", True )
+            , ( "active", selected.tabType == tab.tabType )
+            , ( "clickable", selected.tabType /= tab.tabType )
+            ]
+        , onClick (SelectTab tab.tabType)
+        ]
         [ text tab.name ]

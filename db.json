@@ -125,7 +125,154 @@
   "files": [
     {
       "id": "Customer.46.Client",
-      "name": "Files"
+      "type": "folder",
+      "name": "Files",
+      "folders": [
+        {
+          "id": "f1",
+          "type": "folder",
+          "name": "A1 Commercial Cleaning",
+          "children": [
+            {
+              "id": "f1.1",
+              "type": "folder",
+              "name": "Shared4User",
+              "children": []
+            },
+            {
+              "id": "f1.2",
+              "type": "folder",
+              "name": "Shared4Customer",
+              "children": []
+            },
+            {
+              "id": "f1.3",
+              "type": "folder",
+              "name": "Shared4Client",
+              "children": [
+                {
+                  "id": "f1.3.1",
+                  "type": "folder",
+                  "name": "Client KPI's",
+                  "children": []
+                },
+                {
+                  "id": "f1.3.2",
+                  "type": "folder",
+                  "name": "Invoices",
+                  "children": []
+                },
+                {
+                  "id": "f1.3.3",
+                  "type": "folder",
+                  "name": "Photos",
+                  "children": []
+                },
+                {
+                  "id": "f1.3.4",
+                  "type": "folder",
+                  "name": "Accreditations",
+                  "children": []
+                },
+                {
+                  "id": "f1.3.5",
+                  "type": "folder",
+                  "name": "Insurance",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "f1.4",
+              "type": "folder",
+              "name": "Shared4Site",
+              "children": [
+                {
+                  "id": "f1.4.1",
+                  "type": "folder",
+                  "name": "Audits",
+                  "children": [
+                    {
+                      "id": "f1.4.1.1",
+                      "type": "folder",
+                      "name": "Machinery",
+                      "children": []
+                    },
+                    {
+                      "id": "f1.4.1.2",
+                      "type": "folder",
+                      "name": "Reviews",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "f1.4.2",
+                  "type": "folder",
+                  "name": "Health & Safety",
+                  "children": [
+                    {
+                      "id": "f1.4.2.1",
+                      "type": "folder",
+                      "name": "COSHH",
+                      "children": []
+                    },
+                    {
+                      "id": "f1.4.2.2",
+                      "type": "folder",
+                      "name": "Method Statements",
+                      "children": []
+                    },
+                    {
+                      "id": "f1.4.2.3",
+                      "type": "folder",
+                      "name": "Policies",
+                      "children": []
+                    },
+                    {
+                      "id": "f1.4.2.4",
+                      "type": "folder",
+                      "name": "Risk Assessments",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "f1.5",
+              "type": "folder",
+              "name": "Shared4Staff",
+              "children": [
+                  {
+                    "id": "f1.5.1",
+                    "type": "folder",
+                    "name": "P60",
+                    "children": []
+                  },
+                  {
+                    "id": "f1.5.2",
+                    "type": "folder",
+                    "name": "Payslips",
+                    "children": []
+                  },
+                  {
+                    "id": "f1.5.3",
+                    "type": "folder",
+                    "name": "Training Records",
+                    "children": []
+                  },
+                  {
+                    "id": "f1.5.4",
+                    "type": "folder",
+                    "name": "Employment Documents",
+                    "children": []
+                  }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "1",

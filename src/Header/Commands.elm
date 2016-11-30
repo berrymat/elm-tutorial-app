@@ -25,6 +25,9 @@ fetchHeader nodeType nodeId =
 
             StaffType ->
                 fetchStaff nodeId
+
+            FolderType ->
+                Cmd.none
     else
         Cmd.none
 

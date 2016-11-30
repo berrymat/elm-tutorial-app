@@ -1,6 +1,6 @@
 module Content.Models exposing (..)
 
-import Tree.Models exposing (NodeId)
+import Tree.Models exposing (NodeId, Node)
 
 
 type Content
@@ -13,6 +13,7 @@ type Content
 type alias Files =
     { id : NodeId
     , name : String
+    , folders : List Node
     }
 
 

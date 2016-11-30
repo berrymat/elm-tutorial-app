@@ -41,6 +41,7 @@ type NodeType
     | ClientType
     | SiteType
     | StaffType
+    | FolderType
 
 
 type alias Node =
@@ -78,6 +79,8 @@ convertNodeType type_ =
         Just SiteType
     else if type_ == "staff" then
         Just StaffType
+    else if type_ == "folder" then
+        Just FolderType
     else
         Nothing
 

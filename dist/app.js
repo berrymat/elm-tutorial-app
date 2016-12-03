@@ -508,8 +508,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./styles.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./styles.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/sass-loader/index.js!./styles.scss", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/sass-loader/index.js!./styles.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -527,7 +527,7 @@
 
 
 	// module
-	exports.push([module.id, ".wrapper {\n  margin: 0 auto;\n  padding: 40px;\n  max-width: 800px;\n}\n\n.table {\n  margin: 0 0 40px 0;\n  width: 100%;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  display: table;\n}\n@media screen and (max-width: 580px) {\n  .table {\n    display: block;\n  }\n}\n\n.row {\n  display: table-row;\n  background: #f6f6f6;\n}\n.row:nth-of-type(odd) {\n  background: #e9e9e9;\n}\n.row.header {\n  font-weight: 900;\n  color: #ffffff;\n  background: #ea6153;\n}\n.row.green {\n  background: #27ae60;\n}\n.row.blue {\n  background: #2980b9;\n}\n@media screen and (max-width: 580px) {\n  .row {\n    padding: 8px 0;\n    display: block;\n  }\n}\n\n.cell {\n  padding: 6px 12px;\n  display: table-cell;\n}\n@media screen and (max-width: 580px) {\n  .cell {\n    padding: 2px 12px;\n    display: block;\n  }\n}\n\n\n/*-------------------------*/\n\n.k-icon {\n    min-width: 16px;\n}\n\ndiv.k-treeview {\n    border-width: 0;\n    background: 0;\n    overflow: auto;\n    white-space: nowrap\n}\n\n.k-treeview .k-item {\n    display: block;\n    border-width: 0;\n    margin: 0;\n    padding: 0 0 0 16px\n}\n\n.k-treeview>.k-group,.k-treeview .k-item>.k-group,.k-treeview .k-content {\n    margin: 0;\n    padding: 0;\n    background: 0;\n    list-style-type: none;\n    position: relative\n}\n\n.k-treeview .k-icon,.k-treeview .k-image,.k-treeview .k-sprite,.k-treeview .k-checkbox,.k-treeview .k-in {\n    display: inline-block;\n    vertical-align: top\n}\n\n.k-treeview .k-plus,.k-treeview .k-minus,.k-treeview .k-plus-disabled,.k-treeview .k-minus-disabled {\n    /*margin-top: 3px;*/\n    margin-left: -16px;\n    cursor: pointer\n}\n\n.k-treeview .k-plus-disabled,.k-treeview .k-minus-disabled {\n    cursor: default\n}\n\n.k-treeview .k-sprite,.k-treeview .k-image {\n    margin-right: 3px\n}\n\n.k-treeview .k-in {\n    margin: 1px 0 1px 2px;\n    padding: 2px 4px 2px 3px;\n    line-height: 16px;\n    text-decoration: none\n}\n\n.k-treeview span.k-in {\n    cursor: default\n}\n\n.k-treeview .k-in.k-state-hover,.k-treeview .k-in.k-state-selected,.k-treeview .k-in.k-state-focused {\n    border-style: solid;\n    border-width: 1px;\n    padding: 1px 3px 1px 2px\n}\n\n.k-treeview .k-drop-hint {\n    position: absolute;\n    z-index: 10000;\n    visibility: hidden;\n    width: 80px;\n    height: 5px;\n    margin-top: -3px;\n    background-color: transparent;\n    background-repeat: no-repeat\n}\n\n/* --------------------------------------------- */\n\n.k-icon:hover,.k-state-hover .k-icon,.k-state-selected .k-icon,.k-state-focused .k-icon,.k-column-menu .k-state-hover .k-sprite,.k-column-menu .k-state-active .k-sprite {\n    opacity: 1;\n}\n\n.k-icon,.k-state-disabled .k-icon,.k-column-menu .k-sprite {\n    opacity: 1\n}\n\n.k-icon,.k-tool-icon,.k-grouping-dropclue,.k-drop-hint,.k-column-menu .k-sprite {\n    /*background-image: url('Bootstrap/sprite.png');*/\n    border-color: transparent;\n    /*padding-right: 4px;*/\n}\n\n.k-state-selected {\n    color: #fff;\n    background-color: #04c;\n    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);\n    border-radius: 4px;\n}\n", ""]);
+	exports.push([module.id, "/*\n$bg-color-1: rgb(2, 48, 87);\n$color-1: rgb(98, 144, 183);\n\n$bg-color-2: rgb(3, 75, 138);\n$color-2: rgb(99, 171, 234);\n\n$bg-color-3: rgb(3, 102, 189);\n$color-3: rgb(0, 6, 93);\n\n$bg-color-4: rgb(2, 129, 240);\n$color-4: rgb(0, 33, 144);\n\n$bg-color-5: rgb(40, 154, 254);\n$color-5: rgb(0, 58, 158);\n*/\n.wrapper {\n  margin: 0 auto;\n  padding: 40px;\n  max-width: 800px; }\n\n.table {\n  margin: 0 0 40px 0;\n  width: 100%;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  display: table; }\n\n@media screen and (max-width: 580px) {\n  .table {\n    display: block; } }\n\n.row {\n  display: table-row;\n  background: #f6f6f6; }\n\n.row:nth-of-type(odd) {\n  background: #e9e9e9; }\n\n.row.header {\n  font-weight: 900;\n  color: #ffffff;\n  background: #ea6153; }\n\n.row.green {\n  background: #27ae60; }\n\n.row.blue {\n  background: #2980b9; }\n\n@media screen and (max-width: 580px) {\n  .row {\n    padding: 8px 0;\n    display: block; } }\n\n.cell {\n  padding: 6px 12px;\n  display: table-cell; }\n\n@media screen and (max-width: 580px) {\n  .cell {\n    padding: 2px 12px;\n    display: block; } }\n\n/*-------------------------*/\n.k-icon {\n  min-width: 16px; }\n\ndiv.k-treeview {\n  border-width: 0;\n  background: 0;\n  overflow: auto;\n  white-space: nowrap; }\n\n.k-treeview .k-item {\n  display: block;\n  border-width: 0;\n  margin: 0;\n  padding: 0 0 0 16px; }\n\n.k-treeview > .k-group, .k-treeview .k-item > .k-group, .k-treeview .k-content {\n  margin: 0;\n  padding: 0;\n  background: 0;\n  list-style-type: none;\n  position: relative; }\n\n.k-treeview .k-icon, .k-treeview .k-image, .k-treeview .k-sprite, .k-treeview .k-checkbox, .k-treeview .k-in {\n  display: inline-block;\n  vertical-align: top; }\n\n.k-treeview .k-plus, .k-treeview .k-minus, .k-treeview .k-plus-disabled, .k-treeview .k-minus-disabled {\n  /*margin-top: 3px;*/\n  margin-left: -16px;\n  cursor: pointer; }\n\n.k-treeview .k-plus-disabled, .k-treeview .k-minus-disabled {\n  cursor: default; }\n\n.k-treeview .k-sprite, .k-treeview .k-image {\n  margin-right: 3px; }\n\n.k-treeview .k-in {\n  margin: 1px 0 1px 2px;\n  padding: 2px 4px 2px 3px;\n  line-height: 16px;\n  text-decoration: none; }\n\n.k-treeview span.k-in {\n  cursor: default; }\n\n.k-treeview .k-in.k-state-hover, .k-treeview .k-in.k-state-selected, .k-treeview .k-in.k-state-focused {\n  border-style: solid;\n  border-width: 1px;\n  padding: 1px 3px 1px 2px; }\n\n.k-treeview .k-drop-hint {\n  position: absolute;\n  z-index: 10000;\n  visibility: hidden;\n  width: 80px;\n  height: 5px;\n  margin-top: -3px;\n  background-color: transparent;\n  background-repeat: no-repeat; }\n\n/* --------------------------------------------- */\n.k-icon:hover, .k-state-hover .k-icon, .k-state-selected .k-icon, .k-state-focused .k-icon, .k-column-menu .k-state-hover .k-sprite, .k-column-menu .k-state-active .k-sprite {\n  opacity: 1; }\n\n.k-icon, .k-state-disabled .k-icon, .k-column-menu .k-sprite {\n  opacity: 1; }\n\n.k-icon, .k-tool-icon, .k-grouping-dropclue, .k-drop-hint, .k-column-menu .k-sprite {\n  /*background-image: url('Bootstrap/sprite.png');*/\n  border-color: transparent;\n  /*padding-right: 4px;*/ }\n\n.k-state-selected {\n  color: #fff;\n  background-color: #033241;\n  border-color: #033241;\n  border-radius: 4px; }\n\n/* ---------------------------------------------- */\n.layout {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  position: fixed;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0; }\n\n.navbar {\n  height: 52px;\n  color: #e3f8ff;\n  background-color: #0591bf; }\n\n.fullview {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: row;\n  align-items: stretch; }\n\n.footer {\n  height: 40px;\n  color: #e3f8ff;\n  background-color: #0591bf; }\n\n.sidebar {\n  width: 370px;\n  padding: 16px;\n  overflow: auto;\n  background-color: #05a7db;\n  color: #e3f8ff;\n  border-right: 1px solid #0591bf; }\n\n.body {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  /*\n    position: relative;\n    padding-top: 52px;\n    padding-left: 370px;\n    */ }\n\n.body-header {\n  flex: 0 0 auto;\n  display: flex;\n  color: #033241;\n  border-bottom: 1px solid #0591bf; }\n\n.body-header-image {\n  flex: 0 0 auto;\n  background-color: #a7eaff;\n  color: #033241;\n  width: 280px;\n  border: 8px solid #a7eaff;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position-x: center; }\n\n.body-header-content {\n  flex: 0 0 auto;\n  background-color: #e3f8ff;\n  border-left: 1px solid #0591bf;\n  color: #033241; }\n\n.body-header-extra {\n  flex: 1 1 auto;\n  background-color: #e3f8ff;\n  color: #033241; }\n\n.body-content {\n  display: flex;\n  flex: 1 1 auto;\n  background-color: #FFFFFF;\n  flex-direction: row;\n  align-items: stretch; }\n\n.body-content-sidebar {\n  flex: 0 0 auto;\n  display: flex;\n  background-color: #a7eaff;\n  border-right: 1px solid #0591bf;\n  color: #033241;\n  width: 280px;\n  padding: 8px;\n  overflow: auto; }\n\n.body-content-content {\n  flex: 1 1 auto;\n  background-color: #e3f8ff;\n  color: #033241;\n  padding: 8px;\n  overflow: auto; }\n\nabbr[title] {\n  cursor: help;\n  border-bottom: 1px dotted #033241; }\n\ndiv.body-path {\n  display: flex;\n  flex: 0 0 auto;\n  background-color: #05bcf7;\n  color: #033241;\n  border-bottom: 1px solid #0591bf; }\n\n.body-path div {\n  display: inline-block; }\n\n.path-item {\n  padding-left: 0.5em;\n  padding-right: 0.5em;\n  color: #033241; }\n\n.clickable {\n  cursor: pointer;\n  color: #e3f8ff; }\n\n.clickable:hover {\n  text-decoration: underline; }\n\n.breadcrumb {\n  flex: 1 1 auto;\n  padding: 0.5em; }\n\n.body-path div.tabs {\n  flex: 0 1 auto;\n  display: flex;\n  align-items: flex-end; }\n\n.body-path div.tab {\n  margin-bottom: -1px;\n  margin-right: 0.25em;\n  display: block;\n  padding: 0.35em 0.75em;\n  border-top-left-radius: 0.25em;\n  border-top-right-radius: 0.25em; }\n\n.body-path div.tab.active {\n  border-left: 1px solid #0591bf;\n  border-top: 1px solid #0591bf;\n  border-right: 1px solid #0591bf;\n  background-color: #e3f8ff;\n  color: #033241; }\n\n.body-path div.tab.clickable {\n  border-bottom: 1px solid #0591bf;\n  background-color: #05bcf7;\n  color: #033241; }\n\n.body-path div.tab.clickable:hover {\n  background-color: #05a7db;\n  text-decoration: none; }\n", ""]);
 
 	// exports
 
@@ -3223,1275 +3223,6 @@
 
 	//import Native.Utils //
 
-	var _elm_lang$core$Native_Char = function() {
-
-	return {
-		fromCode: function(c) { return _elm_lang$core$Native_Utils.chr(String.fromCharCode(c)); },
-		toCode: function(c) { return c.charCodeAt(0); },
-		toUpper: function(c) { return _elm_lang$core$Native_Utils.chr(c.toUpperCase()); },
-		toLower: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLowerCase()); },
-		toLocaleUpper: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLocaleUpperCase()); },
-		toLocaleLower: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLocaleLowerCase()); }
-	};
-
-	}();
-	var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
-	var _elm_lang$core$Char$toCode = _elm_lang$core$Native_Char.toCode;
-	var _elm_lang$core$Char$toLocaleLower = _elm_lang$core$Native_Char.toLocaleLower;
-	var _elm_lang$core$Char$toLocaleUpper = _elm_lang$core$Native_Char.toLocaleUpper;
-	var _elm_lang$core$Char$toLower = _elm_lang$core$Native_Char.toLower;
-	var _elm_lang$core$Char$toUpper = _elm_lang$core$Native_Char.toUpper;
-	var _elm_lang$core$Char$isBetween = F3(
-		function (low, high, $char) {
-			var code = _elm_lang$core$Char$toCode($char);
-			return (_elm_lang$core$Native_Utils.cmp(
-				code,
-				_elm_lang$core$Char$toCode(low)) > -1) && (_elm_lang$core$Native_Utils.cmp(
-				code,
-				_elm_lang$core$Char$toCode(high)) < 1);
-		});
-	var _elm_lang$core$Char$isUpper = A2(
-		_elm_lang$core$Char$isBetween,
-		_elm_lang$core$Native_Utils.chr('A'),
-		_elm_lang$core$Native_Utils.chr('Z'));
-	var _elm_lang$core$Char$isLower = A2(
-		_elm_lang$core$Char$isBetween,
-		_elm_lang$core$Native_Utils.chr('a'),
-		_elm_lang$core$Native_Utils.chr('z'));
-	var _elm_lang$core$Char$isDigit = A2(
-		_elm_lang$core$Char$isBetween,
-		_elm_lang$core$Native_Utils.chr('0'),
-		_elm_lang$core$Native_Utils.chr('9'));
-	var _elm_lang$core$Char$isOctDigit = A2(
-		_elm_lang$core$Char$isBetween,
-		_elm_lang$core$Native_Utils.chr('0'),
-		_elm_lang$core$Native_Utils.chr('7'));
-	var _elm_lang$core$Char$isHexDigit = function ($char) {
-		return _elm_lang$core$Char$isDigit($char) || (A3(
-			_elm_lang$core$Char$isBetween,
-			_elm_lang$core$Native_Utils.chr('a'),
-			_elm_lang$core$Native_Utils.chr('f'),
-			$char) || A3(
-			_elm_lang$core$Char$isBetween,
-			_elm_lang$core$Native_Utils.chr('A'),
-			_elm_lang$core$Native_Utils.chr('F'),
-			$char));
-	};
-
-	//import Native.Utils //
-
-	var _elm_lang$core$Native_Scheduler = function() {
-
-	var MAX_STEPS = 10000;
-
-
-	// TASKS
-
-	function succeed(value)
-	{
-		return {
-			ctor: '_Task_succeed',
-			value: value
-		};
-	}
-
-	function fail(error)
-	{
-		return {
-			ctor: '_Task_fail',
-			value: error
-		};
-	}
-
-	function nativeBinding(callback)
-	{
-		return {
-			ctor: '_Task_nativeBinding',
-			callback: callback,
-			cancel: null
-		};
-	}
-
-	function andThen(callback, task)
-	{
-		return {
-			ctor: '_Task_andThen',
-			callback: callback,
-			task: task
-		};
-	}
-
-	function onError(callback, task)
-	{
-		return {
-			ctor: '_Task_onError',
-			callback: callback,
-			task: task
-		};
-	}
-
-	function receive(callback)
-	{
-		return {
-			ctor: '_Task_receive',
-			callback: callback
-		};
-	}
-
-
-	// PROCESSES
-
-	function rawSpawn(task)
-	{
-		var process = {
-			ctor: '_Process',
-			id: _elm_lang$core$Native_Utils.guid(),
-			root: task,
-			stack: null,
-			mailbox: []
-		};
-
-		enqueue(process);
-
-		return process;
-	}
-
-	function spawn(task)
-	{
-		return nativeBinding(function(callback) {
-			var process = rawSpawn(task);
-			callback(succeed(process));
-		});
-	}
-
-	function rawSend(process, msg)
-	{
-		process.mailbox.push(msg);
-		enqueue(process);
-	}
-
-	function send(process, msg)
-	{
-		return nativeBinding(function(callback) {
-			rawSend(process, msg);
-			callback(succeed(_elm_lang$core$Native_Utils.Tuple0));
-		});
-	}
-
-	function kill(process)
-	{
-		return nativeBinding(function(callback) {
-			var root = process.root;
-			if (root.ctor === '_Task_nativeBinding' && root.cancel)
-			{
-				root.cancel();
-			}
-
-			process.root = null;
-
-			callback(succeed(_elm_lang$core$Native_Utils.Tuple0));
-		});
-	}
-
-	function sleep(time)
-	{
-		return nativeBinding(function(callback) {
-			var id = setTimeout(function() {
-				callback(succeed(_elm_lang$core$Native_Utils.Tuple0));
-			}, time);
-
-			return function() { clearTimeout(id); };
-		});
-	}
-
-
-	// STEP PROCESSES
-
-	function step(numSteps, process)
-	{
-		while (numSteps < MAX_STEPS)
-		{
-			var ctor = process.root.ctor;
-
-			if (ctor === '_Task_succeed')
-			{
-				while (process.stack && process.stack.ctor === '_Task_onError')
-				{
-					process.stack = process.stack.rest;
-				}
-				if (process.stack === null)
-				{
-					break;
-				}
-				process.root = process.stack.callback(process.root.value);
-				process.stack = process.stack.rest;
-				++numSteps;
-				continue;
-			}
-
-			if (ctor === '_Task_fail')
-			{
-				while (process.stack && process.stack.ctor === '_Task_andThen')
-				{
-					process.stack = process.stack.rest;
-				}
-				if (process.stack === null)
-				{
-					break;
-				}
-				process.root = process.stack.callback(process.root.value);
-				process.stack = process.stack.rest;
-				++numSteps;
-				continue;
-			}
-
-			if (ctor === '_Task_andThen')
-			{
-				process.stack = {
-					ctor: '_Task_andThen',
-					callback: process.root.callback,
-					rest: process.stack
-				};
-				process.root = process.root.task;
-				++numSteps;
-				continue;
-			}
-
-			if (ctor === '_Task_onError')
-			{
-				process.stack = {
-					ctor: '_Task_onError',
-					callback: process.root.callback,
-					rest: process.stack
-				};
-				process.root = process.root.task;
-				++numSteps;
-				continue;
-			}
-
-			if (ctor === '_Task_nativeBinding')
-			{
-				process.root.cancel = process.root.callback(function(newRoot) {
-					process.root = newRoot;
-					enqueue(process);
-				});
-
-				break;
-			}
-
-			if (ctor === '_Task_receive')
-			{
-				var mailbox = process.mailbox;
-				if (mailbox.length === 0)
-				{
-					break;
-				}
-
-				process.root = process.root.callback(mailbox.shift());
-				++numSteps;
-				continue;
-			}
-
-			throw new Error(ctor);
-		}
-
-		if (numSteps < MAX_STEPS)
-		{
-			return numSteps + 1;
-		}
-		enqueue(process);
-
-		return numSteps;
-	}
-
-
-	// WORK QUEUE
-
-	var working = false;
-	var workQueue = [];
-
-	function enqueue(process)
-	{
-		workQueue.push(process);
-
-		if (!working)
-		{
-			setTimeout(work, 0);
-			working = true;
-		}
-	}
-
-	function work()
-	{
-		var numSteps = 0;
-		var process;
-		while (numSteps < MAX_STEPS && (process = workQueue.shift()))
-		{
-			if (process.root)
-			{
-				numSteps = step(numSteps, process);
-			}
-		}
-		if (!process)
-		{
-			working = false;
-			return;
-		}
-		setTimeout(work, 0);
-	}
-
-
-	return {
-		succeed: succeed,
-		fail: fail,
-		nativeBinding: nativeBinding,
-		andThen: F2(andThen),
-		onError: F2(onError),
-		receive: receive,
-
-		spawn: spawn,
-		kill: kill,
-		sleep: sleep,
-		send: F2(send),
-
-		rawSpawn: rawSpawn,
-		rawSend: rawSend
-	};
-
-	}();
-	//import //
-
-	var _elm_lang$core$Native_Platform = function() {
-
-
-	// PROGRAMS
-
-	function program(impl)
-	{
-		return function(flagDecoder)
-		{
-			return function(object, moduleName)
-			{
-				object['worker'] = function worker(flags)
-				{
-					if (typeof flags !== 'undefined')
-					{
-						throw new Error(
-							'The `' + moduleName + '` module does not need flags.\n'
-							+ 'Call ' + moduleName + '.worker() with no arguments and you should be all set!'
-						);
-					}
-
-					return initialize(
-						impl.init,
-						impl.update,
-						impl.subscriptions,
-						renderer
-					);
-				};
-			};
-		};
-	}
-
-	function programWithFlags(impl)
-	{
-		return function(flagDecoder)
-		{
-			return function(object, moduleName)
-			{
-				object['worker'] = function worker(flags)
-				{
-					if (typeof flagDecoder === 'undefined')
-					{
-						throw new Error(
-							'Are you trying to sneak a Never value into Elm? Trickster!\n'
-							+ 'It looks like ' + moduleName + '.main is defined with `programWithFlags` but has type `Program Never`.\n'
-							+ 'Use `program` instead if you do not want flags.'
-						);
-					}
-
-					var result = A2(_elm_lang$core$Native_Json.run, flagDecoder, flags);
-					if (result.ctor === 'Err')
-					{
-						throw new Error(
-							moduleName + '.worker(...) was called with an unexpected argument.\n'
-							+ 'I tried to convert it to an Elm value, but ran into this problem:\n\n'
-							+ result._0
-						);
-					}
-
-					return initialize(
-						impl.init(result._0),
-						impl.update,
-						impl.subscriptions,
-						renderer
-					);
-				};
-			};
-		};
-	}
-
-	function renderer(enqueue, _)
-	{
-		return function(_) {};
-	}
-
-
-	// HTML TO PROGRAM
-
-	function htmlToProgram(vnode)
-	{
-		var emptyBag = batch(_elm_lang$core$Native_List.Nil);
-		var noChange = _elm_lang$core$Native_Utils.Tuple2(
-			_elm_lang$core$Native_Utils.Tuple0,
-			emptyBag
-		);
-
-		return _elm_lang$virtual_dom$VirtualDom$program({
-			init: noChange,
-			view: function(model) { return main; },
-			update: F2(function(msg, model) { return noChange; }),
-			subscriptions: function (model) { return emptyBag; }
-		});
-	}
-
-
-	// INITIALIZE A PROGRAM
-
-	function initialize(init, update, subscriptions, renderer)
-	{
-		// ambient state
-		var managers = {};
-		var updateView;
-
-		// init and update state in main process
-		var initApp = _elm_lang$core$Native_Scheduler.nativeBinding(function(callback) {
-			var model = init._0;
-			updateView = renderer(enqueue, model);
-			var cmds = init._1;
-			var subs = subscriptions(model);
-			dispatchEffects(managers, cmds, subs);
-			callback(_elm_lang$core$Native_Scheduler.succeed(model));
-		});
-
-		function onMessage(msg, model)
-		{
-			return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback) {
-				var results = A2(update, msg, model);
-				model = results._0;
-				updateView(model);
-				var cmds = results._1;
-				var subs = subscriptions(model);
-				dispatchEffects(managers, cmds, subs);
-				callback(_elm_lang$core$Native_Scheduler.succeed(model));
-			});
-		}
-
-		var mainProcess = spawnLoop(initApp, onMessage);
-
-		function enqueue(msg)
-		{
-			_elm_lang$core$Native_Scheduler.rawSend(mainProcess, msg);
-		}
-
-		var ports = setupEffects(managers, enqueue);
-
-		return ports ? { ports: ports } : {};
-	}
-
-
-	// EFFECT MANAGERS
-
-	var effectManagers = {};
-
-	function setupEffects(managers, callback)
-	{
-		var ports;
-
-		// setup all necessary effect managers
-		for (var key in effectManagers)
-		{
-			var manager = effectManagers[key];
-
-			if (manager.isForeign)
-			{
-				ports = ports || {};
-				ports[key] = manager.tag === 'cmd'
-					? setupOutgoingPort(key)
-					: setupIncomingPort(key, callback);
-			}
-
-			managers[key] = makeManager(manager, callback);
-		}
-
-		return ports;
-	}
-
-	function makeManager(info, callback)
-	{
-		var router = {
-			main: callback,
-			self: undefined
-		};
-
-		var tag = info.tag;
-		var onEffects = info.onEffects;
-		var onSelfMsg = info.onSelfMsg;
-
-		function onMessage(msg, state)
-		{
-			if (msg.ctor === 'self')
-			{
-				return A3(onSelfMsg, router, msg._0, state);
-			}
-
-			var fx = msg._0;
-			switch (tag)
-			{
-				case 'cmd':
-					return A3(onEffects, router, fx.cmds, state);
-
-				case 'sub':
-					return A3(onEffects, router, fx.subs, state);
-
-				case 'fx':
-					return A4(onEffects, router, fx.cmds, fx.subs, state);
-			}
-		}
-
-		var process = spawnLoop(info.init, onMessage);
-		router.self = process;
-		return process;
-	}
-
-	function sendToApp(router, msg)
-	{
-		return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-		{
-			router.main(msg);
-			callback(_elm_lang$core$Native_Scheduler.succeed(_elm_lang$core$Native_Utils.Tuple0));
-		});
-	}
-
-	function sendToSelf(router, msg)
-	{
-		return A2(_elm_lang$core$Native_Scheduler.send, router.self, {
-			ctor: 'self',
-			_0: msg
-		});
-	}
-
-
-	// HELPER for STATEFUL LOOPS
-
-	function spawnLoop(init, onMessage)
-	{
-		var andThen = _elm_lang$core$Native_Scheduler.andThen;
-
-		function loop(state)
-		{
-			var handleMsg = _elm_lang$core$Native_Scheduler.receive(function(msg) {
-				return onMessage(msg, state);
-			});
-			return A2(andThen, loop, handleMsg);
-		}
-
-		var task = A2(andThen, loop, init);
-
-		return _elm_lang$core$Native_Scheduler.rawSpawn(task);
-	}
-
-
-	// BAGS
-
-	function leaf(home)
-	{
-		return function(value)
-		{
-			return {
-				type: 'leaf',
-				home: home,
-				value: value
-			};
-		};
-	}
-
-	function batch(list)
-	{
-		return {
-			type: 'node',
-			branches: list
-		};
-	}
-
-	function map(tagger, bag)
-	{
-		return {
-			type: 'map',
-			tagger: tagger,
-			tree: bag
-		}
-	}
-
-
-	// PIPE BAGS INTO EFFECT MANAGERS
-
-	function dispatchEffects(managers, cmdBag, subBag)
-	{
-		var effectsDict = {};
-		gatherEffects(true, cmdBag, effectsDict, null);
-		gatherEffects(false, subBag, effectsDict, null);
-
-		for (var home in managers)
-		{
-			var fx = home in effectsDict
-				? effectsDict[home]
-				: {
-					cmds: _elm_lang$core$Native_List.Nil,
-					subs: _elm_lang$core$Native_List.Nil
-				};
-
-			_elm_lang$core$Native_Scheduler.rawSend(managers[home], { ctor: 'fx', _0: fx });
-		}
-	}
-
-	function gatherEffects(isCmd, bag, effectsDict, taggers)
-	{
-		switch (bag.type)
-		{
-			case 'leaf':
-				var home = bag.home;
-				var effect = toEffect(isCmd, home, taggers, bag.value);
-				effectsDict[home] = insert(isCmd, effect, effectsDict[home]);
-				return;
-
-			case 'node':
-				var list = bag.branches;
-				while (list.ctor !== '[]')
-				{
-					gatherEffects(isCmd, list._0, effectsDict, taggers);
-					list = list._1;
-				}
-				return;
-
-			case 'map':
-				gatherEffects(isCmd, bag.tree, effectsDict, {
-					tagger: bag.tagger,
-					rest: taggers
-				});
-				return;
-		}
-	}
-
-	function toEffect(isCmd, home, taggers, value)
-	{
-		function applyTaggers(x)
-		{
-			var temp = taggers;
-			while (temp)
-			{
-				x = temp.tagger(x);
-				temp = temp.rest;
-			}
-			return x;
-		}
-
-		var map = isCmd
-			? effectManagers[home].cmdMap
-			: effectManagers[home].subMap;
-
-		return A2(map, applyTaggers, value)
-	}
-
-	function insert(isCmd, newEffect, effects)
-	{
-		effects = effects || {
-			cmds: _elm_lang$core$Native_List.Nil,
-			subs: _elm_lang$core$Native_List.Nil
-		};
-		if (isCmd)
-		{
-			effects.cmds = _elm_lang$core$Native_List.Cons(newEffect, effects.cmds);
-			return effects;
-		}
-		effects.subs = _elm_lang$core$Native_List.Cons(newEffect, effects.subs);
-		return effects;
-	}
-
-
-	// PORTS
-
-	function checkPortName(name)
-	{
-		if (name in effectManagers)
-		{
-			throw new Error('There can only be one port named `' + name + '`, but your program has multiple.');
-		}
-	}
-
-
-	// OUTGOING PORTS
-
-	function outgoingPort(name, converter)
-	{
-		checkPortName(name);
-		effectManagers[name] = {
-			tag: 'cmd',
-			cmdMap: outgoingPortMap,
-			converter: converter,
-			isForeign: true
-		};
-		return leaf(name);
-	}
-
-	var outgoingPortMap = F2(function cmdMap(tagger, value) {
-		return value;
-	});
-
-	function setupOutgoingPort(name)
-	{
-		var subs = [];
-		var converter = effectManagers[name].converter;
-
-		// CREATE MANAGER
-
-		var init = _elm_lang$core$Native_Scheduler.succeed(null);
-
-		function onEffects(router, cmdList, state)
-		{
-			while (cmdList.ctor !== '[]')
-			{
-				// grab a separate reference to subs in case unsubscribe is called
-				var currentSubs = subs;
-				var value = converter(cmdList._0);
-				for (var i = 0; i < currentSubs.length; i++)
-				{
-					currentSubs[i](value);
-				}
-				cmdList = cmdList._1;
-			}
-			return init;
-		}
-
-		effectManagers[name].init = init;
-		effectManagers[name].onEffects = F3(onEffects);
-
-		// PUBLIC API
-
-		function subscribe(callback)
-		{
-			subs.push(callback);
-		}
-
-		function unsubscribe(callback)
-		{
-			// copy subs into a new array in case unsubscribe is called within a
-			// subscribed callback
-			subs = subs.slice();
-			var index = subs.indexOf(callback);
-			if (index >= 0)
-			{
-				subs.splice(index, 1);
-			}
-		}
-
-		return {
-			subscribe: subscribe,
-			unsubscribe: unsubscribe
-		};
-	}
-
-
-	// INCOMING PORTS
-
-	function incomingPort(name, converter)
-	{
-		checkPortName(name);
-		effectManagers[name] = {
-			tag: 'sub',
-			subMap: incomingPortMap,
-			converter: converter,
-			isForeign: true
-		};
-		return leaf(name);
-	}
-
-	var incomingPortMap = F2(function subMap(tagger, finalTagger)
-	{
-		return function(value)
-		{
-			return tagger(finalTagger(value));
-		};
-	});
-
-	function setupIncomingPort(name, callback)
-	{
-		var sentBeforeInit = [];
-		var subs = _elm_lang$core$Native_List.Nil;
-		var converter = effectManagers[name].converter;
-		var currentOnEffects = preInitOnEffects;
-		var currentSend = preInitSend;
-
-		// CREATE MANAGER
-
-		var init = _elm_lang$core$Native_Scheduler.succeed(null);
-
-		function preInitOnEffects(router, subList, state)
-		{
-			var postInitResult = postInitOnEffects(router, subList, state);
-
-			for(var i = 0; i < sentBeforeInit.length; i++)
-			{
-				postInitSend(sentBeforeInit[i]);
-			}
-
-			sentBeforeInit = null; // to release objects held in queue
-			currentSend = postInitSend;
-			currentOnEffects = postInitOnEffects;
-			return postInitResult;
-		}
-
-		function postInitOnEffects(router, subList, state)
-		{
-			subs = subList;
-			return init;
-		}
-
-		function onEffects(router, subList, state)
-		{
-			return currentOnEffects(router, subList, state);
-		}
-
-		effectManagers[name].init = init;
-		effectManagers[name].onEffects = F3(onEffects);
-
-		// PUBLIC API
-
-		function preInitSend(value)
-		{
-			sentBeforeInit.push(value);
-		}
-
-		function postInitSend(incomingValue)
-		{
-			var result = A2(_elm_lang$core$Json_Decode$decodeValue, converter, incomingValue);
-			if (result.ctor === 'Err')
-			{
-				throw new Error('Trying to send an unexpected type of value through port `' + name + '`:\n' + result._0);
-			}
-
-			var value = result._0;
-			var temp = subs;
-			while (temp.ctor !== '[]')
-			{
-				callback(temp._0(value));
-				temp = temp._1;
-			}
-		}
-
-		function send(incomingValue)
-		{
-			currentSend(incomingValue);
-		}
-
-		return { send: send };
-	}
-
-	return {
-		// routers
-		sendToApp: F2(sendToApp),
-		sendToSelf: F2(sendToSelf),
-
-		// global setup
-		effectManagers: effectManagers,
-		outgoingPort: outgoingPort,
-		incomingPort: incomingPort,
-
-		htmlToProgram: htmlToProgram,
-		program: program,
-		programWithFlags: programWithFlags,
-		initialize: initialize,
-
-		// effect bags
-		leaf: leaf,
-		batch: batch,
-		map: F2(map)
-	};
-
-	}();
-
-	var _elm_lang$core$Platform_Cmd$batch = _elm_lang$core$Native_Platform.batch;
-	var _elm_lang$core$Platform_Cmd$none = _elm_lang$core$Platform_Cmd$batch(
-		{ctor: '[]'});
-	var _elm_lang$core$Platform_Cmd_ops = _elm_lang$core$Platform_Cmd_ops || {};
-	_elm_lang$core$Platform_Cmd_ops['!'] = F2(
-		function (model, commands) {
-			return {
-				ctor: '_Tuple2',
-				_0: model,
-				_1: _elm_lang$core$Platform_Cmd$batch(commands)
-			};
-		});
-	var _elm_lang$core$Platform_Cmd$map = _elm_lang$core$Native_Platform.map;
-	var _elm_lang$core$Platform_Cmd$Cmd = {ctor: 'Cmd'};
-
-	var _elm_lang$core$Platform_Sub$batch = _elm_lang$core$Native_Platform.batch;
-	var _elm_lang$core$Platform_Sub$none = _elm_lang$core$Platform_Sub$batch(
-		{ctor: '[]'});
-	var _elm_lang$core$Platform_Sub$map = _elm_lang$core$Native_Platform.map;
-	var _elm_lang$core$Platform_Sub$Sub = {ctor: 'Sub'};
-
-	var _elm_lang$core$Platform$hack = _elm_lang$core$Native_Scheduler.succeed;
-	var _elm_lang$core$Platform$sendToSelf = _elm_lang$core$Native_Platform.sendToSelf;
-	var _elm_lang$core$Platform$sendToApp = _elm_lang$core$Native_Platform.sendToApp;
-	var _elm_lang$core$Platform$programWithFlags = _elm_lang$core$Native_Platform.programWithFlags;
-	var _elm_lang$core$Platform$program = _elm_lang$core$Native_Platform.program;
-	var _elm_lang$core$Platform$Program = {ctor: 'Program'};
-	var _elm_lang$core$Platform$Task = {ctor: 'Task'};
-	var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
-	var _elm_lang$core$Platform$Router = {ctor: 'Router'};
-
-	var _elm_lang$core$Result$toMaybe = function (result) {
-		var _p0 = result;
-		if (_p0.ctor === 'Ok') {
-			return _elm_lang$core$Maybe$Just(_p0._0);
-		} else {
-			return _elm_lang$core$Maybe$Nothing;
-		}
-	};
-	var _elm_lang$core$Result$withDefault = F2(
-		function (def, result) {
-			var _p1 = result;
-			if (_p1.ctor === 'Ok') {
-				return _p1._0;
-			} else {
-				return def;
-			}
-		});
-	var _elm_lang$core$Result$Err = function (a) {
-		return {ctor: 'Err', _0: a};
-	};
-	var _elm_lang$core$Result$andThen = F2(
-		function (callback, result) {
-			var _p2 = result;
-			if (_p2.ctor === 'Ok') {
-				return callback(_p2._0);
-			} else {
-				return _elm_lang$core$Result$Err(_p2._0);
-			}
-		});
-	var _elm_lang$core$Result$Ok = function (a) {
-		return {ctor: 'Ok', _0: a};
-	};
-	var _elm_lang$core$Result$map = F2(
-		function (func, ra) {
-			var _p3 = ra;
-			if (_p3.ctor === 'Ok') {
-				return _elm_lang$core$Result$Ok(
-					func(_p3._0));
-			} else {
-				return _elm_lang$core$Result$Err(_p3._0);
-			}
-		});
-	var _elm_lang$core$Result$map2 = F3(
-		function (func, ra, rb) {
-			var _p4 = {ctor: '_Tuple2', _0: ra, _1: rb};
-			if (_p4._0.ctor === 'Ok') {
-				if (_p4._1.ctor === 'Ok') {
-					return _elm_lang$core$Result$Ok(
-						A2(func, _p4._0._0, _p4._1._0));
-				} else {
-					return _elm_lang$core$Result$Err(_p4._1._0);
-				}
-			} else {
-				return _elm_lang$core$Result$Err(_p4._0._0);
-			}
-		});
-	var _elm_lang$core$Result$map3 = F4(
-		function (func, ra, rb, rc) {
-			var _p5 = {ctor: '_Tuple3', _0: ra, _1: rb, _2: rc};
-			if (_p5._0.ctor === 'Ok') {
-				if (_p5._1.ctor === 'Ok') {
-					if (_p5._2.ctor === 'Ok') {
-						return _elm_lang$core$Result$Ok(
-							A3(func, _p5._0._0, _p5._1._0, _p5._2._0));
-					} else {
-						return _elm_lang$core$Result$Err(_p5._2._0);
-					}
-				} else {
-					return _elm_lang$core$Result$Err(_p5._1._0);
-				}
-			} else {
-				return _elm_lang$core$Result$Err(_p5._0._0);
-			}
-		});
-	var _elm_lang$core$Result$map4 = F5(
-		function (func, ra, rb, rc, rd) {
-			var _p6 = {ctor: '_Tuple4', _0: ra, _1: rb, _2: rc, _3: rd};
-			if (_p6._0.ctor === 'Ok') {
-				if (_p6._1.ctor === 'Ok') {
-					if (_p6._2.ctor === 'Ok') {
-						if (_p6._3.ctor === 'Ok') {
-							return _elm_lang$core$Result$Ok(
-								A4(func, _p6._0._0, _p6._1._0, _p6._2._0, _p6._3._0));
-						} else {
-							return _elm_lang$core$Result$Err(_p6._3._0);
-						}
-					} else {
-						return _elm_lang$core$Result$Err(_p6._2._0);
-					}
-				} else {
-					return _elm_lang$core$Result$Err(_p6._1._0);
-				}
-			} else {
-				return _elm_lang$core$Result$Err(_p6._0._0);
-			}
-		});
-	var _elm_lang$core$Result$map5 = F6(
-		function (func, ra, rb, rc, rd, re) {
-			var _p7 = {ctor: '_Tuple5', _0: ra, _1: rb, _2: rc, _3: rd, _4: re};
-			if (_p7._0.ctor === 'Ok') {
-				if (_p7._1.ctor === 'Ok') {
-					if (_p7._2.ctor === 'Ok') {
-						if (_p7._3.ctor === 'Ok') {
-							if (_p7._4.ctor === 'Ok') {
-								return _elm_lang$core$Result$Ok(
-									A5(func, _p7._0._0, _p7._1._0, _p7._2._0, _p7._3._0, _p7._4._0));
-							} else {
-								return _elm_lang$core$Result$Err(_p7._4._0);
-							}
-						} else {
-							return _elm_lang$core$Result$Err(_p7._3._0);
-						}
-					} else {
-						return _elm_lang$core$Result$Err(_p7._2._0);
-					}
-				} else {
-					return _elm_lang$core$Result$Err(_p7._1._0);
-				}
-			} else {
-				return _elm_lang$core$Result$Err(_p7._0._0);
-			}
-		});
-	var _elm_lang$core$Result$mapError = F2(
-		function (f, result) {
-			var _p8 = result;
-			if (_p8.ctor === 'Ok') {
-				return _elm_lang$core$Result$Ok(_p8._0);
-			} else {
-				return _elm_lang$core$Result$Err(
-					f(_p8._0));
-			}
-		});
-	var _elm_lang$core$Result$fromMaybe = F2(
-		function (err, maybe) {
-			var _p9 = maybe;
-			if (_p9.ctor === 'Just') {
-				return _elm_lang$core$Result$Ok(_p9._0);
-			} else {
-				return _elm_lang$core$Result$Err(err);
-			}
-		});
-
-	var _elm_lang$core$Task$onError = _elm_lang$core$Native_Scheduler.onError;
-	var _elm_lang$core$Task$andThen = _elm_lang$core$Native_Scheduler.andThen;
-	var _elm_lang$core$Task$spawnCmd = F2(
-		function (router, _p0) {
-			var _p1 = _p0;
-			return _elm_lang$core$Native_Scheduler.spawn(
-				A2(
-					_elm_lang$core$Task$andThen,
-					_elm_lang$core$Platform$sendToApp(router),
-					_p1._0));
-		});
-	var _elm_lang$core$Task$fail = _elm_lang$core$Native_Scheduler.fail;
-	var _elm_lang$core$Task$mapError = F2(
-		function (convert, task) {
-			return A2(
-				_elm_lang$core$Task$onError,
-				function (_p2) {
-					return _elm_lang$core$Task$fail(
-						convert(_p2));
-				},
-				task);
-		});
-	var _elm_lang$core$Task$succeed = _elm_lang$core$Native_Scheduler.succeed;
-	var _elm_lang$core$Task$map = F2(
-		function (func, taskA) {
-			return A2(
-				_elm_lang$core$Task$andThen,
-				function (a) {
-					return _elm_lang$core$Task$succeed(
-						func(a));
-				},
-				taskA);
-		});
-	var _elm_lang$core$Task$map2 = F3(
-		function (func, taskA, taskB) {
-			return A2(
-				_elm_lang$core$Task$andThen,
-				function (a) {
-					return A2(
-						_elm_lang$core$Task$andThen,
-						function (b) {
-							return _elm_lang$core$Task$succeed(
-								A2(func, a, b));
-						},
-						taskB);
-				},
-				taskA);
-		});
-	var _elm_lang$core$Task$map3 = F4(
-		function (func, taskA, taskB, taskC) {
-			return A2(
-				_elm_lang$core$Task$andThen,
-				function (a) {
-					return A2(
-						_elm_lang$core$Task$andThen,
-						function (b) {
-							return A2(
-								_elm_lang$core$Task$andThen,
-								function (c) {
-									return _elm_lang$core$Task$succeed(
-										A3(func, a, b, c));
-								},
-								taskC);
-						},
-						taskB);
-				},
-				taskA);
-		});
-	var _elm_lang$core$Task$map4 = F5(
-		function (func, taskA, taskB, taskC, taskD) {
-			return A2(
-				_elm_lang$core$Task$andThen,
-				function (a) {
-					return A2(
-						_elm_lang$core$Task$andThen,
-						function (b) {
-							return A2(
-								_elm_lang$core$Task$andThen,
-								function (c) {
-									return A2(
-										_elm_lang$core$Task$andThen,
-										function (d) {
-											return _elm_lang$core$Task$succeed(
-												A4(func, a, b, c, d));
-										},
-										taskD);
-								},
-								taskC);
-						},
-						taskB);
-				},
-				taskA);
-		});
-	var _elm_lang$core$Task$map5 = F6(
-		function (func, taskA, taskB, taskC, taskD, taskE) {
-			return A2(
-				_elm_lang$core$Task$andThen,
-				function (a) {
-					return A2(
-						_elm_lang$core$Task$andThen,
-						function (b) {
-							return A2(
-								_elm_lang$core$Task$andThen,
-								function (c) {
-									return A2(
-										_elm_lang$core$Task$andThen,
-										function (d) {
-											return A2(
-												_elm_lang$core$Task$andThen,
-												function (e) {
-													return _elm_lang$core$Task$succeed(
-														A5(func, a, b, c, d, e));
-												},
-												taskE);
-										},
-										taskD);
-								},
-								taskC);
-						},
-						taskB);
-				},
-				taskA);
-		});
-	var _elm_lang$core$Task$sequence = function (tasks) {
-		var _p3 = tasks;
-		if (_p3.ctor === '[]') {
-			return _elm_lang$core$Task$succeed(
-				{ctor: '[]'});
-		} else {
-			return A3(
-				_elm_lang$core$Task$map2,
-				F2(
-					function (x, y) {
-						return {ctor: '::', _0: x, _1: y};
-					}),
-				_p3._0,
-				_elm_lang$core$Task$sequence(_p3._1));
-		}
-	};
-	var _elm_lang$core$Task$onEffects = F3(
-		function (router, commands, state) {
-			return A2(
-				_elm_lang$core$Task$map,
-				function (_p4) {
-					return {ctor: '_Tuple0'};
-				},
-				_elm_lang$core$Task$sequence(
-					A2(
-						_elm_lang$core$List$map,
-						_elm_lang$core$Task$spawnCmd(router),
-						commands)));
-		});
-	var _elm_lang$core$Task$init = _elm_lang$core$Task$succeed(
-		{ctor: '_Tuple0'});
-	var _elm_lang$core$Task$onSelfMsg = F3(
-		function (_p7, _p6, _p5) {
-			return _elm_lang$core$Task$succeed(
-				{ctor: '_Tuple0'});
-		});
-	var _elm_lang$core$Task$command = _elm_lang$core$Native_Platform.leaf('Task');
-	var _elm_lang$core$Task$Perform = function (a) {
-		return {ctor: 'Perform', _0: a};
-	};
-	var _elm_lang$core$Task$perform = F2(
-		function (toMessage, task) {
-			return _elm_lang$core$Task$command(
-				_elm_lang$core$Task$Perform(
-					A2(_elm_lang$core$Task$map, toMessage, task)));
-		});
-	var _elm_lang$core$Task$attempt = F2(
-		function (resultToMessage, task) {
-			return _elm_lang$core$Task$command(
-				_elm_lang$core$Task$Perform(
-					A2(
-						_elm_lang$core$Task$onError,
-						function (_p8) {
-							return _elm_lang$core$Task$succeed(
-								resultToMessage(
-									_elm_lang$core$Result$Err(_p8)));
-						},
-						A2(
-							_elm_lang$core$Task$andThen,
-							function (_p9) {
-								return _elm_lang$core$Task$succeed(
-									resultToMessage(
-										_elm_lang$core$Result$Ok(_p9)));
-							},
-							task))));
-		});
-	var _elm_lang$core$Task$cmdMap = F2(
-		function (tagger, _p10) {
-			var _p11 = _p10;
-			return _elm_lang$core$Task$Perform(
-				A2(_elm_lang$core$Task$map, tagger, _p11._0));
-		});
-	_elm_lang$core$Native_Platform.effectManagers['Task'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Task$init, onEffects: _elm_lang$core$Task$onEffects, onSelfMsg: _elm_lang$core$Task$onSelfMsg, tag: 'cmd', cmdMap: _elm_lang$core$Task$cmdMap};
-
-	//import Native.Utils //
-
 	var _elm_lang$core$Native_Debug = function() {
 
 	function log(tag, value)
@@ -4855,6 +3586,205 @@
 	};
 
 	}();
+
+	//import Native.Utils //
+
+	var _elm_lang$core$Native_Char = function() {
+
+	return {
+		fromCode: function(c) { return _elm_lang$core$Native_Utils.chr(String.fromCharCode(c)); },
+		toCode: function(c) { return c.charCodeAt(0); },
+		toUpper: function(c) { return _elm_lang$core$Native_Utils.chr(c.toUpperCase()); },
+		toLower: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLowerCase()); },
+		toLocaleUpper: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLocaleUpperCase()); },
+		toLocaleLower: function(c) { return _elm_lang$core$Native_Utils.chr(c.toLocaleLowerCase()); }
+	};
+
+	}();
+	var _elm_lang$core$Char$fromCode = _elm_lang$core$Native_Char.fromCode;
+	var _elm_lang$core$Char$toCode = _elm_lang$core$Native_Char.toCode;
+	var _elm_lang$core$Char$toLocaleLower = _elm_lang$core$Native_Char.toLocaleLower;
+	var _elm_lang$core$Char$toLocaleUpper = _elm_lang$core$Native_Char.toLocaleUpper;
+	var _elm_lang$core$Char$toLower = _elm_lang$core$Native_Char.toLower;
+	var _elm_lang$core$Char$toUpper = _elm_lang$core$Native_Char.toUpper;
+	var _elm_lang$core$Char$isBetween = F3(
+		function (low, high, $char) {
+			var code = _elm_lang$core$Char$toCode($char);
+			return (_elm_lang$core$Native_Utils.cmp(
+				code,
+				_elm_lang$core$Char$toCode(low)) > -1) && (_elm_lang$core$Native_Utils.cmp(
+				code,
+				_elm_lang$core$Char$toCode(high)) < 1);
+		});
+	var _elm_lang$core$Char$isUpper = A2(
+		_elm_lang$core$Char$isBetween,
+		_elm_lang$core$Native_Utils.chr('A'),
+		_elm_lang$core$Native_Utils.chr('Z'));
+	var _elm_lang$core$Char$isLower = A2(
+		_elm_lang$core$Char$isBetween,
+		_elm_lang$core$Native_Utils.chr('a'),
+		_elm_lang$core$Native_Utils.chr('z'));
+	var _elm_lang$core$Char$isDigit = A2(
+		_elm_lang$core$Char$isBetween,
+		_elm_lang$core$Native_Utils.chr('0'),
+		_elm_lang$core$Native_Utils.chr('9'));
+	var _elm_lang$core$Char$isOctDigit = A2(
+		_elm_lang$core$Char$isBetween,
+		_elm_lang$core$Native_Utils.chr('0'),
+		_elm_lang$core$Native_Utils.chr('7'));
+	var _elm_lang$core$Char$isHexDigit = function ($char) {
+		return _elm_lang$core$Char$isDigit($char) || (A3(
+			_elm_lang$core$Char$isBetween,
+			_elm_lang$core$Native_Utils.chr('a'),
+			_elm_lang$core$Native_Utils.chr('f'),
+			$char) || A3(
+			_elm_lang$core$Char$isBetween,
+			_elm_lang$core$Native_Utils.chr('A'),
+			_elm_lang$core$Native_Utils.chr('F'),
+			$char));
+	};
+
+	var _elm_lang$core$Result$toMaybe = function (result) {
+		var _p0 = result;
+		if (_p0.ctor === 'Ok') {
+			return _elm_lang$core$Maybe$Just(_p0._0);
+		} else {
+			return _elm_lang$core$Maybe$Nothing;
+		}
+	};
+	var _elm_lang$core$Result$withDefault = F2(
+		function (def, result) {
+			var _p1 = result;
+			if (_p1.ctor === 'Ok') {
+				return _p1._0;
+			} else {
+				return def;
+			}
+		});
+	var _elm_lang$core$Result$Err = function (a) {
+		return {ctor: 'Err', _0: a};
+	};
+	var _elm_lang$core$Result$andThen = F2(
+		function (callback, result) {
+			var _p2 = result;
+			if (_p2.ctor === 'Ok') {
+				return callback(_p2._0);
+			} else {
+				return _elm_lang$core$Result$Err(_p2._0);
+			}
+		});
+	var _elm_lang$core$Result$Ok = function (a) {
+		return {ctor: 'Ok', _0: a};
+	};
+	var _elm_lang$core$Result$map = F2(
+		function (func, ra) {
+			var _p3 = ra;
+			if (_p3.ctor === 'Ok') {
+				return _elm_lang$core$Result$Ok(
+					func(_p3._0));
+			} else {
+				return _elm_lang$core$Result$Err(_p3._0);
+			}
+		});
+	var _elm_lang$core$Result$map2 = F3(
+		function (func, ra, rb) {
+			var _p4 = {ctor: '_Tuple2', _0: ra, _1: rb};
+			if (_p4._0.ctor === 'Ok') {
+				if (_p4._1.ctor === 'Ok') {
+					return _elm_lang$core$Result$Ok(
+						A2(func, _p4._0._0, _p4._1._0));
+				} else {
+					return _elm_lang$core$Result$Err(_p4._1._0);
+				}
+			} else {
+				return _elm_lang$core$Result$Err(_p4._0._0);
+			}
+		});
+	var _elm_lang$core$Result$map3 = F4(
+		function (func, ra, rb, rc) {
+			var _p5 = {ctor: '_Tuple3', _0: ra, _1: rb, _2: rc};
+			if (_p5._0.ctor === 'Ok') {
+				if (_p5._1.ctor === 'Ok') {
+					if (_p5._2.ctor === 'Ok') {
+						return _elm_lang$core$Result$Ok(
+							A3(func, _p5._0._0, _p5._1._0, _p5._2._0));
+					} else {
+						return _elm_lang$core$Result$Err(_p5._2._0);
+					}
+				} else {
+					return _elm_lang$core$Result$Err(_p5._1._0);
+				}
+			} else {
+				return _elm_lang$core$Result$Err(_p5._0._0);
+			}
+		});
+	var _elm_lang$core$Result$map4 = F5(
+		function (func, ra, rb, rc, rd) {
+			var _p6 = {ctor: '_Tuple4', _0: ra, _1: rb, _2: rc, _3: rd};
+			if (_p6._0.ctor === 'Ok') {
+				if (_p6._1.ctor === 'Ok') {
+					if (_p6._2.ctor === 'Ok') {
+						if (_p6._3.ctor === 'Ok') {
+							return _elm_lang$core$Result$Ok(
+								A4(func, _p6._0._0, _p6._1._0, _p6._2._0, _p6._3._0));
+						} else {
+							return _elm_lang$core$Result$Err(_p6._3._0);
+						}
+					} else {
+						return _elm_lang$core$Result$Err(_p6._2._0);
+					}
+				} else {
+					return _elm_lang$core$Result$Err(_p6._1._0);
+				}
+			} else {
+				return _elm_lang$core$Result$Err(_p6._0._0);
+			}
+		});
+	var _elm_lang$core$Result$map5 = F6(
+		function (func, ra, rb, rc, rd, re) {
+			var _p7 = {ctor: '_Tuple5', _0: ra, _1: rb, _2: rc, _3: rd, _4: re};
+			if (_p7._0.ctor === 'Ok') {
+				if (_p7._1.ctor === 'Ok') {
+					if (_p7._2.ctor === 'Ok') {
+						if (_p7._3.ctor === 'Ok') {
+							if (_p7._4.ctor === 'Ok') {
+								return _elm_lang$core$Result$Ok(
+									A5(func, _p7._0._0, _p7._1._0, _p7._2._0, _p7._3._0, _p7._4._0));
+							} else {
+								return _elm_lang$core$Result$Err(_p7._4._0);
+							}
+						} else {
+							return _elm_lang$core$Result$Err(_p7._3._0);
+						}
+					} else {
+						return _elm_lang$core$Result$Err(_p7._2._0);
+					}
+				} else {
+					return _elm_lang$core$Result$Err(_p7._1._0);
+				}
+			} else {
+				return _elm_lang$core$Result$Err(_p7._0._0);
+			}
+		});
+	var _elm_lang$core$Result$mapError = F2(
+		function (f, result) {
+			var _p8 = result;
+			if (_p8.ctor === 'Ok') {
+				return _elm_lang$core$Result$Ok(_p8._0);
+			} else {
+				return _elm_lang$core$Result$Err(
+					f(_p8._0));
+			}
+		});
+	var _elm_lang$core$Result$fromMaybe = F2(
+		function (err, maybe) {
+			var _p9 = maybe;
+			if (_p9.ctor === 'Just') {
+				return _elm_lang$core$Result$Ok(_p9._0);
+			} else {
+				return _elm_lang$core$Result$Err(err);
+			}
+		});
 
 	var _elm_lang$core$String$fromList = _elm_lang$core$Native_String.fromList;
 	var _elm_lang$core$String$toList = _elm_lang$core$Native_String.toList;
@@ -5817,224 +4747,6 @@
 				t2);
 		});
 
-	//import Native.Scheduler //
-
-	var _elm_lang$core$Native_Time = function() {
-
-	var now = _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		callback(_elm_lang$core$Native_Scheduler.succeed(Date.now()));
-	});
-
-	function setInterval_(interval, task)
-	{
-		return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-		{
-			var id = setInterval(function() {
-				_elm_lang$core$Native_Scheduler.rawSpawn(task);
-			}, interval);
-
-			return function() { clearInterval(id); };
-		});
-	}
-
-	return {
-		now: now,
-		setInterval_: F2(setInterval_)
-	};
-
-	}();
-	var _elm_lang$core$Time$setInterval = _elm_lang$core$Native_Time.setInterval_;
-	var _elm_lang$core$Time$spawnHelp = F3(
-		function (router, intervals, processes) {
-			var _p0 = intervals;
-			if (_p0.ctor === '[]') {
-				return _elm_lang$core$Task$succeed(processes);
-			} else {
-				var _p1 = _p0._0;
-				var spawnRest = function (id) {
-					return A3(
-						_elm_lang$core$Time$spawnHelp,
-						router,
-						_p0._1,
-						A3(_elm_lang$core$Dict$insert, _p1, id, processes));
-				};
-				var spawnTimer = _elm_lang$core$Native_Scheduler.spawn(
-					A2(
-						_elm_lang$core$Time$setInterval,
-						_p1,
-						A2(_elm_lang$core$Platform$sendToSelf, router, _p1)));
-				return A2(_elm_lang$core$Task$andThen, spawnRest, spawnTimer);
-			}
-		});
-	var _elm_lang$core$Time$addMySub = F2(
-		function (_p2, state) {
-			var _p3 = _p2;
-			var _p6 = _p3._1;
-			var _p5 = _p3._0;
-			var _p4 = A2(_elm_lang$core$Dict$get, _p5, state);
-			if (_p4.ctor === 'Nothing') {
-				return A3(
-					_elm_lang$core$Dict$insert,
-					_p5,
-					{
-						ctor: '::',
-						_0: _p6,
-						_1: {ctor: '[]'}
-					},
-					state);
-			} else {
-				return A3(
-					_elm_lang$core$Dict$insert,
-					_p5,
-					{ctor: '::', _0: _p6, _1: _p4._0},
-					state);
-			}
-		});
-	var _elm_lang$core$Time$inMilliseconds = function (t) {
-		return t;
-	};
-	var _elm_lang$core$Time$millisecond = 1;
-	var _elm_lang$core$Time$second = 1000 * _elm_lang$core$Time$millisecond;
-	var _elm_lang$core$Time$minute = 60 * _elm_lang$core$Time$second;
-	var _elm_lang$core$Time$hour = 60 * _elm_lang$core$Time$minute;
-	var _elm_lang$core$Time$inHours = function (t) {
-		return t / _elm_lang$core$Time$hour;
-	};
-	var _elm_lang$core$Time$inMinutes = function (t) {
-		return t / _elm_lang$core$Time$minute;
-	};
-	var _elm_lang$core$Time$inSeconds = function (t) {
-		return t / _elm_lang$core$Time$second;
-	};
-	var _elm_lang$core$Time$now = _elm_lang$core$Native_Time.now;
-	var _elm_lang$core$Time$onSelfMsg = F3(
-		function (router, interval, state) {
-			var _p7 = A2(_elm_lang$core$Dict$get, interval, state.taggers);
-			if (_p7.ctor === 'Nothing') {
-				return _elm_lang$core$Task$succeed(state);
-			} else {
-				var tellTaggers = function (time) {
-					return _elm_lang$core$Task$sequence(
-						A2(
-							_elm_lang$core$List$map,
-							function (tagger) {
-								return A2(
-									_elm_lang$core$Platform$sendToApp,
-									router,
-									tagger(time));
-							},
-							_p7._0));
-				};
-				return A2(
-					_elm_lang$core$Task$andThen,
-					function (_p8) {
-						return _elm_lang$core$Task$succeed(state);
-					},
-					A2(_elm_lang$core$Task$andThen, tellTaggers, _elm_lang$core$Time$now));
-			}
-		});
-	var _elm_lang$core$Time$subscription = _elm_lang$core$Native_Platform.leaf('Time');
-	var _elm_lang$core$Time$State = F2(
-		function (a, b) {
-			return {taggers: a, processes: b};
-		});
-	var _elm_lang$core$Time$init = _elm_lang$core$Task$succeed(
-		A2(_elm_lang$core$Time$State, _elm_lang$core$Dict$empty, _elm_lang$core$Dict$empty));
-	var _elm_lang$core$Time$onEffects = F3(
-		function (router, subs, _p9) {
-			var _p10 = _p9;
-			var rightStep = F3(
-				function (_p12, id, _p11) {
-					var _p13 = _p11;
-					return {
-						ctor: '_Tuple3',
-						_0: _p13._0,
-						_1: _p13._1,
-						_2: A2(
-							_elm_lang$core$Task$andThen,
-							function (_p14) {
-								return _p13._2;
-							},
-							_elm_lang$core$Native_Scheduler.kill(id))
-					};
-				});
-			var bothStep = F4(
-				function (interval, taggers, id, _p15) {
-					var _p16 = _p15;
-					return {
-						ctor: '_Tuple3',
-						_0: _p16._0,
-						_1: A3(_elm_lang$core$Dict$insert, interval, id, _p16._1),
-						_2: _p16._2
-					};
-				});
-			var leftStep = F3(
-				function (interval, taggers, _p17) {
-					var _p18 = _p17;
-					return {
-						ctor: '_Tuple3',
-						_0: {ctor: '::', _0: interval, _1: _p18._0},
-						_1: _p18._1,
-						_2: _p18._2
-					};
-				});
-			var newTaggers = A3(_elm_lang$core$List$foldl, _elm_lang$core$Time$addMySub, _elm_lang$core$Dict$empty, subs);
-			var _p19 = A6(
-				_elm_lang$core$Dict$merge,
-				leftStep,
-				bothStep,
-				rightStep,
-				newTaggers,
-				_p10.processes,
-				{
-					ctor: '_Tuple3',
-					_0: {ctor: '[]'},
-					_1: _elm_lang$core$Dict$empty,
-					_2: _elm_lang$core$Task$succeed(
-						{ctor: '_Tuple0'})
-				});
-			var spawnList = _p19._0;
-			var existingDict = _p19._1;
-			var killTask = _p19._2;
-			return A2(
-				_elm_lang$core$Task$andThen,
-				function (newProcesses) {
-					return _elm_lang$core$Task$succeed(
-						A2(_elm_lang$core$Time$State, newTaggers, newProcesses));
-				},
-				A2(
-					_elm_lang$core$Task$andThen,
-					function (_p20) {
-						return A3(_elm_lang$core$Time$spawnHelp, router, spawnList, existingDict);
-					},
-					killTask));
-		});
-	var _elm_lang$core$Time$Every = F2(
-		function (a, b) {
-			return {ctor: 'Every', _0: a, _1: b};
-		});
-	var _elm_lang$core$Time$every = F2(
-		function (interval, tagger) {
-			return _elm_lang$core$Time$subscription(
-				A2(_elm_lang$core$Time$Every, interval, tagger));
-		});
-	var _elm_lang$core$Time$subMap = F2(
-		function (f, _p21) {
-			var _p22 = _p21;
-			return A2(
-				_elm_lang$core$Time$Every,
-				_p22._0,
-				function (_p23) {
-					return f(
-						_p22._1(_p23));
-				});
-		});
-	_elm_lang$core$Native_Platform.effectManagers['Time'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Time$init, onEffects: _elm_lang$core$Time$onEffects, onSelfMsg: _elm_lang$core$Time$onSelfMsg, tag: 'sub', subMap: _elm_lang$core$Time$subMap};
-
-	var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
-	var _elm_lang$core$Debug$log = _elm_lang$core$Native_Debug.log;
-
 	//import Maybe, Native.Array, Native.List, Native.Utils, Result //
 
 	var _elm_lang$core$Native_Json = function() {
@@ -6690,9 +5402,8 @@
 	var _elm_lang$core$Json_Decode$string = _elm_lang$core$Native_Json.decodePrimitive('string');
 	var _elm_lang$core$Json_Decode$Decoder = {ctor: 'Decoder'};
 
-	var _elm_lang$core$Process$kill = _elm_lang$core$Native_Scheduler.kill;
-	var _elm_lang$core$Process$sleep = _elm_lang$core$Native_Scheduler.sleep;
-	var _elm_lang$core$Process$spawn = _elm_lang$core$Native_Scheduler.spawn;
+	var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
+	var _elm_lang$core$Debug$log = _elm_lang$core$Native_Debug.log;
 
 	var _elm_lang$core$Tuple$mapSecond = F2(
 		function (func, _p0) {
@@ -6720,6 +5431,1375 @@
 		var _p7 = _p6;
 		return _p7._0;
 	};
+
+	//import //
+
+	var _elm_lang$core$Native_Platform = function() {
+
+
+	// PROGRAMS
+
+	function program(impl)
+	{
+		return function(flagDecoder)
+		{
+			return function(object, moduleName)
+			{
+				object['worker'] = function worker(flags)
+				{
+					if (typeof flags !== 'undefined')
+					{
+						throw new Error(
+							'The `' + moduleName + '` module does not need flags.\n'
+							+ 'Call ' + moduleName + '.worker() with no arguments and you should be all set!'
+						);
+					}
+
+					return initialize(
+						impl.init,
+						impl.update,
+						impl.subscriptions,
+						renderer
+					);
+				};
+			};
+		};
+	}
+
+	function programWithFlags(impl)
+	{
+		return function(flagDecoder)
+		{
+			return function(object, moduleName)
+			{
+				object['worker'] = function worker(flags)
+				{
+					if (typeof flagDecoder === 'undefined')
+					{
+						throw new Error(
+							'Are you trying to sneak a Never value into Elm? Trickster!\n'
+							+ 'It looks like ' + moduleName + '.main is defined with `programWithFlags` but has type `Program Never`.\n'
+							+ 'Use `program` instead if you do not want flags.'
+						);
+					}
+
+					var result = A2(_elm_lang$core$Native_Json.run, flagDecoder, flags);
+					if (result.ctor === 'Err')
+					{
+						throw new Error(
+							moduleName + '.worker(...) was called with an unexpected argument.\n'
+							+ 'I tried to convert it to an Elm value, but ran into this problem:\n\n'
+							+ result._0
+						);
+					}
+
+					return initialize(
+						impl.init(result._0),
+						impl.update,
+						impl.subscriptions,
+						renderer
+					);
+				};
+			};
+		};
+	}
+
+	function renderer(enqueue, _)
+	{
+		return function(_) {};
+	}
+
+
+	// HTML TO PROGRAM
+
+	function htmlToProgram(vnode)
+	{
+		var emptyBag = batch(_elm_lang$core$Native_List.Nil);
+		var noChange = _elm_lang$core$Native_Utils.Tuple2(
+			_elm_lang$core$Native_Utils.Tuple0,
+			emptyBag
+		);
+
+		return _elm_lang$virtual_dom$VirtualDom$program({
+			init: noChange,
+			view: function(model) { return main; },
+			update: F2(function(msg, model) { return noChange; }),
+			subscriptions: function (model) { return emptyBag; }
+		});
+	}
+
+
+	// INITIALIZE A PROGRAM
+
+	function initialize(init, update, subscriptions, renderer)
+	{
+		// ambient state
+		var managers = {};
+		var updateView;
+
+		// init and update state in main process
+		var initApp = _elm_lang$core$Native_Scheduler.nativeBinding(function(callback) {
+			var model = init._0;
+			updateView = renderer(enqueue, model);
+			var cmds = init._1;
+			var subs = subscriptions(model);
+			dispatchEffects(managers, cmds, subs);
+			callback(_elm_lang$core$Native_Scheduler.succeed(model));
+		});
+
+		function onMessage(msg, model)
+		{
+			return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback) {
+				var results = A2(update, msg, model);
+				model = results._0;
+				updateView(model);
+				var cmds = results._1;
+				var subs = subscriptions(model);
+				dispatchEffects(managers, cmds, subs);
+				callback(_elm_lang$core$Native_Scheduler.succeed(model));
+			});
+		}
+
+		var mainProcess = spawnLoop(initApp, onMessage);
+
+		function enqueue(msg)
+		{
+			_elm_lang$core$Native_Scheduler.rawSend(mainProcess, msg);
+		}
+
+		var ports = setupEffects(managers, enqueue);
+
+		return ports ? { ports: ports } : {};
+	}
+
+
+	// EFFECT MANAGERS
+
+	var effectManagers = {};
+
+	function setupEffects(managers, callback)
+	{
+		var ports;
+
+		// setup all necessary effect managers
+		for (var key in effectManagers)
+		{
+			var manager = effectManagers[key];
+
+			if (manager.isForeign)
+			{
+				ports = ports || {};
+				ports[key] = manager.tag === 'cmd'
+					? setupOutgoingPort(key)
+					: setupIncomingPort(key, callback);
+			}
+
+			managers[key] = makeManager(manager, callback);
+		}
+
+		return ports;
+	}
+
+	function makeManager(info, callback)
+	{
+		var router = {
+			main: callback,
+			self: undefined
+		};
+
+		var tag = info.tag;
+		var onEffects = info.onEffects;
+		var onSelfMsg = info.onSelfMsg;
+
+		function onMessage(msg, state)
+		{
+			if (msg.ctor === 'self')
+			{
+				return A3(onSelfMsg, router, msg._0, state);
+			}
+
+			var fx = msg._0;
+			switch (tag)
+			{
+				case 'cmd':
+					return A3(onEffects, router, fx.cmds, state);
+
+				case 'sub':
+					return A3(onEffects, router, fx.subs, state);
+
+				case 'fx':
+					return A4(onEffects, router, fx.cmds, fx.subs, state);
+			}
+		}
+
+		var process = spawnLoop(info.init, onMessage);
+		router.self = process;
+		return process;
+	}
+
+	function sendToApp(router, msg)
+	{
+		return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
+		{
+			router.main(msg);
+			callback(_elm_lang$core$Native_Scheduler.succeed(_elm_lang$core$Native_Utils.Tuple0));
+		});
+	}
+
+	function sendToSelf(router, msg)
+	{
+		return A2(_elm_lang$core$Native_Scheduler.send, router.self, {
+			ctor: 'self',
+			_0: msg
+		});
+	}
+
+
+	// HELPER for STATEFUL LOOPS
+
+	function spawnLoop(init, onMessage)
+	{
+		var andThen = _elm_lang$core$Native_Scheduler.andThen;
+
+		function loop(state)
+		{
+			var handleMsg = _elm_lang$core$Native_Scheduler.receive(function(msg) {
+				return onMessage(msg, state);
+			});
+			return A2(andThen, loop, handleMsg);
+		}
+
+		var task = A2(andThen, loop, init);
+
+		return _elm_lang$core$Native_Scheduler.rawSpawn(task);
+	}
+
+
+	// BAGS
+
+	function leaf(home)
+	{
+		return function(value)
+		{
+			return {
+				type: 'leaf',
+				home: home,
+				value: value
+			};
+		};
+	}
+
+	function batch(list)
+	{
+		return {
+			type: 'node',
+			branches: list
+		};
+	}
+
+	function map(tagger, bag)
+	{
+		return {
+			type: 'map',
+			tagger: tagger,
+			tree: bag
+		}
+	}
+
+
+	// PIPE BAGS INTO EFFECT MANAGERS
+
+	function dispatchEffects(managers, cmdBag, subBag)
+	{
+		var effectsDict = {};
+		gatherEffects(true, cmdBag, effectsDict, null);
+		gatherEffects(false, subBag, effectsDict, null);
+
+		for (var home in managers)
+		{
+			var fx = home in effectsDict
+				? effectsDict[home]
+				: {
+					cmds: _elm_lang$core$Native_List.Nil,
+					subs: _elm_lang$core$Native_List.Nil
+				};
+
+			_elm_lang$core$Native_Scheduler.rawSend(managers[home], { ctor: 'fx', _0: fx });
+		}
+	}
+
+	function gatherEffects(isCmd, bag, effectsDict, taggers)
+	{
+		switch (bag.type)
+		{
+			case 'leaf':
+				var home = bag.home;
+				var effect = toEffect(isCmd, home, taggers, bag.value);
+				effectsDict[home] = insert(isCmd, effect, effectsDict[home]);
+				return;
+
+			case 'node':
+				var list = bag.branches;
+				while (list.ctor !== '[]')
+				{
+					gatherEffects(isCmd, list._0, effectsDict, taggers);
+					list = list._1;
+				}
+				return;
+
+			case 'map':
+				gatherEffects(isCmd, bag.tree, effectsDict, {
+					tagger: bag.tagger,
+					rest: taggers
+				});
+				return;
+		}
+	}
+
+	function toEffect(isCmd, home, taggers, value)
+	{
+		function applyTaggers(x)
+		{
+			var temp = taggers;
+			while (temp)
+			{
+				x = temp.tagger(x);
+				temp = temp.rest;
+			}
+			return x;
+		}
+
+		var map = isCmd
+			? effectManagers[home].cmdMap
+			: effectManagers[home].subMap;
+
+		return A2(map, applyTaggers, value)
+	}
+
+	function insert(isCmd, newEffect, effects)
+	{
+		effects = effects || {
+			cmds: _elm_lang$core$Native_List.Nil,
+			subs: _elm_lang$core$Native_List.Nil
+		};
+		if (isCmd)
+		{
+			effects.cmds = _elm_lang$core$Native_List.Cons(newEffect, effects.cmds);
+			return effects;
+		}
+		effects.subs = _elm_lang$core$Native_List.Cons(newEffect, effects.subs);
+		return effects;
+	}
+
+
+	// PORTS
+
+	function checkPortName(name)
+	{
+		if (name in effectManagers)
+		{
+			throw new Error('There can only be one port named `' + name + '`, but your program has multiple.');
+		}
+	}
+
+
+	// OUTGOING PORTS
+
+	function outgoingPort(name, converter)
+	{
+		checkPortName(name);
+		effectManagers[name] = {
+			tag: 'cmd',
+			cmdMap: outgoingPortMap,
+			converter: converter,
+			isForeign: true
+		};
+		return leaf(name);
+	}
+
+	var outgoingPortMap = F2(function cmdMap(tagger, value) {
+		return value;
+	});
+
+	function setupOutgoingPort(name)
+	{
+		var subs = [];
+		var converter = effectManagers[name].converter;
+
+		// CREATE MANAGER
+
+		var init = _elm_lang$core$Native_Scheduler.succeed(null);
+
+		function onEffects(router, cmdList, state)
+		{
+			while (cmdList.ctor !== '[]')
+			{
+				// grab a separate reference to subs in case unsubscribe is called
+				var currentSubs = subs;
+				var value = converter(cmdList._0);
+				for (var i = 0; i < currentSubs.length; i++)
+				{
+					currentSubs[i](value);
+				}
+				cmdList = cmdList._1;
+			}
+			return init;
+		}
+
+		effectManagers[name].init = init;
+		effectManagers[name].onEffects = F3(onEffects);
+
+		// PUBLIC API
+
+		function subscribe(callback)
+		{
+			subs.push(callback);
+		}
+
+		function unsubscribe(callback)
+		{
+			// copy subs into a new array in case unsubscribe is called within a
+			// subscribed callback
+			subs = subs.slice();
+			var index = subs.indexOf(callback);
+			if (index >= 0)
+			{
+				subs.splice(index, 1);
+			}
+		}
+
+		return {
+			subscribe: subscribe,
+			unsubscribe: unsubscribe
+		};
+	}
+
+
+	// INCOMING PORTS
+
+	function incomingPort(name, converter)
+	{
+		checkPortName(name);
+		effectManagers[name] = {
+			tag: 'sub',
+			subMap: incomingPortMap,
+			converter: converter,
+			isForeign: true
+		};
+		return leaf(name);
+	}
+
+	var incomingPortMap = F2(function subMap(tagger, finalTagger)
+	{
+		return function(value)
+		{
+			return tagger(finalTagger(value));
+		};
+	});
+
+	function setupIncomingPort(name, callback)
+	{
+		var sentBeforeInit = [];
+		var subs = _elm_lang$core$Native_List.Nil;
+		var converter = effectManagers[name].converter;
+		var currentOnEffects = preInitOnEffects;
+		var currentSend = preInitSend;
+
+		// CREATE MANAGER
+
+		var init = _elm_lang$core$Native_Scheduler.succeed(null);
+
+		function preInitOnEffects(router, subList, state)
+		{
+			var postInitResult = postInitOnEffects(router, subList, state);
+
+			for(var i = 0; i < sentBeforeInit.length; i++)
+			{
+				postInitSend(sentBeforeInit[i]);
+			}
+
+			sentBeforeInit = null; // to release objects held in queue
+			currentSend = postInitSend;
+			currentOnEffects = postInitOnEffects;
+			return postInitResult;
+		}
+
+		function postInitOnEffects(router, subList, state)
+		{
+			subs = subList;
+			return init;
+		}
+
+		function onEffects(router, subList, state)
+		{
+			return currentOnEffects(router, subList, state);
+		}
+
+		effectManagers[name].init = init;
+		effectManagers[name].onEffects = F3(onEffects);
+
+		// PUBLIC API
+
+		function preInitSend(value)
+		{
+			sentBeforeInit.push(value);
+		}
+
+		function postInitSend(incomingValue)
+		{
+			var result = A2(_elm_lang$core$Json_Decode$decodeValue, converter, incomingValue);
+			if (result.ctor === 'Err')
+			{
+				throw new Error('Trying to send an unexpected type of value through port `' + name + '`:\n' + result._0);
+			}
+
+			var value = result._0;
+			var temp = subs;
+			while (temp.ctor !== '[]')
+			{
+				callback(temp._0(value));
+				temp = temp._1;
+			}
+		}
+
+		function send(incomingValue)
+		{
+			currentSend(incomingValue);
+		}
+
+		return { send: send };
+	}
+
+	return {
+		// routers
+		sendToApp: F2(sendToApp),
+		sendToSelf: F2(sendToSelf),
+
+		// global setup
+		effectManagers: effectManagers,
+		outgoingPort: outgoingPort,
+		incomingPort: incomingPort,
+
+		htmlToProgram: htmlToProgram,
+		program: program,
+		programWithFlags: programWithFlags,
+		initialize: initialize,
+
+		// effect bags
+		leaf: leaf,
+		batch: batch,
+		map: F2(map)
+	};
+
+	}();
+
+	//import Native.Utils //
+
+	var _elm_lang$core$Native_Scheduler = function() {
+
+	var MAX_STEPS = 10000;
+
+
+	// TASKS
+
+	function succeed(value)
+	{
+		return {
+			ctor: '_Task_succeed',
+			value: value
+		};
+	}
+
+	function fail(error)
+	{
+		return {
+			ctor: '_Task_fail',
+			value: error
+		};
+	}
+
+	function nativeBinding(callback)
+	{
+		return {
+			ctor: '_Task_nativeBinding',
+			callback: callback,
+			cancel: null
+		};
+	}
+
+	function andThen(callback, task)
+	{
+		return {
+			ctor: '_Task_andThen',
+			callback: callback,
+			task: task
+		};
+	}
+
+	function onError(callback, task)
+	{
+		return {
+			ctor: '_Task_onError',
+			callback: callback,
+			task: task
+		};
+	}
+
+	function receive(callback)
+	{
+		return {
+			ctor: '_Task_receive',
+			callback: callback
+		};
+	}
+
+
+	// PROCESSES
+
+	function rawSpawn(task)
+	{
+		var process = {
+			ctor: '_Process',
+			id: _elm_lang$core$Native_Utils.guid(),
+			root: task,
+			stack: null,
+			mailbox: []
+		};
+
+		enqueue(process);
+
+		return process;
+	}
+
+	function spawn(task)
+	{
+		return nativeBinding(function(callback) {
+			var process = rawSpawn(task);
+			callback(succeed(process));
+		});
+	}
+
+	function rawSend(process, msg)
+	{
+		process.mailbox.push(msg);
+		enqueue(process);
+	}
+
+	function send(process, msg)
+	{
+		return nativeBinding(function(callback) {
+			rawSend(process, msg);
+			callback(succeed(_elm_lang$core$Native_Utils.Tuple0));
+		});
+	}
+
+	function kill(process)
+	{
+		return nativeBinding(function(callback) {
+			var root = process.root;
+			if (root.ctor === '_Task_nativeBinding' && root.cancel)
+			{
+				root.cancel();
+			}
+
+			process.root = null;
+
+			callback(succeed(_elm_lang$core$Native_Utils.Tuple0));
+		});
+	}
+
+	function sleep(time)
+	{
+		return nativeBinding(function(callback) {
+			var id = setTimeout(function() {
+				callback(succeed(_elm_lang$core$Native_Utils.Tuple0));
+			}, time);
+
+			return function() { clearTimeout(id); };
+		});
+	}
+
+
+	// STEP PROCESSES
+
+	function step(numSteps, process)
+	{
+		while (numSteps < MAX_STEPS)
+		{
+			var ctor = process.root.ctor;
+
+			if (ctor === '_Task_succeed')
+			{
+				while (process.stack && process.stack.ctor === '_Task_onError')
+				{
+					process.stack = process.stack.rest;
+				}
+				if (process.stack === null)
+				{
+					break;
+				}
+				process.root = process.stack.callback(process.root.value);
+				process.stack = process.stack.rest;
+				++numSteps;
+				continue;
+			}
+
+			if (ctor === '_Task_fail')
+			{
+				while (process.stack && process.stack.ctor === '_Task_andThen')
+				{
+					process.stack = process.stack.rest;
+				}
+				if (process.stack === null)
+				{
+					break;
+				}
+				process.root = process.stack.callback(process.root.value);
+				process.stack = process.stack.rest;
+				++numSteps;
+				continue;
+			}
+
+			if (ctor === '_Task_andThen')
+			{
+				process.stack = {
+					ctor: '_Task_andThen',
+					callback: process.root.callback,
+					rest: process.stack
+				};
+				process.root = process.root.task;
+				++numSteps;
+				continue;
+			}
+
+			if (ctor === '_Task_onError')
+			{
+				process.stack = {
+					ctor: '_Task_onError',
+					callback: process.root.callback,
+					rest: process.stack
+				};
+				process.root = process.root.task;
+				++numSteps;
+				continue;
+			}
+
+			if (ctor === '_Task_nativeBinding')
+			{
+				process.root.cancel = process.root.callback(function(newRoot) {
+					process.root = newRoot;
+					enqueue(process);
+				});
+
+				break;
+			}
+
+			if (ctor === '_Task_receive')
+			{
+				var mailbox = process.mailbox;
+				if (mailbox.length === 0)
+				{
+					break;
+				}
+
+				process.root = process.root.callback(mailbox.shift());
+				++numSteps;
+				continue;
+			}
+
+			throw new Error(ctor);
+		}
+
+		if (numSteps < MAX_STEPS)
+		{
+			return numSteps + 1;
+		}
+		enqueue(process);
+
+		return numSteps;
+	}
+
+
+	// WORK QUEUE
+
+	var working = false;
+	var workQueue = [];
+
+	function enqueue(process)
+	{
+		workQueue.push(process);
+
+		if (!working)
+		{
+			setTimeout(work, 0);
+			working = true;
+		}
+	}
+
+	function work()
+	{
+		var numSteps = 0;
+		var process;
+		while (numSteps < MAX_STEPS && (process = workQueue.shift()))
+		{
+			if (process.root)
+			{
+				numSteps = step(numSteps, process);
+			}
+		}
+		if (!process)
+		{
+			working = false;
+			return;
+		}
+		setTimeout(work, 0);
+	}
+
+
+	return {
+		succeed: succeed,
+		fail: fail,
+		nativeBinding: nativeBinding,
+		andThen: F2(andThen),
+		onError: F2(onError),
+		receive: receive,
+
+		spawn: spawn,
+		kill: kill,
+		sleep: sleep,
+		send: F2(send),
+
+		rawSpawn: rawSpawn,
+		rawSend: rawSend
+	};
+
+	}();
+	var _elm_lang$core$Platform_Cmd$batch = _elm_lang$core$Native_Platform.batch;
+	var _elm_lang$core$Platform_Cmd$none = _elm_lang$core$Platform_Cmd$batch(
+		{ctor: '[]'});
+	var _elm_lang$core$Platform_Cmd_ops = _elm_lang$core$Platform_Cmd_ops || {};
+	_elm_lang$core$Platform_Cmd_ops['!'] = F2(
+		function (model, commands) {
+			return {
+				ctor: '_Tuple2',
+				_0: model,
+				_1: _elm_lang$core$Platform_Cmd$batch(commands)
+			};
+		});
+	var _elm_lang$core$Platform_Cmd$map = _elm_lang$core$Native_Platform.map;
+	var _elm_lang$core$Platform_Cmd$Cmd = {ctor: 'Cmd'};
+
+	var _elm_lang$core$Platform_Sub$batch = _elm_lang$core$Native_Platform.batch;
+	var _elm_lang$core$Platform_Sub$none = _elm_lang$core$Platform_Sub$batch(
+		{ctor: '[]'});
+	var _elm_lang$core$Platform_Sub$map = _elm_lang$core$Native_Platform.map;
+	var _elm_lang$core$Platform_Sub$Sub = {ctor: 'Sub'};
+
+	var _elm_lang$core$Platform$hack = _elm_lang$core$Native_Scheduler.succeed;
+	var _elm_lang$core$Platform$sendToSelf = _elm_lang$core$Native_Platform.sendToSelf;
+	var _elm_lang$core$Platform$sendToApp = _elm_lang$core$Native_Platform.sendToApp;
+	var _elm_lang$core$Platform$programWithFlags = _elm_lang$core$Native_Platform.programWithFlags;
+	var _elm_lang$core$Platform$program = _elm_lang$core$Native_Platform.program;
+	var _elm_lang$core$Platform$Program = {ctor: 'Program'};
+	var _elm_lang$core$Platform$Task = {ctor: 'Task'};
+	var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
+	var _elm_lang$core$Platform$Router = {ctor: 'Router'};
+
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode = _elm_lang$core$Json_Decode$succeed;
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$resolve = _elm_lang$core$Json_Decode$andThen(_elm_lang$core$Basics$identity);
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom = _elm_lang$core$Json_Decode$map2(
+		F2(
+			function (x, y) {
+				return y(x);
+			}));
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$hardcoded = function (_p0) {
+		return _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom(
+			_elm_lang$core$Json_Decode$succeed(_p0));
+	};
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalDecoder = F3(
+		function (pathDecoder, valDecoder, fallback) {
+			var nullOr = function (decoder) {
+				return _elm_lang$core$Json_Decode$oneOf(
+					{
+						ctor: '::',
+						_0: decoder,
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$core$Json_Decode$null(fallback),
+							_1: {ctor: '[]'}
+						}
+					});
+			};
+			var handleResult = function (input) {
+				var _p1 = A2(_elm_lang$core$Json_Decode$decodeValue, pathDecoder, input);
+				if (_p1.ctor === 'Ok') {
+					var _p2 = A2(
+						_elm_lang$core$Json_Decode$decodeValue,
+						nullOr(valDecoder),
+						_p1._0);
+					if (_p2.ctor === 'Ok') {
+						return _elm_lang$core$Json_Decode$succeed(_p2._0);
+					} else {
+						return _elm_lang$core$Json_Decode$fail(_p2._0);
+					}
+				} else {
+					return _elm_lang$core$Json_Decode$succeed(fallback);
+				}
+			};
+			return A2(_elm_lang$core$Json_Decode$andThen, handleResult, _elm_lang$core$Json_Decode$value);
+		});
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalAt = F4(
+		function (path, valDecoder, fallback, decoder) {
+			return A2(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalDecoder,
+					A2(_elm_lang$core$Json_Decode$at, path, _elm_lang$core$Json_Decode$value),
+					valDecoder,
+					fallback),
+				decoder);
+		});
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optional = F4(
+		function (key, valDecoder, fallback, decoder) {
+			return A2(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$optionalDecoder,
+					A2(_elm_lang$core$Json_Decode$field, key, _elm_lang$core$Json_Decode$value),
+					valDecoder,
+					fallback),
+				decoder);
+		});
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$requiredAt = F3(
+		function (path, valDecoder, decoder) {
+			return A2(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+				A2(_elm_lang$core$Json_Decode$at, path, valDecoder),
+				decoder);
+		});
+	var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required = F3(
+		function (key, valDecoder, decoder) {
+			return A2(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$custom,
+				A2(_elm_lang$core$Json_Decode$field, key, valDecoder),
+				decoder);
+		});
+
+	var _elm_lang$core$Task$onError = _elm_lang$core$Native_Scheduler.onError;
+	var _elm_lang$core$Task$andThen = _elm_lang$core$Native_Scheduler.andThen;
+	var _elm_lang$core$Task$spawnCmd = F2(
+		function (router, _p0) {
+			var _p1 = _p0;
+			return _elm_lang$core$Native_Scheduler.spawn(
+				A2(
+					_elm_lang$core$Task$andThen,
+					_elm_lang$core$Platform$sendToApp(router),
+					_p1._0));
+		});
+	var _elm_lang$core$Task$fail = _elm_lang$core$Native_Scheduler.fail;
+	var _elm_lang$core$Task$mapError = F2(
+		function (convert, task) {
+			return A2(
+				_elm_lang$core$Task$onError,
+				function (_p2) {
+					return _elm_lang$core$Task$fail(
+						convert(_p2));
+				},
+				task);
+		});
+	var _elm_lang$core$Task$succeed = _elm_lang$core$Native_Scheduler.succeed;
+	var _elm_lang$core$Task$map = F2(
+		function (func, taskA) {
+			return A2(
+				_elm_lang$core$Task$andThen,
+				function (a) {
+					return _elm_lang$core$Task$succeed(
+						func(a));
+				},
+				taskA);
+		});
+	var _elm_lang$core$Task$map2 = F3(
+		function (func, taskA, taskB) {
+			return A2(
+				_elm_lang$core$Task$andThen,
+				function (a) {
+					return A2(
+						_elm_lang$core$Task$andThen,
+						function (b) {
+							return _elm_lang$core$Task$succeed(
+								A2(func, a, b));
+						},
+						taskB);
+				},
+				taskA);
+		});
+	var _elm_lang$core$Task$map3 = F4(
+		function (func, taskA, taskB, taskC) {
+			return A2(
+				_elm_lang$core$Task$andThen,
+				function (a) {
+					return A2(
+						_elm_lang$core$Task$andThen,
+						function (b) {
+							return A2(
+								_elm_lang$core$Task$andThen,
+								function (c) {
+									return _elm_lang$core$Task$succeed(
+										A3(func, a, b, c));
+								},
+								taskC);
+						},
+						taskB);
+				},
+				taskA);
+		});
+	var _elm_lang$core$Task$map4 = F5(
+		function (func, taskA, taskB, taskC, taskD) {
+			return A2(
+				_elm_lang$core$Task$andThen,
+				function (a) {
+					return A2(
+						_elm_lang$core$Task$andThen,
+						function (b) {
+							return A2(
+								_elm_lang$core$Task$andThen,
+								function (c) {
+									return A2(
+										_elm_lang$core$Task$andThen,
+										function (d) {
+											return _elm_lang$core$Task$succeed(
+												A4(func, a, b, c, d));
+										},
+										taskD);
+								},
+								taskC);
+						},
+						taskB);
+				},
+				taskA);
+		});
+	var _elm_lang$core$Task$map5 = F6(
+		function (func, taskA, taskB, taskC, taskD, taskE) {
+			return A2(
+				_elm_lang$core$Task$andThen,
+				function (a) {
+					return A2(
+						_elm_lang$core$Task$andThen,
+						function (b) {
+							return A2(
+								_elm_lang$core$Task$andThen,
+								function (c) {
+									return A2(
+										_elm_lang$core$Task$andThen,
+										function (d) {
+											return A2(
+												_elm_lang$core$Task$andThen,
+												function (e) {
+													return _elm_lang$core$Task$succeed(
+														A5(func, a, b, c, d, e));
+												},
+												taskE);
+										},
+										taskD);
+								},
+								taskC);
+						},
+						taskB);
+				},
+				taskA);
+		});
+	var _elm_lang$core$Task$sequence = function (tasks) {
+		var _p3 = tasks;
+		if (_p3.ctor === '[]') {
+			return _elm_lang$core$Task$succeed(
+				{ctor: '[]'});
+		} else {
+			return A3(
+				_elm_lang$core$Task$map2,
+				F2(
+					function (x, y) {
+						return {ctor: '::', _0: x, _1: y};
+					}),
+				_p3._0,
+				_elm_lang$core$Task$sequence(_p3._1));
+		}
+	};
+	var _elm_lang$core$Task$onEffects = F3(
+		function (router, commands, state) {
+			return A2(
+				_elm_lang$core$Task$map,
+				function (_p4) {
+					return {ctor: '_Tuple0'};
+				},
+				_elm_lang$core$Task$sequence(
+					A2(
+						_elm_lang$core$List$map,
+						_elm_lang$core$Task$spawnCmd(router),
+						commands)));
+		});
+	var _elm_lang$core$Task$init = _elm_lang$core$Task$succeed(
+		{ctor: '_Tuple0'});
+	var _elm_lang$core$Task$onSelfMsg = F3(
+		function (_p7, _p6, _p5) {
+			return _elm_lang$core$Task$succeed(
+				{ctor: '_Tuple0'});
+		});
+	var _elm_lang$core$Task$command = _elm_lang$core$Native_Platform.leaf('Task');
+	var _elm_lang$core$Task$Perform = function (a) {
+		return {ctor: 'Perform', _0: a};
+	};
+	var _elm_lang$core$Task$perform = F2(
+		function (toMessage, task) {
+			return _elm_lang$core$Task$command(
+				_elm_lang$core$Task$Perform(
+					A2(_elm_lang$core$Task$map, toMessage, task)));
+		});
+	var _elm_lang$core$Task$attempt = F2(
+		function (resultToMessage, task) {
+			return _elm_lang$core$Task$command(
+				_elm_lang$core$Task$Perform(
+					A2(
+						_elm_lang$core$Task$onError,
+						function (_p8) {
+							return _elm_lang$core$Task$succeed(
+								resultToMessage(
+									_elm_lang$core$Result$Err(_p8)));
+						},
+						A2(
+							_elm_lang$core$Task$andThen,
+							function (_p9) {
+								return _elm_lang$core$Task$succeed(
+									resultToMessage(
+										_elm_lang$core$Result$Ok(_p9)));
+							},
+							task))));
+		});
+	var _elm_lang$core$Task$cmdMap = F2(
+		function (tagger, _p10) {
+			var _p11 = _p10;
+			return _elm_lang$core$Task$Perform(
+				A2(_elm_lang$core$Task$map, tagger, _p11._0));
+		});
+	_elm_lang$core$Native_Platform.effectManagers['Task'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Task$init, onEffects: _elm_lang$core$Task$onEffects, onSelfMsg: _elm_lang$core$Task$onSelfMsg, tag: 'cmd', cmdMap: _elm_lang$core$Task$cmdMap};
+
+	//import Native.Scheduler //
+
+	var _elm_lang$core$Native_Time = function() {
+
+	var now = _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
+	{
+		callback(_elm_lang$core$Native_Scheduler.succeed(Date.now()));
+	});
+
+	function setInterval_(interval, task)
+	{
+		return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
+		{
+			var id = setInterval(function() {
+				_elm_lang$core$Native_Scheduler.rawSpawn(task);
+			}, interval);
+
+			return function() { clearInterval(id); };
+		});
+	}
+
+	return {
+		now: now,
+		setInterval_: F2(setInterval_)
+	};
+
+	}();
+	var _elm_lang$core$Time$setInterval = _elm_lang$core$Native_Time.setInterval_;
+	var _elm_lang$core$Time$spawnHelp = F3(
+		function (router, intervals, processes) {
+			var _p0 = intervals;
+			if (_p0.ctor === '[]') {
+				return _elm_lang$core$Task$succeed(processes);
+			} else {
+				var _p1 = _p0._0;
+				var spawnRest = function (id) {
+					return A3(
+						_elm_lang$core$Time$spawnHelp,
+						router,
+						_p0._1,
+						A3(_elm_lang$core$Dict$insert, _p1, id, processes));
+				};
+				var spawnTimer = _elm_lang$core$Native_Scheduler.spawn(
+					A2(
+						_elm_lang$core$Time$setInterval,
+						_p1,
+						A2(_elm_lang$core$Platform$sendToSelf, router, _p1)));
+				return A2(_elm_lang$core$Task$andThen, spawnRest, spawnTimer);
+			}
+		});
+	var _elm_lang$core$Time$addMySub = F2(
+		function (_p2, state) {
+			var _p3 = _p2;
+			var _p6 = _p3._1;
+			var _p5 = _p3._0;
+			var _p4 = A2(_elm_lang$core$Dict$get, _p5, state);
+			if (_p4.ctor === 'Nothing') {
+				return A3(
+					_elm_lang$core$Dict$insert,
+					_p5,
+					{
+						ctor: '::',
+						_0: _p6,
+						_1: {ctor: '[]'}
+					},
+					state);
+			} else {
+				return A3(
+					_elm_lang$core$Dict$insert,
+					_p5,
+					{ctor: '::', _0: _p6, _1: _p4._0},
+					state);
+			}
+		});
+	var _elm_lang$core$Time$inMilliseconds = function (t) {
+		return t;
+	};
+	var _elm_lang$core$Time$millisecond = 1;
+	var _elm_lang$core$Time$second = 1000 * _elm_lang$core$Time$millisecond;
+	var _elm_lang$core$Time$minute = 60 * _elm_lang$core$Time$second;
+	var _elm_lang$core$Time$hour = 60 * _elm_lang$core$Time$minute;
+	var _elm_lang$core$Time$inHours = function (t) {
+		return t / _elm_lang$core$Time$hour;
+	};
+	var _elm_lang$core$Time$inMinutes = function (t) {
+		return t / _elm_lang$core$Time$minute;
+	};
+	var _elm_lang$core$Time$inSeconds = function (t) {
+		return t / _elm_lang$core$Time$second;
+	};
+	var _elm_lang$core$Time$now = _elm_lang$core$Native_Time.now;
+	var _elm_lang$core$Time$onSelfMsg = F3(
+		function (router, interval, state) {
+			var _p7 = A2(_elm_lang$core$Dict$get, interval, state.taggers);
+			if (_p7.ctor === 'Nothing') {
+				return _elm_lang$core$Task$succeed(state);
+			} else {
+				var tellTaggers = function (time) {
+					return _elm_lang$core$Task$sequence(
+						A2(
+							_elm_lang$core$List$map,
+							function (tagger) {
+								return A2(
+									_elm_lang$core$Platform$sendToApp,
+									router,
+									tagger(time));
+							},
+							_p7._0));
+				};
+				return A2(
+					_elm_lang$core$Task$andThen,
+					function (_p8) {
+						return _elm_lang$core$Task$succeed(state);
+					},
+					A2(_elm_lang$core$Task$andThen, tellTaggers, _elm_lang$core$Time$now));
+			}
+		});
+	var _elm_lang$core$Time$subscription = _elm_lang$core$Native_Platform.leaf('Time');
+	var _elm_lang$core$Time$State = F2(
+		function (a, b) {
+			return {taggers: a, processes: b};
+		});
+	var _elm_lang$core$Time$init = _elm_lang$core$Task$succeed(
+		A2(_elm_lang$core$Time$State, _elm_lang$core$Dict$empty, _elm_lang$core$Dict$empty));
+	var _elm_lang$core$Time$onEffects = F3(
+		function (router, subs, _p9) {
+			var _p10 = _p9;
+			var rightStep = F3(
+				function (_p12, id, _p11) {
+					var _p13 = _p11;
+					return {
+						ctor: '_Tuple3',
+						_0: _p13._0,
+						_1: _p13._1,
+						_2: A2(
+							_elm_lang$core$Task$andThen,
+							function (_p14) {
+								return _p13._2;
+							},
+							_elm_lang$core$Native_Scheduler.kill(id))
+					};
+				});
+			var bothStep = F4(
+				function (interval, taggers, id, _p15) {
+					var _p16 = _p15;
+					return {
+						ctor: '_Tuple3',
+						_0: _p16._0,
+						_1: A3(_elm_lang$core$Dict$insert, interval, id, _p16._1),
+						_2: _p16._2
+					};
+				});
+			var leftStep = F3(
+				function (interval, taggers, _p17) {
+					var _p18 = _p17;
+					return {
+						ctor: '_Tuple3',
+						_0: {ctor: '::', _0: interval, _1: _p18._0},
+						_1: _p18._1,
+						_2: _p18._2
+					};
+				});
+			var newTaggers = A3(_elm_lang$core$List$foldl, _elm_lang$core$Time$addMySub, _elm_lang$core$Dict$empty, subs);
+			var _p19 = A6(
+				_elm_lang$core$Dict$merge,
+				leftStep,
+				bothStep,
+				rightStep,
+				newTaggers,
+				_p10.processes,
+				{
+					ctor: '_Tuple3',
+					_0: {ctor: '[]'},
+					_1: _elm_lang$core$Dict$empty,
+					_2: _elm_lang$core$Task$succeed(
+						{ctor: '_Tuple0'})
+				});
+			var spawnList = _p19._0;
+			var existingDict = _p19._1;
+			var killTask = _p19._2;
+			return A2(
+				_elm_lang$core$Task$andThen,
+				function (newProcesses) {
+					return _elm_lang$core$Task$succeed(
+						A2(_elm_lang$core$Time$State, newTaggers, newProcesses));
+				},
+				A2(
+					_elm_lang$core$Task$andThen,
+					function (_p20) {
+						return A3(_elm_lang$core$Time$spawnHelp, router, spawnList, existingDict);
+					},
+					killTask));
+		});
+	var _elm_lang$core$Time$Every = F2(
+		function (a, b) {
+			return {ctor: 'Every', _0: a, _1: b};
+		});
+	var _elm_lang$core$Time$every = F2(
+		function (interval, tagger) {
+			return _elm_lang$core$Time$subscription(
+				A2(_elm_lang$core$Time$Every, interval, tagger));
+		});
+	var _elm_lang$core$Time$subMap = F2(
+		function (f, _p21) {
+			var _p22 = _p21;
+			return A2(
+				_elm_lang$core$Time$Every,
+				_p22._0,
+				function (_p23) {
+					return f(
+						_p22._1(_p23));
+				});
+		});
+	_elm_lang$core$Native_Platform.effectManagers['Time'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Time$init, onEffects: _elm_lang$core$Time$onEffects, onSelfMsg: _elm_lang$core$Time$onSelfMsg, tag: 'sub', subMap: _elm_lang$core$Time$subMap};
+
+	var _elm_lang$core$Process$kill = _elm_lang$core$Native_Scheduler.kill;
+	var _elm_lang$core$Process$sleep = _elm_lang$core$Native_Scheduler.sleep;
+	var _elm_lang$core$Process$spawn = _elm_lang$core$Native_Scheduler.spawn;
 
 	var _elm_lang$dom$Native_Dom = function() {
 
@@ -13365,6 +13445,14 @@
 			return {stopPropagation: a, preventDefault: b};
 		});
 
+	var _elm_lang$html$Html_Keyed$node = _elm_lang$virtual_dom$VirtualDom$keyedNode;
+	var _elm_lang$html$Html_Keyed$ol = _elm_lang$html$Html_Keyed$node('ol');
+	var _elm_lang$html$Html_Keyed$ul = _elm_lang$html$Html_Keyed$node('ul');
+
+	var _elm_lang$html$Html_Lazy$lazy3 = _elm_lang$virtual_dom$VirtualDom$lazy3;
+	var _elm_lang$html$Html_Lazy$lazy2 = _elm_lang$virtual_dom$VirtualDom$lazy2;
+	var _elm_lang$html$Html_Lazy$lazy = _elm_lang$virtual_dom$VirtualDom$lazy;
+
 	var _elm_lang$http$Native_Http = function() {
 
 
@@ -14032,6 +14120,480 @@
 		});
 	_elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/navigation', init: _elm_lang$navigation$Navigation$init, onEffects: _elm_lang$navigation$Navigation$onEffects, onSelfMsg: _elm_lang$navigation$Navigation$onSelfMsg, tag: 'fx', cmdMap: _elm_lang$navigation$Navigation$cmdMap, subMap: _elm_lang$navigation$Navigation$subMap};
 
+	var _evancz$elm_sortable_table$Table$findSorter = F2(
+		function (selectedColumn, columnData) {
+			findSorter:
+			while (true) {
+				var _p0 = columnData;
+				if (_p0.ctor === '[]') {
+					return _elm_lang$core$Maybe$Nothing;
+				} else {
+					if (_elm_lang$core$Native_Utils.eq(_p0._0.name, selectedColumn)) {
+						return _elm_lang$core$Maybe$Just(_p0._0.sorter);
+					} else {
+						var _v1 = selectedColumn,
+							_v2 = _p0._1;
+						selectedColumn = _v1;
+						columnData = _v2;
+						continue findSorter;
+					}
+				}
+			}
+		});
+	var _evancz$elm_sortable_table$Table$applySorter = F3(
+		function (isReversed, sorter, data) {
+			var _p1 = sorter;
+			switch (_p1.ctor) {
+				case 'None':
+					return data;
+				case 'Increasing':
+					return _p1._0(data);
+				case 'Decreasing':
+					return _elm_lang$core$List$reverse(
+						_p1._0(data));
+				case 'IncOrDec':
+					var _p2 = _p1._0;
+					return isReversed ? _elm_lang$core$List$reverse(
+						_p2(data)) : _p2(data);
+				default:
+					var _p3 = _p1._0;
+					return isReversed ? _p3(data) : _elm_lang$core$List$reverse(
+						_p3(data));
+			}
+		});
+	var _evancz$elm_sortable_table$Table$sort = F3(
+		function (_p4, columnData, data) {
+			var _p5 = _p4;
+			var _p6 = A2(_evancz$elm_sortable_table$Table$findSorter, _p5._0, columnData);
+			if (_p6.ctor === 'Nothing') {
+				return data;
+			} else {
+				return A3(_evancz$elm_sortable_table$Table$applySorter, _p5._1, _p6._0, data);
+			}
+		});
+	var _evancz$elm_sortable_table$Table$viewCell = F2(
+		function (data, _p7) {
+			var _p8 = _p7;
+			var details = _p8.viewData(data);
+			return A2(_elm_lang$html$Html$td, details.attributes, details.children);
+		});
+	var _evancz$elm_sortable_table$Table$viewRowHelp = F3(
+		function (columns, toRowAttrs, data) {
+			return A2(
+				_elm_lang$html$Html$tr,
+				toRowAttrs(data),
+				A2(
+					_elm_lang$core$List$map,
+					_evancz$elm_sortable_table$Table$viewCell(data),
+					columns));
+		});
+	var _evancz$elm_sortable_table$Table$viewRow = F4(
+		function (toId, columns, toRowAttrs, data) {
+			return {
+				ctor: '_Tuple2',
+				_0: toId(data),
+				_1: A4(_elm_lang$html$Html_Lazy$lazy3, _evancz$elm_sortable_table$Table$viewRowHelp, columns, toRowAttrs, data)
+			};
+		});
+	var _evancz$elm_sortable_table$Table$simpleRowAttrs = function (_p9) {
+		return {ctor: '[]'};
+	};
+	var _evancz$elm_sortable_table$Table$lightGrey = function (symbol) {
+		return A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$style(
+					{
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'color', _1: '#ccc'},
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(
+					A2(_elm_lang$core$Basics_ops['++'], ' ', symbol)),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _evancz$elm_sortable_table$Table$darkGrey = function (symbol) {
+		return A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$style(
+					{
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'color', _1: '#555'},
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(
+					A2(_elm_lang$core$Basics_ops['++'], ' ', symbol)),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _evancz$elm_sortable_table$Table$simpleTheadHelp = function (_p10) {
+		var _p11 = _p10;
+		var _p13 = _p11._0;
+		var content = function () {
+			var _p12 = _p11._1;
+			switch (_p12.ctor) {
+				case 'Unsortable':
+					return {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(_p13),
+						_1: {ctor: '[]'}
+					};
+				case 'Sortable':
+					return {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(_p13),
+						_1: {
+							ctor: '::',
+							_0: _p12._0 ? _evancz$elm_sortable_table$Table$darkGrey('↓') : _evancz$elm_sortable_table$Table$lightGrey('↓'),
+							_1: {ctor: '[]'}
+						}
+					};
+				default:
+					if (_p12._0.ctor === 'Nothing') {
+						return {
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(_p13),
+							_1: {
+								ctor: '::',
+								_0: _evancz$elm_sortable_table$Table$lightGrey('↕'),
+								_1: {ctor: '[]'}
+							}
+						};
+					} else {
+						return {
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(_p13),
+							_1: {
+								ctor: '::',
+								_0: _evancz$elm_sortable_table$Table$darkGrey(
+									_p12._0._0 ? '↑' : '↓'),
+								_1: {ctor: '[]'}
+							}
+						};
+					}
+			}
+		}();
+		return A2(
+			_elm_lang$html$Html$th,
+			{
+				ctor: '::',
+				_0: _p11._2,
+				_1: {ctor: '[]'}
+			},
+			content);
+	};
+	var _evancz$elm_sortable_table$Table$Customizations = F6(
+		function (a, b, c, d, e, f) {
+			return {tableAttrs: a, caption: b, thead: c, tfoot: d, tbodyAttrs: e, rowAttrs: f};
+		});
+	var _evancz$elm_sortable_table$Table$HtmlDetails = F2(
+		function (a, b) {
+			return {attributes: a, children: b};
+		});
+	var _evancz$elm_sortable_table$Table$simpleThead = function (headers) {
+		return A2(
+			_evancz$elm_sortable_table$Table$HtmlDetails,
+			{ctor: '[]'},
+			A2(_elm_lang$core$List$map, _evancz$elm_sortable_table$Table$simpleTheadHelp, headers));
+	};
+	var _evancz$elm_sortable_table$Table$defaultCustomizations = {
+		tableAttrs: {ctor: '[]'},
+		caption: _elm_lang$core$Maybe$Nothing,
+		thead: _evancz$elm_sortable_table$Table$simpleThead,
+		tfoot: _elm_lang$core$Maybe$Nothing,
+		tbodyAttrs: {ctor: '[]'},
+		rowAttrs: _evancz$elm_sortable_table$Table$simpleRowAttrs
+	};
+	var _evancz$elm_sortable_table$Table$textDetails = function (str) {
+		return A2(
+			_evancz$elm_sortable_table$Table$HtmlDetails,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(str),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _evancz$elm_sortable_table$Table$ColumnData = F3(
+		function (a, b, c) {
+			return {name: a, viewData: b, sorter: c};
+		});
+	var _evancz$elm_sortable_table$Table$State = F2(
+		function (a, b) {
+			return {ctor: 'State', _0: a, _1: b};
+		});
+	var _evancz$elm_sortable_table$Table$initialSort = function (header) {
+		return A2(_evancz$elm_sortable_table$Table$State, header, false);
+	};
+	var _evancz$elm_sortable_table$Table$onClick = F3(
+		function (name, isReversed, toMsg) {
+			return A2(
+				_elm_lang$html$Html_Events$on,
+				'click',
+				A2(
+					_elm_lang$core$Json_Decode$map,
+					toMsg,
+					A3(
+						_elm_lang$core$Json_Decode$map2,
+						_evancz$elm_sortable_table$Table$State,
+						_elm_lang$core$Json_Decode$succeed(name),
+						_elm_lang$core$Json_Decode$succeed(isReversed))));
+		});
+	var _evancz$elm_sortable_table$Table$Config = function (a) {
+		return {ctor: 'Config', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$config = function (_p14) {
+		var _p15 = _p14;
+		return _evancz$elm_sortable_table$Table$Config(
+			{
+				toId: _p15.toId,
+				toMsg: _p15.toMsg,
+				columns: A2(
+					_elm_lang$core$List$map,
+					function (_p16) {
+						var _p17 = _p16;
+						return _p17._0;
+					},
+					_p15.columns),
+				customizations: _evancz$elm_sortable_table$Table$defaultCustomizations
+			});
+	};
+	var _evancz$elm_sortable_table$Table$customConfig = function (_p18) {
+		var _p19 = _p18;
+		return _evancz$elm_sortable_table$Table$Config(
+			{
+				toId: _p19.toId,
+				toMsg: _p19.toMsg,
+				columns: A2(
+					_elm_lang$core$List$map,
+					function (_p20) {
+						var _p21 = _p20;
+						return _p21._0;
+					},
+					_p19.columns),
+				customizations: _p19.customizations
+			});
+	};
+	var _evancz$elm_sortable_table$Table$Reversible = function (a) {
+		return {ctor: 'Reversible', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$Sortable = function (a) {
+		return {ctor: 'Sortable', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$Unsortable = {ctor: 'Unsortable'};
+	var _evancz$elm_sortable_table$Table$toHeaderInfo = F3(
+		function (_p23, toMsg, _p22) {
+			var _p24 = _p23;
+			var _p29 = _p24._0;
+			var _p28 = _p24._1;
+			var _p25 = _p22;
+			var _p27 = _p25.name;
+			var _p26 = _p25.sorter;
+			switch (_p26.ctor) {
+				case 'None':
+					return {
+						ctor: '_Tuple3',
+						_0: _p27,
+						_1: _evancz$elm_sortable_table$Table$Unsortable,
+						_2: A3(_evancz$elm_sortable_table$Table$onClick, _p29, _p28, toMsg)
+					};
+				case 'Increasing':
+					return {
+						ctor: '_Tuple3',
+						_0: _p27,
+						_1: _evancz$elm_sortable_table$Table$Sortable(
+							_elm_lang$core$Native_Utils.eq(_p27, _p29)),
+						_2: A3(_evancz$elm_sortable_table$Table$onClick, _p27, false, toMsg)
+					};
+				case 'Decreasing':
+					return {
+						ctor: '_Tuple3',
+						_0: _p27,
+						_1: _evancz$elm_sortable_table$Table$Sortable(
+							_elm_lang$core$Native_Utils.eq(_p27, _p29)),
+						_2: A3(_evancz$elm_sortable_table$Table$onClick, _p27, false, toMsg)
+					};
+				case 'IncOrDec':
+					return _elm_lang$core$Native_Utils.eq(_p27, _p29) ? {
+						ctor: '_Tuple3',
+						_0: _p27,
+						_1: _evancz$elm_sortable_table$Table$Reversible(
+							_elm_lang$core$Maybe$Just(_p28)),
+						_2: A3(_evancz$elm_sortable_table$Table$onClick, _p27, !_p28, toMsg)
+					} : {
+						ctor: '_Tuple3',
+						_0: _p27,
+						_1: _evancz$elm_sortable_table$Table$Reversible(_elm_lang$core$Maybe$Nothing),
+						_2: A3(_evancz$elm_sortable_table$Table$onClick, _p27, false, toMsg)
+					};
+				default:
+					return _elm_lang$core$Native_Utils.eq(_p27, _p29) ? {
+						ctor: '_Tuple3',
+						_0: _p27,
+						_1: _evancz$elm_sortable_table$Table$Reversible(
+							_elm_lang$core$Maybe$Just(_p28)),
+						_2: A3(_evancz$elm_sortable_table$Table$onClick, _p27, !_p28, toMsg)
+					} : {
+						ctor: '_Tuple3',
+						_0: _p27,
+						_1: _evancz$elm_sortable_table$Table$Reversible(_elm_lang$core$Maybe$Nothing),
+						_2: A3(_evancz$elm_sortable_table$Table$onClick, _p27, false, toMsg)
+					};
+			}
+		});
+	var _evancz$elm_sortable_table$Table$view = F3(
+		function (_p30, state, data) {
+			var _p31 = _p30;
+			var _p35 = _p31._0.customizations;
+			var _p34 = _p31._0.columns;
+			var theadDetails = _p35.thead(
+				A2(
+					_elm_lang$core$List$map,
+					A2(_evancz$elm_sortable_table$Table$toHeaderInfo, state, _p31._0.toMsg),
+					_p34));
+			var thead = A2(_elm_lang$html$Html$thead, theadDetails.attributes, theadDetails.children);
+			var sortedData = A3(_evancz$elm_sortable_table$Table$sort, state, _p34, data);
+			var tbody = A3(
+				_elm_lang$html$Html_Keyed$node,
+				'tbody',
+				_p35.tbodyAttrs,
+				A2(
+					_elm_lang$core$List$map,
+					A3(_evancz$elm_sortable_table$Table$viewRow, _p31._0.toId, _p34, _p35.rowAttrs),
+					sortedData));
+			var withFoot = function () {
+				var _p32 = _p35.tfoot;
+				if (_p32.ctor === 'Nothing') {
+					return {
+						ctor: '::',
+						_0: tbody,
+						_1: {ctor: '[]'}
+					};
+				} else {
+					return {
+						ctor: '::',
+						_0: A2(_elm_lang$html$Html$tfoot, _p32._0.attributes, _p32._0.children),
+						_1: {
+							ctor: '::',
+							_0: tbody,
+							_1: {ctor: '[]'}
+						}
+					};
+				}
+			}();
+			return A2(
+				_elm_lang$html$Html$table,
+				_p35.tableAttrs,
+				function () {
+					var _p33 = _p35.caption;
+					if (_p33.ctor === 'Nothing') {
+						return {ctor: '::', _0: thead, _1: withFoot};
+					} else {
+						return {
+							ctor: '::',
+							_0: A2(_elm_lang$html$Html$caption, _p33._0.attributes, _p33._0.children),
+							_1: {ctor: '::', _0: thead, _1: withFoot}
+						};
+					}
+				}());
+		});
+	var _evancz$elm_sortable_table$Table$Column = function (a) {
+		return {ctor: 'Column', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$customColumn = function (_p36) {
+		var _p37 = _p36;
+		return _evancz$elm_sortable_table$Table$Column(
+			A3(
+				_evancz$elm_sortable_table$Table$ColumnData,
+				_p37.name,
+				function (_p38) {
+					return _evancz$elm_sortable_table$Table$textDetails(
+						_p37.viewData(_p38));
+				},
+				_p37.sorter));
+	};
+	var _evancz$elm_sortable_table$Table$veryCustomColumn = _evancz$elm_sortable_table$Table$Column;
+	var _evancz$elm_sortable_table$Table$DecOrInc = function (a) {
+		return {ctor: 'DecOrInc', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$decreasingOrIncreasingBy = function (toComparable) {
+		return _evancz$elm_sortable_table$Table$DecOrInc(
+			_elm_lang$core$List$sortBy(toComparable));
+	};
+	var _evancz$elm_sortable_table$Table$IncOrDec = function (a) {
+		return {ctor: 'IncOrDec', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$increasingOrDecreasingBy = function (toComparable) {
+		return _evancz$elm_sortable_table$Table$IncOrDec(
+			_elm_lang$core$List$sortBy(toComparable));
+	};
+	var _evancz$elm_sortable_table$Table$stringColumn = F2(
+		function (name, toStr) {
+			return _evancz$elm_sortable_table$Table$Column(
+				{
+					name: name,
+					viewData: function (_p39) {
+						return _evancz$elm_sortable_table$Table$textDetails(
+							toStr(_p39));
+					},
+					sorter: _evancz$elm_sortable_table$Table$increasingOrDecreasingBy(toStr)
+				});
+		});
+	var _evancz$elm_sortable_table$Table$intColumn = F2(
+		function (name, toInt) {
+			return _evancz$elm_sortable_table$Table$Column(
+				{
+					name: name,
+					viewData: function (_p40) {
+						return _evancz$elm_sortable_table$Table$textDetails(
+							_elm_lang$core$Basics$toString(
+								toInt(_p40)));
+					},
+					sorter: _evancz$elm_sortable_table$Table$increasingOrDecreasingBy(toInt)
+				});
+		});
+	var _evancz$elm_sortable_table$Table$floatColumn = F2(
+		function (name, toFloat) {
+			return _evancz$elm_sortable_table$Table$Column(
+				{
+					name: name,
+					viewData: function (_p41) {
+						return _evancz$elm_sortable_table$Table$textDetails(
+							_elm_lang$core$Basics$toString(
+								toFloat(_p41)));
+					},
+					sorter: _evancz$elm_sortable_table$Table$increasingOrDecreasingBy(toFloat)
+				});
+		});
+	var _evancz$elm_sortable_table$Table$Decreasing = function (a) {
+		return {ctor: 'Decreasing', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$decreasingBy = function (toComparable) {
+		return _evancz$elm_sortable_table$Table$Decreasing(
+			_elm_lang$core$List$sortBy(toComparable));
+	};
+	var _evancz$elm_sortable_table$Table$Increasing = function (a) {
+		return {ctor: 'Increasing', _0: a};
+	};
+	var _evancz$elm_sortable_table$Table$increasingBy = function (toComparable) {
+		return _evancz$elm_sortable_table$Table$Increasing(
+			_elm_lang$core$List$sortBy(toComparable));
+	};
+	var _evancz$elm_sortable_table$Table$None = {ctor: 'None'};
+	var _evancz$elm_sortable_table$Table$unsortable = _evancz$elm_sortable_table$Table$None;
+
 	var _evancz$url_parser$UrlParser$toKeyValuePair = function (segment) {
 		var _p0 = A2(_elm_lang$core$String$split, '=', segment);
 		if (((_p0.ctor === '::') && (_p0._1.ctor === '::')) && (_p0._1._1.ctor === '[]')) {
@@ -14283,6 +14845,2288 @@
 		return A2(_evancz$url_parser$UrlParser$customParam, name, _evancz$url_parser$UrlParser$intParamHelp);
 	};
 
+	var _user$project$Tree_Models$TempNode = F4(
+		function (a, b, c, d) {
+			return {id: a, type_: b, name: c, hasChildren: d};
+		});
+	var _user$project$Tree_Models$TempChildren = F3(
+		function (a, b, c) {
+			return {id: a, type_: b, children: c};
+		});
+	var _user$project$Tree_Models$TempRoot = F4(
+		function (a, b, c, d) {
+			return {id: a, type_: b, name: c, children: d};
+		});
+	var _user$project$Tree_Models$Node = F6(
+		function (a, b, c, d, e, f) {
+			return {id: a, nodeType: b, name: c, selected: d, childrenState: e, childNodes: f};
+		});
+	var _user$project$Tree_Models$Tree = F5(
+		function (a, b, c, d, e) {
+			return {id: a, nodeType: b, name: c, children: d, path: e};
+		});
+	var _user$project$Tree_Models$Expanded = {ctor: 'Expanded'};
+	var _user$project$Tree_Models$Expanding = {ctor: 'Expanding'};
+	var _user$project$Tree_Models$Collapsed = {ctor: 'Collapsed'};
+	var _user$project$Tree_Models$NoChildren = {ctor: 'NoChildren'};
+	var _user$project$Tree_Models$FolderType = {ctor: 'FolderType'};
+	var _user$project$Tree_Models$StaffType = {ctor: 'StaffType'};
+	var _user$project$Tree_Models$SiteType = {ctor: 'SiteType'};
+	var _user$project$Tree_Models$ClientType = {ctor: 'ClientType'};
+	var _user$project$Tree_Models$CustomerType = {ctor: 'CustomerType'};
+	var _user$project$Tree_Models$RootType = {ctor: 'RootType'};
+	var _user$project$Tree_Models$convertNodeType = function (type_) {
+		return _elm_lang$core$Native_Utils.eq(type_, 'root') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$RootType) : (_elm_lang$core$Native_Utils.eq(type_, 'customer') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$CustomerType) : (_elm_lang$core$Native_Utils.eq(type_, 'client') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$ClientType) : (_elm_lang$core$Native_Utils.eq(type_, 'site') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$SiteType) : (_elm_lang$core$Native_Utils.eq(type_, 'staff') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$StaffType) : (_elm_lang$core$Native_Utils.eq(type_, 'folder') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$FolderType) : _elm_lang$core$Maybe$Nothing)))));
+	};
+	var _user$project$Tree_Models$initialTree = {
+		id: '',
+		nodeType: _user$project$Tree_Models$RootType,
+		name: '',
+		children: {ctor: '[]'},
+		path: {ctor: '[]'}
+	};
+	var _user$project$Tree_Models$ChildNodes = function (a) {
+		return {ctor: 'ChildNodes', _0: a};
+	};
+
+	var _user$project$Header_Models$headerId = function (headerInfo) {
+		var _p0 = headerInfo.header;
+		switch (_p0.ctor) {
+			case 'RootHeader':
+				return _p0._0.id;
+			case 'CustomerHeader':
+				return _p0._0.id;
+			case 'ClientHeader':
+				return _p0._0.id;
+			case 'SiteHeader':
+				return _p0._0.id;
+			case 'StaffHeader':
+				return _p0._0.id;
+			default:
+				return '';
+		}
+	};
+	var _user$project$Header_Models$HeaderInfo = F2(
+		function (a, b) {
+			return {header: a, tabs: b};
+		});
+	var _user$project$Header_Models$Root = F2(
+		function (a, b) {
+			return {id: a, name: b};
+		});
+	var _user$project$Header_Models$Customer = F3(
+		function (a, b, c) {
+			return {id: a, access: b, values: c};
+		});
+	var _user$project$Header_Models$CustomerAccess = F4(
+		function (a, b, c, d) {
+			return {name: a, image: b, address: c, contact: d};
+		});
+	var _user$project$Header_Models$CustomerValues = function (a) {
+		return function (b) {
+			return function (c) {
+				return function (d) {
+					return function (e) {
+						return function (f) {
+							return function (g) {
+								return function (h) {
+									return function (i) {
+										return function (j) {
+											return {name: a, address1: b, address2: c, address3: d, address4: e, postcode: f, contact: g, tel: h, email: i, image: j};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+	var _user$project$Header_Models$Client = F7(
+		function (a, b, c, d, e, f, g) {
+			return {id: a, ref: b, name: c, address: d, contact: e, phone: f, email: g};
+		});
+	var _user$project$Header_Models$Site = F7(
+		function (a, b, c, d, e, f, g) {
+			return {id: a, ref: b, name: c, address: d, contact: e, phone: f, email: g};
+		});
+	var _user$project$Header_Models$Staff = F2(
+		function (a, b) {
+			return {id: a, name: b};
+		});
+	var _user$project$Header_Models$Tab = F2(
+		function (a, b) {
+			return {tabType: a, name: b};
+		});
+	var _user$project$Header_Models$Empty = {ctor: 'Empty'};
+	var _user$project$Header_Models$initialHeaderInfo = {
+		header: _user$project$Header_Models$Empty,
+		tabs: {ctor: '[]'}
+	};
+	var _user$project$Header_Models$StaffHeader = function (a) {
+		return {ctor: 'StaffHeader', _0: a};
+	};
+	var _user$project$Header_Models$SiteHeader = function (a) {
+		return {ctor: 'SiteHeader', _0: a};
+	};
+	var _user$project$Header_Models$ClientHeader = function (a) {
+		return {ctor: 'ClientHeader', _0: a};
+	};
+	var _user$project$Header_Models$CustomerHeader = function (a) {
+		return {ctor: 'CustomerHeader', _0: a};
+	};
+	var _user$project$Header_Models$RootHeader = function (a) {
+		return {ctor: 'RootHeader', _0: a};
+	};
+	var _user$project$Header_Models$Write = {ctor: 'Write'};
+	var _user$project$Header_Models$Read = {ctor: 'Read'};
+	var _user$project$Header_Models$None = {ctor: 'None'};
+	var _user$project$Header_Models$convertAccessType = function (type_) {
+		return _elm_lang$core$Native_Utils.eq(type_, 'r') ? _user$project$Header_Models$Read : (_elm_lang$core$Native_Utils.eq(type_, 'w') ? _user$project$Header_Models$Write : _user$project$Header_Models$None);
+	};
+	var _user$project$Header_Models$EmptyTab = {ctor: 'EmptyTab'};
+	var _user$project$Header_Models$CasesType = {ctor: 'CasesType'};
+	var _user$project$Header_Models$UsersType = {ctor: 'UsersType'};
+	var _user$project$Header_Models$FoldersType = {ctor: 'FoldersType'};
+
+	var _user$project$Tree_Messages$SelectNode = function (a) {
+		return {ctor: 'SelectNode', _0: a};
+	};
+	var _user$project$Tree_Messages$ToggleNode = F2(
+		function (a, b) {
+			return {ctor: 'ToggleNode', _0: a, _1: b};
+		});
+	var _user$project$Tree_Messages$OnFetchNode = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchNode', _0: a, _1: b};
+		});
+	var _user$project$Tree_Messages$OnFetchRoot = function (a) {
+		return {ctor: 'OnFetchRoot', _0: a};
+	};
+
+	var _user$project$Header_Messages$OnFetchStaff = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchStaff', _0: a, _1: b};
+		});
+	var _user$project$Header_Messages$OnFetchSite = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchSite', _0: a, _1: b};
+		});
+	var _user$project$Header_Messages$OnFetchClient = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchClient', _0: a, _1: b};
+		});
+	var _user$project$Header_Messages$OnFetchCustomer = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchCustomer', _0: a, _1: b};
+		});
+	var _user$project$Header_Messages$OnFetchRoot = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchRoot', _0: a, _1: b};
+		});
+
+	var _user$project$Content_Models$Folders = F7(
+		function (a, b, c, d, e, f, g) {
+			return {id: a, name: b, tree: c, path: d, files: e, tableState: f, query: g};
+		});
+	var _user$project$Content_Models$File = F3(
+		function (a, b, c) {
+			return {id: a, name: b, datetime: c};
+		});
+	var _user$project$Content_Models$Users = F2(
+		function (a, b) {
+			return {id: a, name: b};
+		});
+	var _user$project$Content_Models$Cases = F2(
+		function (a, b) {
+			return {id: a, name: b};
+		});
+	var _user$project$Content_Models$EmptyContent = {ctor: 'EmptyContent'};
+	var _user$project$Content_Models$initialContent = _user$project$Content_Models$EmptyContent;
+	var _user$project$Content_Models$CasesContent = function (a) {
+		return {ctor: 'CasesContent', _0: a};
+	};
+	var _user$project$Content_Models$UsersContent = function (a) {
+		return {ctor: 'UsersContent', _0: a};
+	};
+	var _user$project$Content_Models$FoldersContent = function (a) {
+		return {ctor: 'FoldersContent', _0: a};
+	};
+
+	var _user$project$Content_Messages$SetTableState = function (a) {
+		return {ctor: 'SetTableState', _0: a};
+	};
+	var _user$project$Content_Messages$SetQuery = function (a) {
+		return {ctor: 'SetQuery', _0: a};
+	};
+	var _user$project$Content_Messages$OnFetchFiles = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchFiles', _0: a, _1: b};
+		});
+	var _user$project$Content_Messages$TreeMsg = function (a) {
+		return {ctor: 'TreeMsg', _0: a};
+	};
+	var _user$project$Content_Messages$OnFetchCases = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchCases', _0: a, _1: b};
+		});
+	var _user$project$Content_Messages$OnFetchUsers = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchUsers', _0: a, _1: b};
+		});
+	var _user$project$Content_Messages$OnFetchFolders = F2(
+		function (a, b) {
+			return {ctor: 'OnFetchFolders', _0: a, _1: b};
+		});
+
+	var _user$project$Container_Messages$ContentMsg = function (a) {
+		return {ctor: 'ContentMsg', _0: a};
+	};
+	var _user$project$Container_Messages$HeaderMsg = function (a) {
+		return {ctor: 'HeaderMsg', _0: a};
+	};
+	var _user$project$Container_Messages$TreeMsg = function (a) {
+		return {ctor: 'TreeMsg', _0: a};
+	};
+	var _user$project$Container_Messages$SelectTab = function (a) {
+		return {ctor: 'SelectTab', _0: a};
+	};
+	var _user$project$Container_Messages$SelectPath = function (a) {
+		return {ctor: 'SelectPath', _0: a};
+	};
+	var _user$project$Container_Messages$ShowContainer = {ctor: 'ShowContainer'};
+
+	var _user$project$Container_Models$initialContainer = {
+		tree: _user$project$Tree_Models$initialTree,
+		path: {ctor: '[]'},
+		headerInfo: _user$project$Header_Models$initialHeaderInfo,
+		tab: A2(_user$project$Header_Models$Tab, _user$project$Header_Models$EmptyTab, ''),
+		content: _user$project$Content_Models$initialContent
+	};
+	var _user$project$Container_Models$Container = F5(
+		function (a, b, c, d, e) {
+			return {tree: a, path: b, headerInfo: c, tab: d, content: e};
+		});
+	var _user$project$Container_Models$PathItem = F3(
+		function (a, b, c) {
+			return {id: a, nodeType: b, name: c};
+		});
+
+	var _user$project$Tree_Commands$tempNodeDecoder = A5(
+		_elm_lang$core$Json_Decode$map4,
+		_user$project$Tree_Models$TempNode,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'hasChildren', _elm_lang$core$Json_Decode$bool));
+	var _user$project$Tree_Commands$tempRootDecoder = A5(
+		_elm_lang$core$Json_Decode$map4,
+		_user$project$Tree_Models$TempRoot,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'children',
+			_elm_lang$core$Json_Decode$list(_user$project$Tree_Commands$tempNodeDecoder)));
+	var _user$project$Tree_Commands$tempChildrenDecoder = A4(
+		_elm_lang$core$Json_Decode$map3,
+		_user$project$Tree_Models$TempChildren,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'children',
+			_elm_lang$core$Json_Decode$list(_user$project$Tree_Commands$tempNodeDecoder)));
+	var _user$project$Tree_Commands$fetchNodeUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				origin,
+				A2(_elm_lang$core$Basics_ops['++'], '/api/Node/', nodeId));
+		});
+	var _user$project$Tree_Commands$fetchNode = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Tree_Messages$OnFetchNode(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Tree_Commands$fetchNodeUrl, origin, nodeId),
+					_user$project$Tree_Commands$tempChildrenDecoder));
+		});
+	var _user$project$Tree_Commands$fetchRoot = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Tree_Messages$OnFetchRoot,
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Tree_Commands$fetchNodeUrl, origin, nodeId),
+					_user$project$Tree_Commands$tempRootDecoder));
+		});
+
+	var _user$project$Header_Commands$createTab = F2(
+		function (id, name) {
+			return _elm_lang$core$Native_Utils.eq(id, 'folders') ? A2(_user$project$Header_Models$Tab, _user$project$Header_Models$FoldersType, name) : (_elm_lang$core$Native_Utils.eq(id, 'users') ? A2(_user$project$Header_Models$Tab, _user$project$Header_Models$UsersType, name) : (_elm_lang$core$Native_Utils.eq(id, 'cases') ? A2(_user$project$Header_Models$Tab, _user$project$Header_Models$CasesType, name) : A2(_user$project$Header_Models$Tab, _user$project$Header_Models$FoldersType, name)));
+		});
+	var _user$project$Header_Commands$tabDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Commands$createTab,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string));
+	var _user$project$Header_Commands$staffDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$StaffHeader,
+			A3(
+				_elm_lang$core$Json_Decode$map2,
+				_user$project$Header_Models$Staff,
+				A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$siteDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$SiteHeader,
+			A8(
+				_elm_lang$core$Json_Decode$map7,
+				_user$project$Header_Models$Site,
+				A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'ref', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'address', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'contact', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'phone', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'email', _elm_lang$core$Json_Decode$string))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$clientDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$ClientHeader,
+			A8(
+				_elm_lang$core$Json_Decode$map7,
+				_user$project$Header_Models$Client,
+				A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'ref', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'address', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'contact', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'phone', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'email', _elm_lang$core$Json_Decode$string))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$customerValuesDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'image',
+		_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'email',
+			_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'tel',
+				_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'contact',
+					_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'postcode',
+						_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'address4',
+							_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+							A3(
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+								'address3',
+								_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+								A3(
+									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+									'address2',
+									_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+									A3(
+										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+										'address1',
+										_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+										A3(
+											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+											'name',
+											_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$CustomerValues)))))))))));
+	var _user$project$Header_Commands$createCustomerAccess = F4(
+		function (name, image, address, contact) {
+			return A4(
+				_user$project$Header_Models$CustomerAccess,
+				_user$project$Header_Models$convertAccessType(name),
+				_user$project$Header_Models$convertAccessType(image),
+				_user$project$Header_Models$convertAccessType(address),
+				_user$project$Header_Models$convertAccessType(contact));
+		});
+	var _user$project$Header_Commands$customerAccessDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'contact',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'address',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'image',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'name',
+					_elm_lang$core$Json_Decode$string,
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Commands$createCustomerAccess)))));
+	var _user$project$Header_Commands$customerDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$CustomerHeader,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'values',
+				_user$project$Header_Commands$customerValuesDecoder,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'access',
+					_user$project$Header_Commands$customerAccessDecoder,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'id',
+						_elm_lang$core$Json_Decode$string,
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$Customer))))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$rootDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$RootHeader,
+			A3(
+				_elm_lang$core$Json_Decode$map2,
+				_user$project$Header_Models$Root,
+				A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+				A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$apiUrl = function (origin) {
+		return A2(_elm_lang$core$Basics_ops['++'], origin, '/api/');
+	};
+	var _user$project$Header_Commands$rootUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Header_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Roots/', nodeId));
+		});
+	var _user$project$Header_Commands$customerUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Header_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Customers/', nodeId));
+		});
+	var _user$project$Header_Commands$clientUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Header_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Clients/', nodeId));
+		});
+	var _user$project$Header_Commands$siteUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Header_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Sites/', nodeId));
+		});
+	var _user$project$Header_Commands$staffUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Header_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Staff/', nodeId));
+		});
+	var _user$project$Header_Commands$fetchStaff = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Header_Messages$OnFetchStaff(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Header_Commands$staffUrl, origin, nodeId),
+					_user$project$Header_Commands$staffDecoder));
+		});
+	var _user$project$Header_Commands$fetchSite = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Header_Messages$OnFetchSite(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Header_Commands$siteUrl, origin, nodeId),
+					_user$project$Header_Commands$siteDecoder));
+		});
+	var _user$project$Header_Commands$fetchClient = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Header_Messages$OnFetchClient(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Header_Commands$clientUrl, origin, nodeId),
+					_user$project$Header_Commands$clientDecoder));
+		});
+	var _user$project$Header_Commands$fetchCustomer = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Header_Messages$OnFetchCustomer(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Header_Commands$customerUrl, origin, nodeId),
+					_user$project$Header_Commands$customerDecoder));
+		});
+	var _user$project$Header_Commands$fetchRoot = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Header_Messages$OnFetchRoot(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Header_Commands$rootUrl, origin, nodeId),
+					_user$project$Header_Commands$rootDecoder));
+		});
+	var _user$project$Header_Commands$fetchHeader = F3(
+		function (origin, nodeType, nodeId) {
+			if (!_elm_lang$core$Native_Utils.eq(nodeId, '')) {
+				var _p0 = nodeType;
+				switch (_p0.ctor) {
+					case 'RootType':
+						return A2(_user$project$Header_Commands$fetchRoot, origin, nodeId);
+					case 'CustomerType':
+						return A2(_user$project$Header_Commands$fetchCustomer, origin, nodeId);
+					case 'ClientType':
+						return A2(_user$project$Header_Commands$fetchClient, origin, nodeId);
+					case 'SiteType':
+						return A2(_user$project$Header_Commands$fetchSite, origin, nodeId);
+					case 'StaffType':
+						return A2(_user$project$Header_Commands$fetchStaff, origin, nodeId);
+					default:
+						return _elm_lang$core$Platform_Cmd$none;
+				}
+			} else {
+				return _elm_lang$core$Platform_Cmd$none;
+			}
+		});
+
+	var _user$project$Container_Commands$fetchAll = F4(
+		function (origin, nodeType, nodeId, container) {
+			var headerCmd = _elm_lang$core$Native_Utils.eq(container.headerInfo.header, _user$project$Header_Models$Empty) ? A2(
+				_elm_lang$core$Platform_Cmd$map,
+				_user$project$Container_Messages$HeaderMsg,
+				A3(_user$project$Header_Commands$fetchHeader, origin, nodeType, nodeId)) : _elm_lang$core$Platform_Cmd$none;
+			var treeCmd = _elm_lang$core$List$isEmpty(container.tree.children) ? A2(
+				_elm_lang$core$Platform_Cmd$map,
+				_user$project$Container_Messages$TreeMsg,
+				A2(_user$project$Tree_Commands$fetchRoot, origin, nodeId)) : _elm_lang$core$Platform_Cmd$none;
+			return _elm_lang$core$Platform_Cmd$batch(
+				{
+					ctor: '::',
+					_0: treeCmd,
+					_1: {
+						ctor: '::',
+						_0: headerCmd,
+						_1: {ctor: '[]'}
+					}
+				});
+		});
+
+	var _user$project$Tree_Update$createNode = function (tempNode) {
+		var nodeType = A2(
+			_elm_lang$core$Maybe$withDefault,
+			_user$project$Tree_Models$RootType,
+			_user$project$Tree_Models$convertNodeType(tempNode.type_));
+		return {
+			id: tempNode.id,
+			nodeType: nodeType,
+			name: tempNode.name,
+			selected: false,
+			childrenState: tempNode.hasChildren ? _user$project$Tree_Models$Collapsed : _user$project$Tree_Models$NoChildren,
+			childNodes: _user$project$Tree_Models$ChildNodes(
+				{ctor: '[]'})
+		};
+	};
+	var _user$project$Tree_Update$fetchedRoot = function (tempRoot) {
+		var nodeType = A2(
+			_elm_lang$core$Maybe$withDefault,
+			_user$project$Tree_Models$RootType,
+			_user$project$Tree_Models$convertNodeType(tempRoot.type_));
+		return {
+			id: tempRoot.id,
+			nodeType: nodeType,
+			name: tempRoot.name,
+			children: A2(_elm_lang$core$List$map, _user$project$Tree_Update$createNode, tempRoot.children),
+			path: {ctor: '[]'}
+		};
+	};
+	var _user$project$Tree_Update$convertChildren = function (tempChildren) {
+		return A2(_elm_lang$core$List$map, _user$project$Tree_Update$createNode, tempChildren.children);
+	};
+	var _user$project$Tree_Update$expandChildren = F3(
+		function (nodeId, tempChildren, node) {
+			if (_elm_lang$core$Native_Utils.eq(nodeId, node.id)) {
+				return _elm_lang$core$Native_Utils.update(
+					node,
+					{
+						childrenState: _user$project$Tree_Models$Expanded,
+						childNodes: _user$project$Tree_Models$ChildNodes(
+							_user$project$Tree_Update$convertChildren(tempChildren))
+					});
+			} else {
+				var _p0 = node.childNodes;
+				var childNodes = _p0._0;
+				var newChildNodes = A2(
+					_elm_lang$core$List$map,
+					A2(_user$project$Tree_Update$expandChildren, nodeId, tempChildren),
+					childNodes);
+				return _elm_lang$core$Native_Utils.update(
+					node,
+					{
+						childNodes: _user$project$Tree_Models$ChildNodes(newChildNodes)
+					});
+			}
+		});
+	var _user$project$Tree_Update$fetchedNode = F3(
+		function (nodeId, tempChildren, tree) {
+			var newChildren = A2(
+				_elm_lang$core$List$map,
+				A2(_user$project$Tree_Update$expandChildren, nodeId, tempChildren),
+				tree.children);
+			return _elm_lang$core$Native_Utils.update(
+				tree,
+				{children: newChildren});
+		});
+	var _user$project$Tree_Update$toggleChildNodes = F3(
+		function (origin, nodeId, node) {
+			var _p1 = node.childNodes;
+			var childNodes = _p1._0;
+			var results = A2(
+				_elm_lang$core$List$map,
+				A2(_user$project$Tree_Update$toggleNode, origin, nodeId),
+				childNodes);
+			var _p2 = _elm_lang$core$List$unzip(results);
+			var newChildNodes = _p2._0;
+			var cmds = _p2._1;
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					node,
+					{
+						childNodes: _user$project$Tree_Models$ChildNodes(newChildNodes)
+					}),
+				_1: _elm_lang$core$Platform_Cmd$batch(cmds)
+			};
+		});
+	var _user$project$Tree_Update$toggleNode = F3(
+		function (origin, nodeId, node) {
+			var _p3 = function () {
+				if (_elm_lang$core$Native_Utils.eq(nodeId, node.id)) {
+					var _p4 = node.childrenState;
+					switch (_p4.ctor) {
+						case 'NoChildren':
+							return {ctor: '_Tuple2', _0: node, _1: _elm_lang$core$Platform_Cmd$none};
+						case 'Collapsed':
+							var _p5 = node.childNodes;
+							var childNodes = _p5._0;
+							return _elm_lang$core$List$isEmpty(childNodes) ? {
+								ctor: '_Tuple2',
+								_0: _elm_lang$core$Native_Utils.update(
+									node,
+									{childrenState: _user$project$Tree_Models$Expanding}),
+								_1: A2(_user$project$Tree_Commands$fetchNode, origin, node.id)
+							} : {
+								ctor: '_Tuple2',
+								_0: _elm_lang$core$Native_Utils.update(
+									node,
+									{childrenState: _user$project$Tree_Models$Expanded}),
+								_1: _elm_lang$core$Platform_Cmd$none
+							};
+						case 'Expanding':
+							return {ctor: '_Tuple2', _0: node, _1: _elm_lang$core$Platform_Cmd$none};
+						default:
+							return {
+								ctor: '_Tuple2',
+								_0: _elm_lang$core$Native_Utils.update(
+									node,
+									{childrenState: _user$project$Tree_Models$Collapsed}),
+								_1: _elm_lang$core$Platform_Cmd$none
+							};
+					}
+				} else {
+					return A3(_user$project$Tree_Update$toggleChildNodes, origin, nodeId, node);
+				}
+			}();
+			var newNode = _p3._0;
+			var cmd = _p3._1;
+			return {ctor: '_Tuple2', _0: newNode, _1: cmd};
+		});
+	var _user$project$Tree_Update$toggle = F3(
+		function (origin, nodeId, tree) {
+			var results = A2(
+				_elm_lang$core$List$map,
+				A2(_user$project$Tree_Update$toggleNode, origin, nodeId),
+				tree.children);
+			var _p6 = _elm_lang$core$List$unzip(results);
+			var newChildren = _p6._0;
+			var cmds = _p6._1;
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					tree,
+					{children: newChildren}),
+				_1: _elm_lang$core$Platform_Cmd$batch(cmds)
+			};
+		});
+	var _user$project$Tree_Update$selectNode = F2(
+		function (nodeId, node) {
+			var _p7 = node.childNodes;
+			var childNodes = _p7._0;
+			var results = A2(
+				_elm_lang$core$List$map,
+				_user$project$Tree_Update$selectNode(nodeId),
+				childNodes);
+			var _p8 = _elm_lang$core$List$unzip(results);
+			var newChildNodes = _p8._0;
+			var newPathLists = _p8._1;
+			var newNode = _elm_lang$core$Native_Utils.update(
+				node,
+				{
+					childNodes: _user$project$Tree_Models$ChildNodes(newChildNodes),
+					selected: _elm_lang$core$Native_Utils.eq(node.id, nodeId)
+				});
+			var newPath = function () {
+				if (newNode.selected) {
+					return {
+						ctor: '::',
+						_0: newNode,
+						_1: {ctor: '[]'}
+					};
+				} else {
+					var concatLists = _elm_lang$core$List$concat(newPathLists);
+					return _elm_lang$core$List$isEmpty(concatLists) ? concatLists : A2(
+						_elm_lang$core$List$append,
+						concatLists,
+						{
+							ctor: '::',
+							_0: newNode,
+							_1: {ctor: '[]'}
+						});
+				}
+			}();
+			return {ctor: '_Tuple2', _0: newNode, _1: newPath};
+		});
+	var _user$project$Tree_Update$select = F2(
+		function (nodeId, tree) {
+			var results = A2(
+				_elm_lang$core$List$map,
+				_user$project$Tree_Update$selectNode(nodeId),
+				tree.children);
+			var _p9 = _elm_lang$core$List$unzip(results);
+			var newChildren = _p9._0;
+			var newPathLists = _p9._1;
+			var newPath = _elm_lang$core$List$concat(newPathLists);
+			return _elm_lang$core$Native_Utils.update(
+				tree,
+				{children: newChildren, path: newPath});
+		});
+	var _user$project$Tree_Update$update = F2(
+		function (message, tree) {
+			var _p10 = message;
+			switch (_p10.ctor) {
+				case 'OnFetchRoot':
+					if (_p10._0.ctor === 'Ok') {
+						return {
+							ctor: '_Tuple3',
+							_0: _user$project$Tree_Update$fetchedRoot(_p10._0._0),
+							_1: _elm_lang$core$Platform_Cmd$none,
+							_2: tree.path
+						};
+					} else {
+						return {ctor: '_Tuple3', _0: tree, _1: _elm_lang$core$Platform_Cmd$none, _2: tree.path};
+					}
+				case 'OnFetchNode':
+					if (_p10._1.ctor === 'Ok') {
+						return {
+							ctor: '_Tuple3',
+							_0: A3(_user$project$Tree_Update$fetchedNode, _p10._0, _p10._1._0, tree),
+							_1: _elm_lang$core$Platform_Cmd$none,
+							_2: tree.path
+						};
+					} else {
+						return {ctor: '_Tuple3', _0: tree, _1: _elm_lang$core$Platform_Cmd$none, _2: tree.path};
+					}
+				case 'ToggleNode':
+					var _p11 = A3(_user$project$Tree_Update$toggle, _p10._0, _p10._1, tree);
+					var newTree = _p11._0;
+					var cmds = _p11._1;
+					return {ctor: '_Tuple3', _0: newTree, _1: cmds, _2: tree.path};
+				default:
+					var newTree = A2(_user$project$Tree_Update$select, _p10._0, tree);
+					return {ctor: '_Tuple3', _0: newTree, _1: _elm_lang$core$Platform_Cmd$none, _2: newTree.path};
+			}
+		});
+
+	var _user$project$Header_Update$update = F2(
+		function (message, headerInfo) {
+			var _p0 = message;
+			switch (_p0.ctor) {
+				case 'OnFetchRoot':
+					if (_p0._1.ctor === 'Ok') {
+						return {ctor: '_Tuple2', _0: _p0._1._0, _1: _elm_lang$core$Platform_Cmd$none};
+					} else {
+						return {ctor: '_Tuple2', _0: headerInfo, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'OnFetchCustomer':
+					if (_p0._1.ctor === 'Ok') {
+						return {ctor: '_Tuple2', _0: _p0._1._0, _1: _elm_lang$core$Platform_Cmd$none};
+					} else {
+						return {ctor: '_Tuple2', _0: headerInfo, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'OnFetchClient':
+					if (_p0._1.ctor === 'Ok') {
+						return {ctor: '_Tuple2', _0: _p0._1._0, _1: _elm_lang$core$Platform_Cmd$none};
+					} else {
+						return {ctor: '_Tuple2', _0: headerInfo, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'OnFetchSite':
+					if (_p0._1.ctor === 'Ok') {
+						return {ctor: '_Tuple2', _0: _p0._1._0, _1: _elm_lang$core$Platform_Cmd$none};
+					} else {
+						return {ctor: '_Tuple2', _0: headerInfo, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				default:
+					if (_p0._1.ctor === 'Ok') {
+						return {ctor: '_Tuple2', _0: _p0._1._0, _1: _elm_lang$core$Platform_Cmd$none};
+					} else {
+						return {ctor: '_Tuple2', _0: headerInfo, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+			}
+		});
+
+	var _user$project$Content_Commands$fileDecoder = A4(
+		_elm_lang$core$Json_Decode$map3,
+		_user$project$Content_Models$File,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'datetime', _elm_lang$core$Json_Decode$int));
+	var _user$project$Content_Commands$filesDecoder = A2(
+		_elm_lang$core$Json_Decode$map,
+		_elm_lang$core$Basics$identity,
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'files',
+			_elm_lang$core$Json_Decode$list(_user$project$Content_Commands$fileDecoder)));
+	var _user$project$Content_Commands$casesDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Content_Models$Cases,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string));
+	var _user$project$Content_Commands$usersDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Content_Models$Users,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string));
+	var _user$project$Content_Commands$createChild = F3(
+		function (nodeId, type_, name) {
+			var children = {ctor: '[]'};
+			var a = A2(_elm_lang$core$Debug$log, 'nodeId', nodeId);
+			return A6(
+				_user$project$Tree_Models$Node,
+				nodeId,
+				A2(
+					_elm_lang$core$Maybe$withDefault,
+					_user$project$Tree_Models$FolderType,
+					_user$project$Tree_Models$convertNodeType(type_)),
+				name,
+				false,
+				_elm_lang$core$Native_Utils.eq(
+					_elm_lang$core$List$length(children),
+					0) ? _user$project$Tree_Models$NoChildren : _user$project$Tree_Models$Expanded,
+				_user$project$Tree_Models$ChildNodes(children));
+		});
+	var _user$project$Content_Commands$createNode = F4(
+		function (nodeId, type_, name, children) {
+			return A6(
+				_user$project$Tree_Models$Node,
+				nodeId,
+				A2(
+					_elm_lang$core$Maybe$withDefault,
+					_user$project$Tree_Models$FolderType,
+					_user$project$Tree_Models$convertNodeType(type_)),
+				name,
+				false,
+				_elm_lang$core$Native_Utils.eq(
+					_elm_lang$core$List$length(children),
+					0) ? _user$project$Tree_Models$NoChildren : _user$project$Tree_Models$Expanded,
+				_user$project$Tree_Models$ChildNodes(children));
+		});
+	var _user$project$Content_Commands$createTree = F4(
+		function (nodeId, type_, name, children) {
+			var node = A4(_user$project$Content_Commands$createNode, nodeId, type_, name, children);
+			return A5(
+				_user$project$Tree_Models$Tree,
+				nodeId,
+				A2(
+					_elm_lang$core$Maybe$withDefault,
+					_user$project$Tree_Models$FolderType,
+					_user$project$Tree_Models$convertNodeType(type_)),
+				name,
+				{
+					ctor: '::',
+					_0: node,
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'});
+		});
+	var _user$project$Content_Commands$childDecoder = A4(
+		_elm_lang$core$Json_Decode$map3,
+		_user$project$Content_Commands$createChild,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string));
+	var _user$project$Content_Commands$folderDecoder = A5(
+		_elm_lang$core$Json_Decode$map4,
+		_user$project$Content_Commands$createNode,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'children',
+			_elm_lang$core$Json_Decode$list(
+				_elm_lang$core$Json_Decode$lazy(
+					function (_p0) {
+						return _user$project$Content_Commands$folderDecoder;
+					}))));
+	var _user$project$Content_Commands$treeDecoder = A5(
+		_elm_lang$core$Json_Decode$map4,
+		_user$project$Content_Commands$createTree,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'children',
+			_elm_lang$core$Json_Decode$list(
+				_elm_lang$core$Json_Decode$lazy(
+					function (_p1) {
+						return _user$project$Content_Commands$folderDecoder;
+					}))));
+	var _user$project$Content_Commands$createFolders = F3(
+		function (nodeId, name, tree) {
+			return A7(
+				_user$project$Content_Models$Folders,
+				nodeId,
+				name,
+				tree,
+				{ctor: '[]'},
+				{ctor: '[]'},
+				_evancz$elm_sortable_table$Table$initialSort('Name'),
+				'');
+		});
+	var _user$project$Content_Commands$foldersDecoder = A4(
+		_elm_lang$core$Json_Decode$map3,
+		_user$project$Content_Commands$createFolders,
+		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
+		A2(_elm_lang$core$Json_Decode$field, 'tree', _user$project$Content_Commands$treeDecoder));
+	var _user$project$Content_Commands$apiUrl = function (origin) {
+		return A2(_elm_lang$core$Basics_ops['++'], origin, '/api/');
+	};
+	var _user$project$Content_Commands$foldersUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Content_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Folders/', nodeId));
+		});
+	var _user$project$Content_Commands$filesUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Content_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Files/', nodeId));
+		});
+	var _user$project$Content_Commands$usersUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Content_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Users/', nodeId));
+		});
+	var _user$project$Content_Commands$casesUrl = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_user$project$Content_Commands$apiUrl(origin),
+				A2(_elm_lang$core$Basics_ops['++'], 'Cases/', nodeId));
+		});
+	var _user$project$Content_Commands$fetchCases = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Content_Messages$OnFetchCases(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Content_Commands$casesUrl, origin, nodeId),
+					_user$project$Content_Commands$casesDecoder));
+		});
+	var _user$project$Content_Commands$fetchUsers = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Content_Messages$OnFetchUsers(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Content_Commands$usersUrl, origin, nodeId),
+					_user$project$Content_Commands$usersDecoder));
+		});
+	var _user$project$Content_Commands$fetchFiles = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Content_Messages$OnFetchFiles(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Content_Commands$filesUrl, origin, nodeId),
+					_user$project$Content_Commands$filesDecoder));
+		});
+	var _user$project$Content_Commands$fetchFolders = F2(
+		function (origin, nodeId) {
+			return A2(
+				_elm_lang$http$Http$send,
+				_user$project$Content_Messages$OnFetchFolders(nodeId),
+				A2(
+					_elm_lang$http$Http$get,
+					A2(_user$project$Content_Commands$foldersUrl, origin, nodeId),
+					_user$project$Content_Commands$foldersDecoder));
+		});
+	var _user$project$Content_Commands$fetchContent = F3(
+		function (origin, tabType, nodeId) {
+			if (!_elm_lang$core$Native_Utils.eq(nodeId, '')) {
+				var _p2 = tabType;
+				switch (_p2.ctor) {
+					case 'FoldersType':
+						return A2(_user$project$Content_Commands$fetchFolders, origin, nodeId);
+					case 'UsersType':
+						return A2(_user$project$Content_Commands$fetchUsers, origin, nodeId);
+					case 'CasesType':
+						return A2(_user$project$Content_Commands$fetchCases, origin, nodeId);
+					default:
+						return _elm_lang$core$Platform_Cmd$none;
+				}
+			} else {
+				return _elm_lang$core$Platform_Cmd$none;
+			}
+		});
+
+	var _user$project$Content_Update$updatePathFromTree = F6(
+		function (origin, content, folders, updatedTree, cmdTree, path) {
+			var maybeSelected = A2(
+				_elm_lang$core$Debug$log,
+				'path',
+				_elm_lang$core$List$head(path));
+			var cmdFiles = function () {
+				var _p0 = maybeSelected;
+				if (_p0.ctor === 'Just') {
+					return A2(_user$project$Content_Commands$fetchFiles, origin, _p0._0.id);
+				} else {
+					return _elm_lang$core$Platform_Cmd$none;
+				}
+			}();
+			var cmdBatch = _elm_lang$core$Platform_Cmd$batch(
+				{
+					ctor: '::',
+					_0: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Content_Messages$TreeMsg, cmdTree),
+					_1: {
+						ctor: '::',
+						_0: cmdFiles,
+						_1: {ctor: '[]'}
+					}
+				});
+			return {
+				ctor: '_Tuple2',
+				_0: _user$project$Content_Models$FoldersContent(
+					_elm_lang$core$Native_Utils.update(
+						folders,
+						{tree: updatedTree, path: path})),
+				_1: cmdBatch
+			};
+		});
+	var _user$project$Content_Update$update = F3(
+		function (origin, message, content) {
+			var _p1 = message;
+			switch (_p1.ctor) {
+				case 'OnFetchFolders':
+					if (_p1._1.ctor === 'Ok') {
+						return {
+							ctor: '_Tuple2',
+							_0: _user$project$Content_Models$FoldersContent(_p1._1._0),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					} else {
+						return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'OnFetchUsers':
+					if (_p1._1.ctor === 'Ok') {
+						return {
+							ctor: '_Tuple2',
+							_0: _user$project$Content_Models$UsersContent(_p1._1._0),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					} else {
+						return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'OnFetchCases':
+					if (_p1._1.ctor === 'Ok') {
+						return {
+							ctor: '_Tuple2',
+							_0: _user$project$Content_Models$CasesContent(_p1._1._0),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					} else {
+						return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'OnFetchFiles':
+					if (_p1._1.ctor === 'Ok') {
+						var _p2 = content;
+						switch (_p2.ctor) {
+							case 'FoldersContent':
+								return {
+									ctor: '_Tuple2',
+									_0: _user$project$Content_Models$FoldersContent(
+										_elm_lang$core$Native_Utils.update(
+											_p2._0,
+											{files: _p1._1._0})),
+									_1: _elm_lang$core$Platform_Cmd$none
+								};
+							case 'UsersContent':
+								return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+							case 'CasesContent':
+								return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+							default:
+								return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+						}
+					} else {
+						return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'TreeMsg':
+					var _p3 = content;
+					switch (_p3.ctor) {
+						case 'FoldersContent':
+							var _p5 = _p3._0;
+							var _p4 = A2(_user$project$Tree_Update$update, _p1._0, _p5.tree);
+							var updatedTree = _p4._0;
+							var cmdTree = _p4._1;
+							var path = _p4._2;
+							return A6(_user$project$Content_Update$updatePathFromTree, origin, content, _p5, updatedTree, cmdTree, path);
+						case 'UsersContent':
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+						case 'CasesContent':
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+						default:
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				case 'SetQuery':
+					var _p6 = content;
+					switch (_p6.ctor) {
+						case 'FoldersContent':
+							return {
+								ctor: '_Tuple2',
+								_0: _user$project$Content_Models$FoldersContent(
+									_elm_lang$core$Native_Utils.update(
+										_p6._0,
+										{query: _p1._0})),
+								_1: _elm_lang$core$Platform_Cmd$none
+							};
+						case 'UsersContent':
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+						case 'CasesContent':
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+						default:
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+				default:
+					var _p7 = content;
+					switch (_p7.ctor) {
+						case 'FoldersContent':
+							return {
+								ctor: '_Tuple2',
+								_0: _user$project$Content_Models$FoldersContent(
+									_elm_lang$core$Native_Utils.update(
+										_p7._0,
+										{tableState: _p1._0})),
+								_1: _elm_lang$core$Platform_Cmd$none
+							};
+						case 'UsersContent':
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+						case 'CasesContent':
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+						default:
+							return {ctor: '_Tuple2', _0: content, _1: _elm_lang$core$Platform_Cmd$none};
+					}
+			}
+		});
+
+	var _user$project$Container_Update$updatePathFromTree = F5(
+		function (origin, container, updatedTree, cmdTree, path) {
+			var maybeSelected = _elm_lang$core$List$head(path);
+			var cmdHeader = function () {
+				var _p0 = maybeSelected;
+				if (_p0.ctor === 'Just') {
+					var _p1 = _p0._0;
+					return A3(_user$project$Header_Commands$fetchHeader, origin, _p1.nodeType, _p1.id);
+				} else {
+					return A3(_user$project$Header_Commands$fetchHeader, origin, container.tree.nodeType, container.tree.id);
+				}
+			}();
+			var cmdBatch = _elm_lang$core$Platform_Cmd$batch(
+				{
+					ctor: '::',
+					_0: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$TreeMsg, cmdTree),
+					_1: {
+						ctor: '::',
+						_0: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$HeaderMsg, cmdHeader),
+						_1: {ctor: '[]'}
+					}
+				});
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					container,
+					{tree: updatedTree, path: path}),
+				_1: cmdBatch
+			};
+		});
+	var _user$project$Container_Update$update = F3(
+		function (origin, message, container) {
+			var _p2 = message;
+			switch (_p2.ctor) {
+				case 'ShowContainer':
+					return {
+						ctor: '_Tuple2',
+						_0: container,
+						_1: _elm_lang$navigation$Navigation$newUrl('#container/customer/path/Customer-46-Client')
+					};
+				case 'SelectPath':
+					var _p3 = A2(
+						_user$project$Tree_Update$update,
+						_user$project$Tree_Messages$SelectNode(_p2._0),
+						container.tree);
+					var updatedTree = _p3._0;
+					var cmdTree = _p3._1;
+					var path = _p3._2;
+					return A5(_user$project$Container_Update$updatePathFromTree, origin, container, updatedTree, cmdTree, path);
+				case 'SelectTab':
+					var _p5 = _p2._0;
+					var maybeTab = _elm_lang$core$List$head(
+						A2(
+							_elm_lang$core$List$filter,
+							function (t) {
+								return _elm_lang$core$Native_Utils.eq(t.tabType, _p5);
+							},
+							container.headerInfo.tabs));
+					var updatedTab = function () {
+						var _p4 = maybeTab;
+						if (_p4.ctor === 'Just') {
+							return _p4._0;
+						} else {
+							return A2(
+								_elm_lang$core$Maybe$withDefault,
+								A2(_user$project$Header_Models$Tab, _user$project$Header_Models$EmptyTab, ''),
+								_elm_lang$core$List$head(container.headerInfo.tabs));
+						}
+					}();
+					var nodeId = _user$project$Header_Models$headerId(container.headerInfo);
+					var cmdContent = A3(_user$project$Content_Commands$fetchContent, origin, _p5, nodeId);
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							container,
+							{tab: updatedTab}),
+						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$ContentMsg, cmdContent)
+					};
+				case 'TreeMsg':
+					var _p6 = A2(_user$project$Tree_Update$update, _p2._0, container.tree);
+					var updatedTree = _p6._0;
+					var cmdTree = _p6._1;
+					var path = _p6._2;
+					return A5(_user$project$Container_Update$updatePathFromTree, origin, container, updatedTree, cmdTree, path);
+				case 'HeaderMsg':
+					var _p7 = A2(_user$project$Header_Update$update, _p2._0, container.headerInfo);
+					var updatedHeaderInfo = _p7._0;
+					var cmdHeader = _p7._1;
+					var nodeId = _user$project$Header_Models$headerId(updatedHeaderInfo);
+					var maybeTab = _elm_lang$core$List$head(
+						A2(
+							_elm_lang$core$List$filter,
+							function (t) {
+								return _elm_lang$core$Native_Utils.eq(t.tabType, container.tab.tabType);
+							},
+							updatedHeaderInfo.tabs));
+					var updatedTab = function () {
+						var _p8 = maybeTab;
+						if (_p8.ctor === 'Just') {
+							return _p8._0;
+						} else {
+							return A2(
+								_elm_lang$core$Maybe$withDefault,
+								A2(_user$project$Header_Models$Tab, _user$project$Header_Models$EmptyTab, ''),
+								_elm_lang$core$List$head(updatedHeaderInfo.tabs));
+						}
+					}();
+					var cmdContent = A3(_user$project$Content_Commands$fetchContent, origin, updatedTab.tabType, nodeId);
+					var cmdBatch = _elm_lang$core$Platform_Cmd$batch(
+						{
+							ctor: '::',
+							_0: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$HeaderMsg, cmdHeader),
+							_1: {
+								ctor: '::',
+								_0: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$ContentMsg, cmdContent),
+								_1: {ctor: '[]'}
+							}
+						});
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							container,
+							{headerInfo: updatedHeaderInfo, tab: updatedTab}),
+						_1: cmdBatch
+					};
+				default:
+					var _p9 = A3(_user$project$Content_Update$update, origin, _p2._0, container.content);
+					var updatedContent = _p9._0;
+					var cmdContent = _p9._1;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							container,
+							{content: updatedContent}),
+						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$ContentMsg, cmdContent)
+					};
+			}
+		});
+
+	var _user$project$Tree_View$viewNode = F2(
+		function (origin, node) {
+			var _p0 = node.childNodes;
+			var childNodes = _p0._0;
+			var nodeStyle = A2(
+				_elm_lang$core$Basics_ops['++'],
+				'k-in btn regular p0',
+				node.selected ? ' k-state-selected' : '');
+			var _p1 = function () {
+				var _p2 = node.childrenState;
+				switch (_p2.ctor) {
+					case 'Collapsed':
+						return {ctor: '_Tuple2', _0: 'k-icon k-plus', _1: 'fa fa-caret-right'};
+					case 'Expanding':
+						return {ctor: '_Tuple2', _0: 'k-icon k-minus', _1: 'fa fa-spin fa-refresh'};
+					case 'Expanded':
+						return {ctor: '_Tuple2', _0: 'k-icon k-minus', _1: 'fa fa-caret-down'};
+					default:
+						return {ctor: '_Tuple2', _0: '', _1: ''};
+				}
+			}();
+			var iconClass = _p1._0;
+			var faClass = _p1._1;
+			var expandedValue = _elm_lang$core$Native_Utils.eq(node.childrenState, _user$project$Tree_Models$Expanded) ? 'true' : 'false';
+			var childStyle = _elm_lang$core$Native_Utils.eq(node.childrenState, _user$project$Tree_Models$Expanded) ? 'display: block;' : 'display: none; overflow: visible; height: 0px;';
+			return A2(
+				_elm_lang$html$Html$li,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('k-item'),
+					_1: {
+						ctor: '::',
+						_0: A2(_elm_lang$html$Html_Attributes$attribute, 'aria-expanded', expandedValue),
+						_1: {
+							ctor: '::',
+							_0: A2(_elm_lang$html$Html_Attributes$attribute, 'data-expanded', expandedValue),
+							_1: {
+								ctor: '::',
+								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'treeitem'),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('k-mid'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class(iconClass),
+									_1: {
+										ctor: '::',
+										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'presentation'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												A2(_user$project$Tree_Messages$ToggleNode, origin, node.id)),
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$i,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class(faClass),
+											_1: {ctor: '[]'}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class(nodeStyle),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												_user$project$Tree_Messages$SelectNode(node.id)),
+											_1: {ctor: '[]'}
+										}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(node.name),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$ul,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('k-group'),
+								_1: {
+									ctor: '::',
+									_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'group'),
+									_1: {
+										ctor: '::',
+										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', childStyle),
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							A2(
+								_elm_lang$core$List$map,
+								_user$project$Tree_View$viewNode(origin),
+								childNodes)),
+						_1: {ctor: '[]'}
+					}
+				});
+		});
+	var _user$project$Tree_View$viewTree = F2(
+		function (origin, tree) {
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('k-treeview'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$ul,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('k-group'),
+							_1: {
+								ctor: '::',
+								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'group'),
+								_1: {
+									ctor: '::',
+									_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', 'display: block;'),
+									_1: {ctor: '[]'}
+								}
+							}
+						},
+						A2(
+							_elm_lang$core$List$map,
+							_user$project$Tree_View$viewNode(origin),
+							tree.children)),
+					_1: {ctor: '[]'}
+				});
+		});
+	var _user$project$Tree_View$view = F2(
+		function (origin, tree) {
+			return A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(_user$project$Tree_View$viewTree, origin, tree),
+					_1: {ctor: '[]'}
+				});
+		});
+
+	var _user$project$Header_View$headerEmpty = A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('body-header'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('Empty'),
+			_1: {ctor: '[]'}
+		});
+	var _user$project$Header_View$headerStaff = function (staff) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Staff'),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Header_View$headerSite = function (site) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Site'),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Header_View$headerClient = function (client) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Client'),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Header_View$fullAddress = F5(
+		function (maybeAddress1, maybeAddress2, maybeAddress3, maybeAddress4, maybePostcode) {
+			return _elm_lang$core$Maybe$Just(
+				A2(
+					_elm_lang$core$String$join,
+					', ',
+					A2(
+						_elm_lang$core$List$filter,
+						function (a) {
+							return _elm_lang$core$Native_Utils.cmp(
+								_elm_lang$core$String$length(a),
+								0) > 0;
+						},
+						A2(
+							_elm_lang$core$List$map,
+							function (mb) {
+								return A2(_elm_lang$core$Maybe$withDefault, '', mb);
+							},
+							{
+								ctor: '::',
+								_0: maybeAddress1,
+								_1: {
+									ctor: '::',
+									_0: maybeAddress2,
+									_1: {
+										ctor: '::',
+										_0: maybeAddress3,
+										_1: {
+											ctor: '::',
+											_0: maybeAddress4,
+											_1: {
+												ctor: '::',
+												_0: maybePostcode,
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}))));
+		});
+	var _user$project$Header_View$headerItem = F4(
+		function (title, icon, accessType, maybeValue) {
+			var hidden = {ctor: '_Tuple2', _0: 'display: none; height: 0px;', _1: ''};
+			var _p0 = function () {
+				var _p1 = maybeValue;
+				if (_p1.ctor === 'Just') {
+					return (!_elm_lang$core$Native_Utils.eq(accessType, _user$project$Header_Models$None)) ? {
+						ctor: '_Tuple2',
+						_0: 'display: block;',
+						_1: A2(_elm_lang$core$Basics_ops['++'], ' ', _p1._0)
+					} : hidden;
+				} else {
+					return hidden;
+				}
+			}();
+			var style = _p0._0;
+			var textValue = _p0._1;
+			return A2(
+				_elm_lang$html$Html$p,
+				{
+					ctor: '::',
+					_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', style),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$abbr,
+						{
+							ctor: '::',
+							_0: A2(_elm_lang$html$Html_Attributes$attribute, 'title', title),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$i,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class(
+										A2(_elm_lang$core$Basics_ops['++'], 'fa fa-', icon)),
+									_1: {ctor: '[]'}
+								},
+								{ctor: '[]'}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(textValue),
+						_1: {ctor: '[]'}
+					}
+				});
+		});
+	var _user$project$Header_View$headerCustomer = function (customer) {
+		var values = customer.values;
+		var address = A5(_user$project$Header_View$fullAddress, values.address1, values.address2, values.address3, values.address4, values.postcode);
+		var backgroundImage = function () {
+			var _p2 = values.image;
+			if (_p2.ctor === 'Just') {
+				return {
+					ctor: '_Tuple2',
+					_0: 'background-image',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'url(\'',
+						A2(_elm_lang$core$Basics_ops['++'], _p2._0, '\')'))
+				};
+			} else {
+				return {ctor: '_Tuple2', _0: 'display', _1: 'none'};
+			}
+		}();
+		var access = customer.access;
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('body-header-image'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$style(
+								{
+									ctor: '::',
+									_0: backgroundImage,
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('body-header-content clearfix pl2 pr2'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A4(_user$project$Header_View$headerItem, 'Name', 'globe', access.name, values.name),
+							_1: {
+								ctor: '::',
+								_0: A4(_user$project$Header_View$headerItem, 'Address', 'home', access.address, address),
+								_1: {
+									ctor: '::',
+									_0: A4(_user$project$Header_View$headerItem, 'Contact', 'user-o', access.contact, values.contact),
+									_1: {
+										ctor: '::',
+										_0: A4(_user$project$Header_View$headerItem, 'Phone', 'phone', access.contact, values.tel),
+										_1: {
+											ctor: '::',
+											_0: A4(_user$project$Header_View$headerItem, 'Email', 'envelope', access.contact, values.email),
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('body-header-extra'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Extra'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	};
+	var _user$project$Header_View$headerRoot = function (root) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Root'),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Header_View$view = function (headerInfo) {
+		var _p3 = headerInfo.header;
+		switch (_p3.ctor) {
+			case 'RootHeader':
+				return _user$project$Header_View$headerRoot(_p3._0);
+			case 'CustomerHeader':
+				return _user$project$Header_View$headerCustomer(_p3._0);
+			case 'ClientHeader':
+				return _user$project$Header_View$headerClient(_p3._0);
+			case 'SiteHeader':
+				return _user$project$Header_View$headerSite(_p3._0);
+			case 'StaffHeader':
+				return _user$project$Header_View$headerStaff(_p3._0);
+			default:
+				return _user$project$Header_View$headerEmpty;
+		}
+	};
+
+	var _user$project$Content_View$contentEmpty = A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('body-content'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('body-content-content'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Empty'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+	var _user$project$Content_View$contentCases = function (cases) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-content'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('body-content-content'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Cases'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Content_View$contentUsers = function (users) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-content'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('body-content-content'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Users'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Content_View$config = _evancz$elm_sortable_table$Table$config(
+		{
+			toId: function (_) {
+				return _.name;
+			},
+			toMsg: _user$project$Content_Messages$SetTableState,
+			columns: {
+				ctor: '::',
+				_0: A2(
+					_evancz$elm_sortable_table$Table$stringColumn,
+					'Name',
+					function (_) {
+						return _.name;
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_evancz$elm_sortable_table$Table$intColumn,
+						'DateTime',
+						function (_) {
+							return _.datetime;
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+	var _user$project$Content_View$contentFiles = function (folders) {
+		var lowerQuery = _elm_lang$core$String$toLower(folders.query);
+		var acceptableFiles = A2(
+			_elm_lang$core$List$filter,
+			function (_p0) {
+				return A2(
+					_elm_lang$core$String$contains,
+					lowerQuery,
+					_elm_lang$core$String$toLower(
+						function (_) {
+							return _.name;
+						}(_p0)));
+			},
+			folders.files);
+		return A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$h1,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Files'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$input,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$placeholder('Search by Name'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onInput(_user$project$Content_Messages$SetQuery),
+								_1: {ctor: '[]'}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A3(_evancz$elm_sortable_table$Table$view, _user$project$Content_View$config, folders.tableState, acceptableFiles),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	};
+	var _user$project$Content_View$contentFolders = F2(
+		function (origin, folders) {
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('body-content'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('body-content-sidebar'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$map,
+								_user$project$Content_Messages$TreeMsg,
+								A2(_user$project$Tree_View$view, origin, folders.tree)),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('body-content-content'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _user$project$Content_View$contentFiles(folders),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				});
+		});
+	var _user$project$Content_View$view = F2(
+		function (origin, content) {
+			var _p1 = content;
+			switch (_p1.ctor) {
+				case 'FoldersContent':
+					return A2(_user$project$Content_View$contentFolders, origin, _p1._0);
+				case 'UsersContent':
+					return _user$project$Content_View$contentUsers(_p1._0);
+				case 'CasesContent':
+					return _user$project$Content_View$contentCases(_p1._0);
+				default:
+					return _user$project$Content_View$contentEmpty;
+			}
+		});
+
+	var _user$project$Container_View$tabItem = F2(
+		function (selected, tab) {
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$classList(
+						{
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'tab', _1: true},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'active',
+									_1: _elm_lang$core$Native_Utils.eq(selected.tabType, tab.tabType)
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: 'clickable',
+										_1: !_elm_lang$core$Native_Utils.eq(selected.tabType, tab.tabType)
+									},
+									_1: {ctor: '[]'}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(
+							_user$project$Container_Messages$SelectTab(tab.tabType)),
+						_1: {ctor: '[]'}
+					}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(tab.name),
+					_1: {ctor: '[]'}
+				});
+		});
+	var _user$project$Container_View$viewTabs = function (container) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('tabs'),
+				_1: {ctor: '[]'}
+			},
+			A2(
+				_elm_lang$core$List$map,
+				_user$project$Container_View$tabItem(container.tab),
+				container.headerInfo.tabs));
+	};
+	var _user$project$Container_View$lastPathItem = function (item) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('path-item'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(item.name),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Container_View$clickablePathItem = function (item) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('path-item clickable'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(
+								_user$project$Container_Messages$SelectPath(item.id)),
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(item.name),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$i,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-chevron-right'),
+							_1: {ctor: '[]'}
+						},
+						{ctor: '[]'}),
+					_1: {ctor: '[]'}
+				}
+			});
+	};
+	var _user$project$Container_View$viewPath = function (container) {
+		var tree = container.tree;
+		var rootItem = {id: tree.id, nodeType: tree.nodeType, name: tree.name};
+		var _p0 = function () {
+			var _p1 = container.path;
+			if (_p1.ctor === '[]') {
+				return {
+					ctor: '_Tuple2',
+					_0: {ctor: '[]'},
+					_1: rootItem
+				};
+			} else {
+				var _p2 = _p1._0;
+				var pathItems = A2(
+					_elm_lang$core$List$map,
+					function (n) {
+						return {id: n.id, nodeType: n.nodeType, name: n.name};
+					},
+					_elm_lang$core$List$reverse(_p1._1));
+				return {
+					ctor: '_Tuple2',
+					_0: {ctor: '::', _0: rootItem, _1: pathItems},
+					_1: {id: _p2.id, nodeType: _p2.nodeType, name: _p2.name}
+				};
+			}
+		}();
+		var items = _p0._0;
+		var last = _p0._1;
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('breadcrumb'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{ctor: '[]'},
+					A2(_elm_lang$core$List$map, _user$project$Container_View$clickablePathItem, items)),
+				_1: {
+					ctor: '::',
+					_0: _user$project$Container_View$lastPathItem(last),
+					_1: {ctor: '[]'}
+				}
+			});
+	};
+	var _user$project$Container_View$view = F2(
+		function (origin, container) {
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('fullview'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('sidebar'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$map,
+								_user$project$Container_Messages$TreeMsg,
+								A2(_user$project$Tree_View$view, origin, container.tree)),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('body'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$map,
+									_user$project$Container_Messages$HeaderMsg,
+									_user$project$Header_View$view(container.headerInfo)),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$div,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('body-path'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _user$project$Container_View$viewPath(container),
+											_1: {
+												ctor: '::',
+												_0: _user$project$Container_View$viewTabs(container),
+												_1: {ctor: '[]'}
+											}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$map,
+											_user$project$Container_Messages$ContentMsg,
+											A2(_user$project$Content_View$view, origin, container.content)),
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {ctor: '[]'}
+					}
+				});
+		});
+
 	var _user$project$Players_Models$new = {id: '0', name: '', level: 1};
 	var _user$project$Players_Models$Player = F3(
 		function (a, b, c) {
@@ -14325,62 +17169,11 @@
 		return {ctor: 'OnFetchAll', _0: a};
 	};
 
-	var _user$project$Tree_Models$newTree = {
-		children: {ctor: '[]'},
-		selected: _elm_lang$core$Maybe$Nothing
-	};
-	var _user$project$Tree_Models$TempNode = F3(
-		function (a, b, c) {
-			return {id: a, name: b, hasChildren: c};
-		});
-	var _user$project$Tree_Models$TempChildren = F2(
-		function (a, b) {
-			return {id: a, children: b};
-		});
-	var _user$project$Tree_Models$Node = F5(
-		function (a, b, c, d, e) {
-			return {id: a, name: b, selected: c, childrenState: d, childNodes: e};
-		});
-	var _user$project$Tree_Models$Tree = F2(
-		function (a, b) {
-			return {children: a, selected: b};
-		});
-	var _user$project$Tree_Models$Expanded = {ctor: 'Expanded'};
-	var _user$project$Tree_Models$Expanding = {ctor: 'Expanding'};
-	var _user$project$Tree_Models$Collapsed = {ctor: 'Collapsed'};
-	var _user$project$Tree_Models$NoChildren = {ctor: 'NoChildren'};
-	var _user$project$Tree_Models$ChildNodes = function (a) {
-		return {ctor: 'ChildNodes', _0: a};
-	};
-	var _user$project$Tree_Models$new = {
-		id: '0',
-		name: '',
-		selected: false,
-		childrenState: _user$project$Tree_Models$NoChildren,
-		childNodes: _user$project$Tree_Models$ChildNodes(
-			{ctor: '[]'})
-	};
-
-	var _user$project$Tree_Messages$SelectNode = function (a) {
-		return {ctor: 'SelectNode', _0: a};
-	};
-	var _user$project$Tree_Messages$ToggleNode = function (a) {
-		return {ctor: 'ToggleNode', _0: a};
-	};
-	var _user$project$Tree_Messages$OnFetchNode = F2(
-		function (a, b) {
-			return {ctor: 'OnFetchNode', _0: a, _1: b};
-		});
-	var _user$project$Tree_Messages$OnFetchTree = function (a) {
-		return {ctor: 'OnFetchTree', _0: a};
-	};
-	var _user$project$Tree_Messages$ShowTree = {ctor: 'ShowTree'};
-
 	var _user$project$Messages$OnLocationChange = function (a) {
 		return {ctor: 'OnLocationChange', _0: a};
 	};
-	var _user$project$Messages$TreeMsg = function (a) {
-		return {ctor: 'TreeMsg', _0: a};
+	var _user$project$Messages$ContainerMsg = function (a) {
+		return {ctor: 'ContainerMsg', _0: a};
 	};
 	var _user$project$Messages$TeamsMsg = function (a) {
 		return {ctor: 'TeamsMsg', _0: a};
@@ -14390,7 +17183,10 @@
 	};
 
 	var _user$project$Routing$NotFoundRoute = {ctor: 'NotFoundRoute'};
-	var _user$project$Routing$TreeRoute = {ctor: 'TreeRoute'};
+	var _user$project$Routing$ContainerRoute = F2(
+		function (a, b) {
+			return {ctor: 'ContainerRoute', _0: a, _1: b};
+		});
 	var _user$project$Routing$TeamRoute = function (a) {
 		return {ctor: 'TeamRoute', _0: a};
 	};
@@ -14437,8 +17233,17 @@
 								ctor: '::',
 								_0: A2(
 									_evancz$url_parser$UrlParser$map,
-									_user$project$Routing$TreeRoute,
-									_evancz$url_parser$UrlParser$s('tree')),
+									_user$project$Routing$ContainerRoute,
+									A2(
+										_evancz$url_parser$UrlParser_ops['</>'],
+										_evancz$url_parser$UrlParser$s('container'),
+										A2(
+											_evancz$url_parser$UrlParser_ops['</>'],
+											_evancz$url_parser$UrlParser$string,
+											A2(
+												_evancz$url_parser$UrlParser_ops['</>'],
+												_evancz$url_parser$UrlParser$s('path'),
+												_evancz$url_parser$UrlParser$string)))),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -14455,17 +17260,19 @@
 		}
 	};
 
-	var _user$project$Models$initialModel = function (route) {
-		return {
-			players: {ctor: '[]'},
-			teams: {ctor: '[]'},
-			tree: _user$project$Tree_Models$newTree,
-			route: route
-		};
-	};
-	var _user$project$Models$Model = F4(
-		function (a, b, c, d) {
-			return {players: a, teams: b, tree: c, route: d};
+	var _user$project$Models$initialModel = F2(
+		function (route, location) {
+			return {
+				players: {ctor: '[]'},
+				teams: {ctor: '[]'},
+				container: _user$project$Container_Models$initialContainer,
+				route: route,
+				location: location
+			};
+		});
+	var _user$project$Models$Model = F5(
+		function (a, b, c, d, e) {
+			return {players: a, teams: b, container: c, route: d, location: e};
 		});
 
 	var _user$project$Players_Commands$memberEncoded = function (player) {
@@ -14714,264 +17521,6 @@
 			}
 		});
 
-	var _user$project$Tree_Commands$tempNodeDecoder = A4(
-		_elm_lang$core$Json_Decode$map3,
-		_user$project$Tree_Models$TempNode,
-		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
-		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
-		A2(_elm_lang$core$Json_Decode$field, 'hasChildren', _elm_lang$core$Json_Decode$bool));
-	var _user$project$Tree_Commands$tempChildrenDecoder = A3(
-		_elm_lang$core$Json_Decode$map2,
-		_user$project$Tree_Models$TempChildren,
-		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
-		A2(
-			_elm_lang$core$Json_Decode$field,
-			'children',
-			_elm_lang$core$Json_Decode$list(_user$project$Tree_Commands$tempNodeDecoder)));
-	var _user$project$Tree_Commands$treeDecoder = _elm_lang$core$Json_Decode$list(_user$project$Tree_Commands$tempNodeDecoder);
-	var _user$project$Tree_Commands$fetchNodeUrl = function (nodeId) {
-		return A2(_elm_lang$core$Basics_ops['++'], 'http://localhost:4000/node/', nodeId);
-	};
-	var _user$project$Tree_Commands$fetchTreeUrl = 'http://localhost:4000/tree';
-	var _user$project$Tree_Commands$fetchNode = function (nodeId) {
-		return A2(
-			_elm_lang$http$Http$send,
-			_user$project$Tree_Messages$OnFetchNode(nodeId),
-			A2(
-				_elm_lang$http$Http$get,
-				_user$project$Tree_Commands$fetchNodeUrl(nodeId),
-				_user$project$Tree_Commands$tempChildrenDecoder));
-	};
-	var _user$project$Tree_Commands$fetchTree = A2(
-		_elm_lang$http$Http$send,
-		_user$project$Tree_Messages$OnFetchTree,
-		A2(_elm_lang$http$Http$get, _user$project$Tree_Commands$fetchTreeUrl, _user$project$Tree_Commands$treeDecoder));
-
-	var _user$project$Tree_Update$createNode = function (tempNode) {
-		return {
-			id: tempNode.id,
-			name: tempNode.name,
-			selected: false,
-			childrenState: tempNode.hasChildren ? _user$project$Tree_Models$Collapsed : _user$project$Tree_Models$NoChildren,
-			childNodes: _user$project$Tree_Models$ChildNodes(
-				{ctor: '[]'})
-		};
-	};
-	var _user$project$Tree_Update$fetchedTree = function (tempNodes) {
-		var nodes = A2(_elm_lang$core$List$map, _user$project$Tree_Update$createNode, tempNodes);
-		return {children: nodes, selected: _elm_lang$core$Maybe$Nothing};
-	};
-	var _user$project$Tree_Update$convertChildren = function (tempChildren) {
-		return A2(_elm_lang$core$List$map, _user$project$Tree_Update$createNode, tempChildren.children);
-	};
-	var _user$project$Tree_Update$expandChildren = F3(
-		function (nodeId, tempChildren, node) {
-			if (_elm_lang$core$Native_Utils.eq(nodeId, node.id)) {
-				return _elm_lang$core$Native_Utils.update(
-					node,
-					{
-						childrenState: _user$project$Tree_Models$Expanded,
-						childNodes: _user$project$Tree_Models$ChildNodes(
-							_user$project$Tree_Update$convertChildren(tempChildren))
-					});
-			} else {
-				var _p0 = node.childNodes;
-				var childNodes = _p0._0;
-				var newChildNodes = A2(
-					_elm_lang$core$List$map,
-					A2(_user$project$Tree_Update$expandChildren, nodeId, tempChildren),
-					childNodes);
-				return _elm_lang$core$Native_Utils.update(
-					node,
-					{
-						childNodes: _user$project$Tree_Models$ChildNodes(newChildNodes)
-					});
-			}
-		});
-	var _user$project$Tree_Update$fetchedNode = F3(
-		function (nodeId, tempChildren, tree) {
-			var newChildren = A2(
-				_elm_lang$core$List$map,
-				A2(_user$project$Tree_Update$expandChildren, nodeId, tempChildren),
-				tree.children);
-			return _elm_lang$core$Native_Utils.update(
-				tree,
-				{children: newChildren});
-		});
-	var _user$project$Tree_Update$toggleChildNodes = F2(
-		function (nodeId, node) {
-			var _p1 = node.childNodes;
-			var childNodes = _p1._0;
-			var results = A2(
-				_elm_lang$core$List$map,
-				_user$project$Tree_Update$toggleNode(nodeId),
-				childNodes);
-			var _p2 = _elm_lang$core$List$unzip(results);
-			var newChildNodes = _p2._0;
-			var cmds = _p2._1;
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					node,
-					{
-						childNodes: _user$project$Tree_Models$ChildNodes(newChildNodes)
-					}),
-				_1: _elm_lang$core$Platform_Cmd$batch(cmds)
-			};
-		});
-	var _user$project$Tree_Update$toggleNode = F2(
-		function (nodeId, node) {
-			var _p3 = function () {
-				if (_elm_lang$core$Native_Utils.eq(nodeId, node.id)) {
-					var _p4 = node.childrenState;
-					switch (_p4.ctor) {
-						case 'NoChildren':
-							return {ctor: '_Tuple2', _0: node, _1: _elm_lang$core$Platform_Cmd$none};
-						case 'Collapsed':
-							var _p5 = node.childNodes;
-							var childNodes = _p5._0;
-							return _elm_lang$core$List$isEmpty(childNodes) ? {
-								ctor: '_Tuple2',
-								_0: _elm_lang$core$Native_Utils.update(
-									node,
-									{childrenState: _user$project$Tree_Models$Expanding}),
-								_1: _user$project$Tree_Commands$fetchNode(node.id)
-							} : {
-								ctor: '_Tuple2',
-								_0: _elm_lang$core$Native_Utils.update(
-									node,
-									{childrenState: _user$project$Tree_Models$Expanded}),
-								_1: _elm_lang$core$Platform_Cmd$none
-							};
-						case 'Expanding':
-							return {ctor: '_Tuple2', _0: node, _1: _elm_lang$core$Platform_Cmd$none};
-						default:
-							return {
-								ctor: '_Tuple2',
-								_0: _elm_lang$core$Native_Utils.update(
-									node,
-									{childrenState: _user$project$Tree_Models$Collapsed}),
-								_1: _elm_lang$core$Platform_Cmd$none
-							};
-					}
-				} else {
-					return A2(_user$project$Tree_Update$toggleChildNodes, nodeId, node);
-				}
-			}();
-			var newNode = _p3._0;
-			var cmd = _p3._1;
-			return {ctor: '_Tuple2', _0: newNode, _1: cmd};
-		});
-	var _user$project$Tree_Update$toggle = F2(
-		function (nodeId, tree) {
-			var results = A2(
-				_elm_lang$core$List$map,
-				_user$project$Tree_Update$toggleNode(nodeId),
-				tree.children);
-			var _p6 = _elm_lang$core$List$unzip(results);
-			var newChildren = _p6._0;
-			var cmds = _p6._1;
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					tree,
-					{children: newChildren}),
-				_1: _elm_lang$core$Platform_Cmd$batch(cmds)
-			};
-		});
-	var _user$project$Tree_Update$selectNode = F2(
-		function (nodeId, node) {
-			var _p7 = node.childNodes;
-			var childNodes = _p7._0;
-			var results = A2(
-				_elm_lang$core$List$map,
-				_user$project$Tree_Update$selectNode(nodeId),
-				childNodes);
-			var _p8 = _elm_lang$core$List$unzip(results);
-			var newChildNodes = _p8._0;
-			var newSelectedNodes = _p8._1;
-			var newNode = _elm_lang$core$Native_Utils.update(
-				node,
-				{
-					childNodes: _user$project$Tree_Models$ChildNodes(newChildNodes),
-					selected: _elm_lang$core$Native_Utils.eq(node.id, nodeId)
-				});
-			var selectedNode = newNode.selected ? _elm_lang$core$Maybe$Just(newNode) : A2(
-				_elm_lang$core$Maybe$withDefault,
-				_elm_lang$core$Maybe$Nothing,
-				_elm_lang$core$List$head(
-					A2(
-						_elm_lang$core$List$filter,
-						function (maybeNode) {
-							return !_elm_lang$core$Native_Utils.eq(maybeNode, _elm_lang$core$Maybe$Nothing);
-						},
-						newSelectedNodes)));
-			return {ctor: '_Tuple2', _0: newNode, _1: selectedNode};
-		});
-	var _user$project$Tree_Update$select = F2(
-		function (nodeId, tree) {
-			var results = A2(
-				_elm_lang$core$List$map,
-				_user$project$Tree_Update$selectNode(nodeId),
-				tree.children);
-			var _p9 = _elm_lang$core$List$unzip(results);
-			var newChildren = _p9._0;
-			var newSelectedNodes = _p9._1;
-			var selectedNode = A2(
-				_elm_lang$core$Maybe$withDefault,
-				_elm_lang$core$Maybe$Nothing,
-				_elm_lang$core$List$head(
-					A2(
-						_elm_lang$core$List$filter,
-						function (maybeNode) {
-							return !_elm_lang$core$Native_Utils.eq(maybeNode, _elm_lang$core$Maybe$Nothing);
-						},
-						newSelectedNodes)));
-			return _elm_lang$core$Native_Utils.update(
-				tree,
-				{children: newChildren, selected: selectedNode});
-		});
-	var _user$project$Tree_Update$update = F2(
-		function (message, tree) {
-			var _p10 = message;
-			switch (_p10.ctor) {
-				case 'ShowTree':
-					return {
-						ctor: '_Tuple2',
-						_0: tree,
-						_1: _elm_lang$navigation$Navigation$newUrl('#tree')
-					};
-				case 'OnFetchTree':
-					if (_p10._0.ctor === 'Ok') {
-						return {
-							ctor: '_Tuple2',
-							_0: _user$project$Tree_Update$fetchedTree(_p10._0._0),
-							_1: _elm_lang$core$Platform_Cmd$none
-						};
-					} else {
-						return {ctor: '_Tuple2', _0: tree, _1: _elm_lang$core$Platform_Cmd$none};
-					}
-				case 'OnFetchNode':
-					if (_p10._1.ctor === 'Ok') {
-						return {
-							ctor: '_Tuple2',
-							_0: A3(_user$project$Tree_Update$fetchedNode, _p10._0, _p10._1._0, tree),
-							_1: _elm_lang$core$Platform_Cmd$none
-						};
-					} else {
-						return {ctor: '_Tuple2', _0: tree, _1: _elm_lang$core$Platform_Cmd$none};
-					}
-				case 'ToggleNode':
-					return A2(_user$project$Tree_Update$toggle, _p10._0, tree);
-				default:
-					return {
-						ctor: '_Tuple2',
-						_0: A2(_user$project$Tree_Update$select, _p10._0, tree),
-						_1: _elm_lang$core$Platform_Cmd$none
-					};
-			}
-		});
-
 	var _user$project$Update$fetchData = function (model) {
 		var _p0 = model.route;
 		switch (_p0.ctor) {
@@ -14983,20 +17532,29 @@
 				return _elm_lang$core$List$isEmpty(model.teams) ? A2(_elm_lang$core$Platform_Cmd$map, _user$project$Messages$TeamsMsg, _user$project$Teams_Commands$fetchAll) : _elm_lang$core$Platform_Cmd$none;
 			case 'TeamRoute':
 				return _elm_lang$core$Platform_Cmd$none;
-			case 'TreeRoute':
-				return _elm_lang$core$List$isEmpty(model.tree.children) ? A2(_elm_lang$core$Platform_Cmd$map, _user$project$Messages$TreeMsg, _user$project$Tree_Commands$fetchTree) : _elm_lang$core$Platform_Cmd$none;
+			case 'ContainerRoute':
+				var maybeNodeType = _user$project$Tree_Models$convertNodeType(_p0._0);
+				var _p1 = maybeNodeType;
+				if (_p1.ctor === 'Just') {
+					return A2(
+						_elm_lang$core$Platform_Cmd$map,
+						_user$project$Messages$ContainerMsg,
+						A4(_user$project$Container_Commands$fetchAll, model.location.origin, _p1._0, _p0._1, model.container));
+				} else {
+					return _elm_lang$core$Platform_Cmd$none;
+				}
 			default:
 				return _elm_lang$core$Platform_Cmd$none;
 		}
 	};
 	var _user$project$Update$update = F2(
 		function (msg, model) {
-			var _p1 = msg;
-			switch (_p1.ctor) {
+			var _p2 = msg;
+			switch (_p2.ctor) {
 				case 'PlayersMsg':
-					var _p2 = A2(_user$project$Players_Update$update, _p1._0, model.players);
-					var updatedPlayers = _p2._0;
-					var cmd = _p2._1;
+					var _p3 = A2(_user$project$Players_Update$update, _p2._0, model.players);
+					var updatedPlayers = _p3._0;
+					var cmd = _p3._1;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
@@ -15005,9 +17563,9 @@
 						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Messages$PlayersMsg, cmd)
 					};
 				case 'TeamsMsg':
-					var _p3 = A2(_user$project$Teams_Update$update, _p1._0, model.teams);
-					var updatedTeams = _p3._0;
-					var cmd = _p3._1;
+					var _p4 = A2(_user$project$Teams_Update$update, _p2._0, model.teams);
+					var updatedTeams = _p4._0;
+					var cmd = _p4._1;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
@@ -15015,22 +17573,23 @@
 							{teams: updatedTeams}),
 						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Messages$TeamsMsg, cmd)
 					};
-				case 'TreeMsg':
-					var _p4 = A2(_user$project$Tree_Update$update, _p1._0, model.tree);
-					var updatedTree = _p4._0;
-					var cmd = _p4._1;
+				case 'ContainerMsg':
+					var _p5 = A3(_user$project$Container_Update$update, model.location.origin, _p2._0, model.container);
+					var updatedContainer = _p5._0;
+					var cmd = _p5._1;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
-							{tree: updatedTree}),
-						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Messages$TreeMsg, cmd)
+							{container: updatedContainer}),
+						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Messages$ContainerMsg, cmd)
 					};
 				default:
-					var newRoute = _user$project$Routing$parseLocation(_p1._0);
+					var _p6 = _p2._0;
+					var newRoute = _user$project$Routing$parseLocation(_p6);
 					var newModel = _elm_lang$core$Native_Utils.update(
 						model,
-						{route: newRoute});
+						{route: newRoute, location: _p6});
 					return {
 						ctor: '_Tuple2',
 						_0: newModel,
@@ -15220,7 +17779,11 @@
 	var _user$project$Players_Edit$view = function (model) {
 		return A2(
 			_elm_lang$html$Html$div,
-			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('fullview'),
+				_1: {ctor: '[]'}
+			},
 			{
 				ctor: '::',
 				_0: _user$project$Players_Edit$nav(model),
@@ -15452,7 +18015,11 @@
 	var _user$project$Players_List$view = function (players) {
 		return A2(
 			_elm_lang$html$Html$div,
-			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('fullview'),
+				_1: {ctor: '[]'}
+			},
 			{
 				ctor: '::',
 				_0: _user$project$Players_List$nav(players),
@@ -15645,7 +18212,11 @@
 	var _user$project$Teams_Edit$view = function (model) {
 		return A2(
 			_elm_lang$html$Html$div,
-			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('fullview'),
+				_1: {ctor: '[]'}
+			},
 			{
 				ctor: '::',
 				_0: _user$project$Teams_Edit$nav(model),
@@ -15877,7 +18448,11 @@
 	var _user$project$Teams_List$view = function (teams) {
 		return A2(
 			_elm_lang$html$Html$div,
-			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('fullview'),
+				_1: {ctor: '[]'}
+			},
 			{
 				ctor: '::',
 				_0: _user$project$Teams_List$nav(teams),
@@ -15886,172 +18461,6 @@
 					_0: _user$project$Teams_List$list(teams),
 					_1: {ctor: '[]'}
 				}
-			});
-	};
-
-	var _user$project$Tree_View$viewNode = function (node) {
-		var _p0 = node.childNodes;
-		var childNodes = _p0._0;
-		var nodeStyle = A2(
-			_elm_lang$core$Basics_ops['++'],
-			'k-in btn regular p0',
-			node.selected ? ' k-state-selected' : '');
-		var _p1 = function () {
-			var _p2 = node.childrenState;
-			switch (_p2.ctor) {
-				case 'Collapsed':
-					return {ctor: '_Tuple2', _0: 'k-icon k-plus', _1: 'fa fa-plus-square-o'};
-				case 'Expanding':
-					return {ctor: '_Tuple2', _0: 'k-icon k-minus', _1: 'fa fa-spin fa-refresh'};
-				case 'Expanded':
-					return {ctor: '_Tuple2', _0: 'k-icon k-minus', _1: 'fa fa-minus-square-o'};
-				default:
-					return {ctor: '_Tuple2', _0: '', _1: ''};
-			}
-		}();
-		var iconClass = _p1._0;
-		var faClass = _p1._1;
-		var expandedValue = _elm_lang$core$Native_Utils.eq(node.childrenState, _user$project$Tree_Models$Expanded) ? 'true' : 'false';
-		var childStyle = _elm_lang$core$Native_Utils.eq(node.childrenState, _user$project$Tree_Models$Expanded) ? 'display: block;' : 'display: none; overflow: visible; height: 0px;';
-		return A2(
-			_elm_lang$html$Html$li,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('k-item'),
-				_1: {
-					ctor: '::',
-					_0: A2(_elm_lang$html$Html_Attributes$attribute, 'aria-expanded', expandedValue),
-					_1: {
-						ctor: '::',
-						_0: A2(_elm_lang$html$Html_Attributes$attribute, 'data-expanded', expandedValue),
-						_1: {
-							ctor: '::',
-							_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'treeitem'),
-							_1: {ctor: '[]'}
-						}
-					}
-				}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$div,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('k-mid'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$span,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class(iconClass),
-								_1: {
-									ctor: '::',
-									_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'presentation'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Tree_Messages$ToggleNode(node.id)),
-										_1: {ctor: '[]'}
-									}
-								}
-							},
-							{
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$i,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class(faClass),
-										_1: {ctor: '[]'}
-									},
-									{ctor: '[]'}),
-								_1: {ctor: '[]'}
-							}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class(nodeStyle),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Tree_Messages$SelectNode(node.id)),
-										_1: {ctor: '[]'}
-									}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(node.name),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$ul,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('k-group'),
-							_1: {
-								ctor: '::',
-								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'group'),
-								_1: {
-									ctor: '::',
-									_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', childStyle),
-									_1: {ctor: '[]'}
-								}
-							}
-						},
-						A2(_elm_lang$core$List$map, _user$project$Tree_View$viewNode, childNodes)),
-					_1: {ctor: '[]'}
-				}
-			});
-	};
-	var _user$project$Tree_View$viewTree = function (tree) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('k-treeview'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$ul,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('k-group'),
-						_1: {
-							ctor: '::',
-							_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'group'),
-							_1: {
-								ctor: '::',
-								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', 'display: block;'),
-								_1: {ctor: '[]'}
-							}
-						}
-					},
-					A2(_elm_lang$core$List$map, _user$project$Tree_View$viewNode, tree.children)),
-				_1: {ctor: '[]'}
-			});
-	};
-	var _user$project$Tree_View$view = function (tree) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{ctor: '[]'},
-			{
-				ctor: '::',
-				_0: _user$project$Tree_View$viewTree(tree),
-				_1: {ctor: '[]'}
 			});
 	};
 
@@ -16118,11 +18527,11 @@
 					_user$project$Teams_List$view(model.teams));
 			case 'TeamRoute':
 				return A2(_user$project$View$teamEditPage, model, _p2._0);
-			case 'TreeRoute':
+			case 'ContainerRoute':
 				return A2(
 					_elm_lang$html$Html$map,
-					_user$project$Messages$TreeMsg,
-					_user$project$Tree_View$view(model.tree));
+					_user$project$Messages$ContainerMsg,
+					A2(_user$project$Container_View$view, model.location.origin, model.container));
 			default:
 				return _user$project$View$notFoundView;
 		}
@@ -16135,13 +18544,13 @@
 			_1: {
 				ctor: '::',
 				_0: _elm_lang$html$Html_Events$onClick(
-					_user$project$Messages$TreeMsg(_user$project$Tree_Messages$ShowTree)),
+					_user$project$Messages$ContainerMsg(_user$project$Container_Messages$ShowContainer)),
 				_1: {ctor: '[]'}
 			}
 		},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Tree'),
+			_0: _elm_lang$html$Html$text('Container'),
 			_1: {ctor: '[]'}
 		});
 	var _user$project$View$playersBtn = A2(
@@ -16178,12 +18587,26 @@
 			_0: _elm_lang$html$Html$text('Teams'),
 			_1: {ctor: '[]'}
 		});
+	var _user$project$View$footer = function (model) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('footer clearfix p1'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Elm prototype'),
+				_1: {ctor: '[]'}
+			});
+	};
 	var _user$project$View$nav = function (model) {
 		return A2(
 			_elm_lang$html$Html$div,
 			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('clearfix mb2 white bg-blue p1'),
+				_0: _elm_lang$html$Html_Attributes$class('navbar clearfix p1'),
 				_1: {ctor: '[]'}
 			},
 			{
@@ -16203,14 +18626,22 @@
 	var _user$project$View$view = function (model) {
 		return A2(
 			_elm_lang$html$Html$div,
-			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('layout'),
+				_1: {ctor: '[]'}
+			},
 			{
 				ctor: '::',
 				_0: _user$project$View$nav(model),
 				_1: {
 					ctor: '::',
 					_0: _user$project$View$page(model),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: _user$project$View$footer(model),
+						_1: {ctor: '[]'}
+					}
 				}
 			});
 	};
@@ -16220,7 +18651,7 @@
 	};
 	var _user$project$Main$init = function (location) {
 		var currentRoute = _user$project$Routing$parseLocation(location);
-		var model = _user$project$Models$initialModel(currentRoute);
+		var model = A2(_user$project$Models$initialModel, currentRoute, location);
 		return {
 			ctor: '_Tuple2',
 			_0: model,
@@ -16235,7 +18666,7 @@
 	var Elm = {};
 	Elm['Main'] = Elm['Main'] || {};
 	if (typeof _user$project$Main$main !== 'undefined') {
-	    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Messages.Msg":{"args":[],"tags":{"OnLocationChange":["Navigation.Location"],"TeamsMsg":["Teams.Messages.Msg"],"TreeMsg":["Tree.Messages.Msg"],"PlayersMsg":["Players.Messages.Msg"]}},"Dict.LeafColor":{"args":[],"tags":{"LBBlack":[],"LBlack":[]}},"Teams.Messages.Msg":{"args":[],"tags":{"OnSave":["Result.Result Http.Error Teams.Models.Team"],"OnFetchAll":["Result.Result Http.Error (List Teams.Models.Team)"],"ShowTeams":[],"ChangeLevel":["Teams.Models.TeamId","Int"],"ShowTeam":["Teams.Models.TeamId"]}},"Tree.Messages.Msg":{"args":[],"tags":{"ToggleNode":["Tree.Models.NodeId"],"OnFetchNode":["Tree.Models.NodeId","Result.Result Http.Error Tree.Models.TempChildren"],"ShowTree":[],"SelectNode":["Tree.Models.NodeId"],"OnFetchTree":["Result.Result Http.Error (List Tree.Models.TempNode)"]}},"Dict.Dict":{"args":["k","v"],"tags":{"RBNode_elm_builtin":["Dict.NColor","k","v","Dict.Dict k v","Dict.Dict k v"],"RBEmpty_elm_builtin":["Dict.LeafColor"]}},"Players.Messages.Msg":{"args":[],"tags":{"ShowPlayer":["Players.Models.PlayerId"],"OnSave":["Result.Result Http.Error Players.Models.Player"],"OnFetchAll":["Result.Result Http.Error (List Players.Models.Player)"],"ChangeLevel":["Players.Models.PlayerId","Int"],"ShowPlayers":[]}},"Dict.NColor":{"args":[],"tags":{"BBlack":[],"Red":[],"NBlack":[],"Black":[]}},"Http.Error":{"args":[],"tags":{"BadUrl":["String"],"NetworkError":[],"Timeout":[],"BadStatus":["Http.Response String"],"BadPayload":["String","Http.Response String"]}},"Result.Result":{"args":["error","value"],"tags":{"Ok":["value"],"Err":["error"]}}},"aliases":{"Teams.Models.TeamId":{"args":[],"type":"String"},"Players.Models.PlayerId":{"args":[],"type":"String"},"Http.Response":{"args":["body"],"type":"{ url : String , status : { code : Int, message : String } , headers : Dict.Dict String String , body : body }"},"Tree.Models.TempNode":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String, hasChildren : Bool }"},"Teams.Models.Team":{"args":[],"type":"{ id : Teams.Models.TeamId, name : String, level : Int }"},"Players.Models.Player":{"args":[],"type":"{ id : Players.Models.PlayerId, name : String, level : Int }"},"Tree.Models.NodeId":{"args":[],"type":"String"},"Tree.Models.TempChildren":{"args":[],"type":"{ id : Tree.Models.NodeId, children : List Tree.Models.TempNode }"},"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Messages.Msg"},"versions":{"elm":"0.18.0"}});
+	    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Messages.Msg":{"args":[],"tags":{"OnLocationChange":["Navigation.Location"],"TeamsMsg":["Teams.Messages.Msg"],"ContainerMsg":["Container.Messages.Msg"],"PlayersMsg":["Players.Messages.Msg"]}},"Dict.LeafColor":{"args":[],"tags":{"LBBlack":[],"LBlack":[]}},"Teams.Messages.Msg":{"args":[],"tags":{"OnSave":["Result.Result Http.Error Teams.Models.Team"],"OnFetchAll":["Result.Result Http.Error (List Teams.Models.Team)"],"ShowTeams":[],"ChangeLevel":["Teams.Models.TeamId","Int"],"ShowTeam":["Teams.Models.TeamId"]}},"Tree.Messages.Msg":{"args":[],"tags":{"ToggleNode":["String","Tree.Models.NodeId"],"OnFetchNode":["Tree.Models.NodeId","Result.Result Http.Error Tree.Models.TempChildren"],"SelectNode":["Tree.Models.NodeId"],"OnFetchRoot":["Result.Result Http.Error Tree.Models.TempRoot"]}},"Content.Messages.Msg":{"args":[],"tags":{"OnFetchFiles":["Tree.Models.NodeId","Result.Result Http.Error (List Content.Models.File)"],"SetTableState":["Table.State"],"OnFetchUsers":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Users"],"TreeMsg":["Tree.Messages.Msg"],"OnFetchCases":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Cases"],"SetQuery":["String"],"OnFetchFolders":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Folders"]}},"Dict.Dict":{"args":["k","v"],"tags":{"RBNode_elm_builtin":["Dict.NColor","k","v","Dict.Dict k v","Dict.Dict k v"],"RBEmpty_elm_builtin":["Dict.LeafColor"]}},"Tree.Models.ChildrenState":{"args":[],"tags":{"Expanded":[],"NoChildren":[],"Expanding":[],"Collapsed":[]}},"Maybe.Maybe":{"args":["a"],"tags":{"Just":["a"],"Nothing":[]}},"Container.Messages.Msg":{"args":[],"tags":{"SelectTab":["Header.Models.TabType"],"ShowContainer":[],"TreeMsg":["Tree.Messages.Msg"],"SelectPath":["Tree.Models.NodeId"],"ContentMsg":["Content.Messages.Msg"],"HeaderMsg":["Header.Messages.Msg"]}},"Header.Messages.Msg":{"args":[],"tags":{"OnFetchSite":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchClient":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchStaff":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchRoot":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchCustomer":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"]}},"Players.Messages.Msg":{"args":[],"tags":{"ShowPlayer":["Players.Models.PlayerId"],"OnSave":["Result.Result Http.Error Players.Models.Player"],"OnFetchAll":["Result.Result Http.Error (List Players.Models.Player)"],"ChangeLevel":["Players.Models.PlayerId","Int"],"ShowPlayers":[]}},"Header.Models.Header":{"args":[],"tags":{"SiteHeader":["Header.Models.Site"],"Empty":[],"CustomerHeader":["Header.Models.Customer"],"RootHeader":["Header.Models.Root"],"ClientHeader":["Header.Models.Client"],"StaffHeader":["Header.Models.Staff"]}},"Header.Models.TabType":{"args":[],"tags":{"EmptyTab":[],"CasesType":[],"UsersType":[],"FoldersType":[]}},"Header.Models.AccessType":{"args":[],"tags":{"Read":[],"None":[],"Write":[]}},"Table.State":{"args":[],"tags":{"State":["String","Bool"]}},"Dict.NColor":{"args":[],"tags":{"BBlack":[],"Red":[],"NBlack":[],"Black":[]}},"Tree.Models.NodeType":{"args":[],"tags":{"CustomerType":[],"SiteType":[],"StaffType":[],"ClientType":[],"RootType":[],"FolderType":[]}},"Tree.Models.ChildNodes":{"args":[],"tags":{"ChildNodes":["List Tree.Models.Node"]}},"Http.Error":{"args":[],"tags":{"BadUrl":["String"],"NetworkError":[],"Timeout":[],"BadStatus":["Http.Response String"],"BadPayload":["String","Http.Response String"]}},"Result.Result":{"args":["error","value"],"tags":{"Ok":["value"],"Err":["error"]}}},"aliases":{"Header.Models.Tab":{"args":[],"type":"{ tabType : Header.Models.TabType, name : String }"},"Content.Models.Users":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Content.Models.Cases":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Teams.Models.TeamId":{"args":[],"type":"String"},"Tree.Models.Node":{"args":[],"type":"{ id : Tree.Models.NodeId , nodeType : Tree.Models.NodeType , name : String , selected : Bool , childrenState : Tree.Models.ChildrenState , childNodes : Tree.Models.ChildNodes }"},"Players.Models.PlayerId":{"args":[],"type":"String"},"Http.Response":{"args":["body"],"type":"{ url : String , status : { code : Int, message : String } , headers : Dict.Dict String String , body : body }"},"Tree.Models.TempRoot":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , name : String , children : List Tree.Models.TempNode }"},"Content.Models.Folders":{"args":[],"type":"{ id : Tree.Models.NodeId , name : String , tree : Tree.Models.Tree , path : List Tree.Models.Node , files : List Content.Models.File , tableState : Table.State , query : String }"},"Tree.Models.TempNode":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , name : String , hasChildren : Bool }"},"Tree.Models.Tree":{"args":[],"type":"{ id : Tree.Models.NodeId , nodeType : Tree.Models.NodeType , name : String , children : List Tree.Models.Node , path : List Tree.Models.Node }"},"Header.Models.CustomerValues":{"args":[],"type":"{ name : Maybe.Maybe String , address1 : Maybe.Maybe String , address2 : Maybe.Maybe String , address3 : Maybe.Maybe String , address4 : Maybe.Maybe String , postcode : Maybe.Maybe String , contact : Maybe.Maybe String , tel : Maybe.Maybe String , email : Maybe.Maybe String , image : Maybe.Maybe String }"},"Teams.Models.Team":{"args":[],"type":"{ id : Teams.Models.TeamId, name : String, level : Int }"},"Header.Models.Customer":{"args":[],"type":"{ id : Tree.Models.NodeId , access : Header.Models.CustomerAccess , values : Header.Models.CustomerValues }"},"Players.Models.Player":{"args":[],"type":"{ id : Players.Models.PlayerId, name : String, level : Int }"},"Tree.Models.NodeId":{"args":[],"type":"String"},"Header.Models.Client":{"args":[],"type":"{ id : Tree.Models.NodeId , ref : String , name : String , address : String , contact : String , phone : String , email : String }"},"Header.Models.HeaderInfo":{"args":[],"type":"{ header : Header.Models.Header, tabs : List Header.Models.Tab }"},"Header.Models.Root":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Header.Models.Staff":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Tree.Models.TempChildren":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , children : List Tree.Models.TempNode }"},"Header.Models.Site":{"args":[],"type":"{ id : Tree.Models.NodeId , ref : String , name : String , address : String , contact : String , phone : String , email : String }"},"Header.Models.CustomerAccess":{"args":[],"type":"{ name : Header.Models.AccessType , image : Header.Models.AccessType , address : Header.Models.AccessType , contact : Header.Models.AccessType }"},"Content.Models.File":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String, datetime : Int }"},"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Messages.Msg"},"versions":{"elm":"0.18.0"}});
 	}
 
 	if (typeof define === "function" && define['amd'])

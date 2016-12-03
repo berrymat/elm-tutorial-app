@@ -8,24 +8,24 @@ import Tree.Commands
 import Header.Commands
 
 
-fetchAll : NodeType -> NodeId -> Container -> Cmd Msg
-fetchAll nodeType nodeId container =
+fetchAll : String -> NodeType -> NodeId -> Container -> Cmd Msg
+fetchAll origin nodeType nodeId container =
     let
         treeCmd =
             if List.isEmpty container.tree.children then
-                Cmd.map TreeMsg (Tree.Commands.fetchRoot nodeId)
+                Cmd.map TreeMsg (Tree.Commands.fetchRoot origin nodeId)
             else
                 Cmd.none
 
         headerCmd =
             if container.headerInfo.header == Empty then
-                Cmd.map HeaderMsg (Header.Commands.fetchHeader nodeType nodeId)
+                Cmd.map HeaderMsg (Header.Commands.fetchHeader origin nodeType nodeId)
             else
                 Cmd.none
     in
         Cmd.batch [ treeCmd, headerCmd ]
 
-
+{-
 fetchDetails : Container -> Cmd Msg
 fetchDetails container =
     let
@@ -38,3 +38,4 @@ fetchDetails container =
 
             Nothing ->
                 Cmd.none
+-}

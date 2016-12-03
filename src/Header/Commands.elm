@@ -2,29 +2,30 @@ module Header.Commands exposing (..)
 
 import Http
 import Json.Decode as Decode exposing (field, at)
+import Json.Decode.Pipeline exposing (decode, required, optional, hardcoded)
 import Header.Messages exposing (..)
 import Header.Models exposing (..)
 import Tree.Models exposing (NodeType(..), NodeId)
 
 
-fetchHeader : NodeType -> NodeId -> Cmd Msg
-fetchHeader nodeType nodeId =
+fetchHeader : String -> NodeType -> NodeId -> Cmd Msg
+fetchHeader origin nodeType nodeId =
     if nodeId /= "" then
         case nodeType of
             RootType ->
-                fetchRoot nodeId
+                fetchRoot origin nodeId
 
             CustomerType ->
-                fetchCustomer nodeId
+                fetchCustomer origin nodeId
 
             ClientType ->
-                fetchClient nodeId
+                fetchClient origin nodeId
 
             SiteType ->
-                fetchSite nodeId
+                fetchSite origin nodeId
 
             StaffType ->
-                fetchStaff nodeId
+                fetchStaff origin nodeId
 
             FolderType ->
                 Cmd.none
@@ -32,64 +33,64 @@ fetchHeader nodeType nodeId =
         Cmd.none
 
 
-fetchRoot : NodeId -> Cmd Msg
-fetchRoot nodeId =
-    Http.get (rootUrl nodeId) rootDecoder
+fetchRoot : String -> NodeId -> Cmd Msg
+fetchRoot origin nodeId =
+    Http.get (rootUrl origin nodeId) rootDecoder
         |> Http.send (OnFetchRoot nodeId)
 
 
-fetchCustomer : NodeId -> Cmd Msg
-fetchCustomer nodeId =
-    Http.get (customerUrl nodeId) customerDecoder
+fetchCustomer : String -> NodeId -> Cmd Msg
+fetchCustomer origin nodeId =
+    Http.get (customerUrl origin nodeId) customerDecoder
         |> Http.send (OnFetchCustomer nodeId)
 
 
-fetchClient : NodeId -> Cmd Msg
-fetchClient nodeId =
-    Http.get (clientUrl nodeId) clientDecoder
+fetchClient : String -> NodeId -> Cmd Msg
+fetchClient origin nodeId =
+    Http.get (clientUrl origin nodeId) clientDecoder
         |> Http.send (OnFetchClient nodeId)
 
 
-fetchSite : NodeId -> Cmd Msg
-fetchSite nodeId =
-    Http.get (siteUrl nodeId) siteDecoder
+fetchSite : String -> NodeId -> Cmd Msg
+fetchSite origin nodeId =
+    Http.get (siteUrl origin nodeId) siteDecoder
         |> Http.send (OnFetchSite nodeId)
 
 
-fetchStaff : NodeId -> Cmd Msg
-fetchStaff nodeId =
-    Http.get (staffUrl nodeId) staffDecoder
+fetchStaff : String -> NodeId -> Cmd Msg
+fetchStaff origin nodeId =
+    Http.get (staffUrl origin nodeId) staffDecoder
         |> Http.send (OnFetchStaff nodeId)
 
 
-apiUrl : String
-apiUrl =
-    "http://localhost:4000/"
+apiUrl : String -> String
+apiUrl origin =
+    origin ++ "/api/"
 
 
-rootUrl : NodeId -> String
-rootUrl nodeId =
-    apiUrl ++ "roots/" ++ nodeId
+rootUrl : String -> NodeId -> String
+rootUrl origin nodeId =
+    (apiUrl origin) ++ "Roots/" ++ nodeId
 
 
-customerUrl : NodeId -> String
-customerUrl nodeId =
-    apiUrl ++ "customers/" ++ nodeId
+customerUrl : String -> NodeId -> String
+customerUrl origin nodeId =
+    (apiUrl origin) ++ "Customers/" ++ nodeId
 
 
-clientUrl : NodeId -> String
-clientUrl nodeId =
-    apiUrl ++ "clients/" ++ nodeId
+clientUrl : String -> NodeId -> String
+clientUrl origin nodeId =
+    (apiUrl origin) ++ "Clients/" ++ nodeId
 
 
-siteUrl : NodeId -> String
-siteUrl nodeId =
-    apiUrl ++ "sites/" ++ nodeId
+siteUrl : String -> NodeId -> String
+siteUrl origin nodeId =
+    (apiUrl origin) ++ "Sites/" ++ nodeId
 
 
-staffUrl : NodeId -> String
-staffUrl nodeId =
-    apiUrl ++ "staff/" ++ nodeId
+staffUrl : String -> NodeId -> String
+staffUrl origin nodeId =
+    (apiUrl origin) ++ "Staff/" ++ nodeId
 
 
 
@@ -112,16 +113,46 @@ customerDecoder : Decode.Decoder HeaderInfo
 customerDecoder =
     Decode.map2 HeaderInfo
         (Decode.map CustomerHeader
-            (Decode.map6 Customer
-                (field "id" Decode.string)
-                (field "name" Decode.string)
-                (field "address" Decode.string)
-                (field "contact" Decode.string)
-                (field "phone" Decode.string)
-                (field "email" Decode.string)
+            (decode Customer
+                |> required "id" Decode.string
+                |> required "access" customerAccessDecoder
+                |> required "values" customerValuesDecoder
             )
         )
         (field "tabs" (Decode.list tabDecoder))
+
+
+customerAccessDecoder : Decode.Decoder CustomerAccess
+customerAccessDecoder =
+    decode createCustomerAccess
+        |> required "name" Decode.string
+        |> required "image" Decode.string
+        |> required "address" Decode.string
+        |> required "contact" Decode.string
+
+
+createCustomerAccess : String -> String -> String -> String -> CustomerAccess
+createCustomerAccess name image address contact =
+    CustomerAccess
+        (convertAccessType name)
+        (convertAccessType image)
+        (convertAccessType address)
+        (convertAccessType contact)
+
+
+customerValuesDecoder : Decode.Decoder CustomerValues
+customerValuesDecoder =
+    decode CustomerValues
+        |> required "name" (Decode.nullable Decode.string)
+        |> required "address1" (Decode.nullable Decode.string)
+        |> required "address2" (Decode.nullable Decode.string)
+        |> required "address3" (Decode.nullable Decode.string)
+        |> required "address4" (Decode.nullable Decode.string)
+        |> required "postcode" (Decode.nullable Decode.string)
+        |> required "contact" (Decode.nullable Decode.string)
+        |> required "tel" (Decode.nullable Decode.string)
+        |> required "email" (Decode.nullable Decode.string)
+        |> required "image" (Decode.nullable Decode.string)
 
 
 clientDecoder : Decode.Decoder HeaderInfo
@@ -172,14 +203,14 @@ staffDecoder =
 
 createTab : NodeId -> String -> Tab
 createTab id name =
-    if id == "files" then
-        Tab FilesType name
+    if id == "folders" then
+        Tab FoldersType name
     else if id == "users" then
         Tab UsersType name
     else if id == "cases" then
         Tab CasesType name
     else
-        Tab FilesType name
+        Tab FoldersType name
 
 
 tabDecoder : Decode.Decoder Tab

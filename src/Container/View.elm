@@ -1,7 +1,7 @@
 module Container.View exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (class, attribute, href, id, classList)
+import Html.Attributes exposing (class, style, attribute, href, id, classList, src)
 import Html.Events exposing (onClick)
 import Container.Messages exposing (..)
 import Container.Models exposing (..)
@@ -11,29 +11,25 @@ import Header.View
 import Content.View
 
 
-view : Container -> Html Msg
-view container =
-    div []
+view : String -> Container -> Html Msg
+view origin container =
+    div [ class "fullview" ]
         [ div [ class "sidebar" ]
             [ Html.map
                 TreeMsg
-                (Tree.View.view container.tree)
+                (Tree.View.view origin container.tree)
             ]
         , div [ class "body" ]
-            [ div [ class "body-header" ]
-                [ Html.map
-                    HeaderMsg
-                    (Header.View.view container.headerInfo)
-                ]
+            [ Html.map
+                HeaderMsg
+                (Header.View.view container.headerInfo)
             , div [ class "body-path" ]
                 [ viewPath container
                 , viewTabs container
                 ]
-            , div [ class "body-content" ]
-                [ Html.map
-                    ContentMsg
-                    (Content.View.view container.content)
-                ]
+            , Html.map
+                ContentMsg
+                (Content.View.view origin container.content)
             ]
         ]
 

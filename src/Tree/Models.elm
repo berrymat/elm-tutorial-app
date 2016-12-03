@@ -85,15 +85,18 @@ convertNodeType type_ =
         Nothing
 
 
-new : Node
-new =
-    { id = "0"
-    , nodeType = RootType
-    , name = ""
-    , selected = False
-    , childrenState = NoChildren
-    , childNodes = ChildNodes []
-    }
+
+{-
+   new : Node
+   new =
+       { id = "0"
+       , nodeType = RootType
+       , name = ""
+       , selected = False
+       , childrenState = NoChildren
+       , childNodes = ChildNodes []
+       }
+-}
 
 
 initialTree : Tree

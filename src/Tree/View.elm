@@ -7,23 +7,23 @@ import Tree.Messages exposing (..)
 import Tree.Models exposing (..)
 
 
-view : Tree -> Html Msg
-view tree =
+view : String -> Tree -> Html Msg
+view origin tree =
     div []
-        [ viewTree tree
+        [ viewTree origin tree
         ]
 
 
-viewTree : Tree -> Html Msg
-viewTree tree =
+viewTree : String -> Tree -> Html Msg
+viewTree origin tree =
     div [ class "k-treeview" ]
         [ ul [ class "k-group", attribute "role" "group", attribute "style" "display: block;" ]
-            (List.map viewNode tree.children)
+            (List.map (viewNode origin) tree.children)
         ]
 
 
-viewNode : Node -> Html Msg
-viewNode node =
+viewNode : String -> Node -> Html Msg
+viewNode origin node =
     let
         childStyle =
             if node.childrenState == Expanded then
@@ -40,13 +40,13 @@ viewNode node =
         ( iconClass, faClass ) =
             case node.childrenState of
                 Collapsed ->
-                    ( "k-icon k-plus", "fa fa-plus-square-o" )
+                    ( "k-icon k-plus", "fa fa-caret-right" )
 
                 Expanding ->
                     ( "k-icon k-minus", "fa fa-spin fa-refresh" )
 
                 Expanded ->
-                    ( "k-icon k-minus", "fa fa-minus-square-o" )
+                    ( "k-icon k-minus", "fa fa-caret-down" )
 
                 NoChildren ->
                     ( "", "" )
@@ -71,7 +71,7 @@ viewNode node =
                 [ span
                     [ class iconClass
                     , attribute "role" "presentation"
-                    , onClick (ToggleNode node.id)
+                    , onClick (ToggleNode origin node.id)
                     ]
                     [ i
                         [ class faClass
@@ -85,7 +85,7 @@ viewNode node =
                     [ text node.name ]
                 ]
             , ul [ class "k-group", attribute "role" "group", attribute "style" childStyle ]
-                (List.map viewNode childNodes)
+                (List.map (viewNode origin) childNodes)
             ]
 
 

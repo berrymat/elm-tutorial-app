@@ -20,16 +20,23 @@ import Routing exposing (Route(..))
 
 view : Model -> Html Messages.Msg
 view model =
-    div []
+    div [ class "layout" ]
         [ nav model
         , page model
+        , footer model
         ]
 
 
 nav : Model -> Html Messages.Msg
 nav model =
-    div [ class "navbar clearfix mb2 white bg-blue p1" ]
+    div [ class "navbar clearfix p1" ]
         [ teamsBtn, playersBtn, treeBtn ]
+
+
+footer : Model -> Html Messages.Msg
+footer model =
+    div [ class "footer clearfix p1" ]
+        [ text "Elm prototype" ]
 
 
 teamsBtn : Html Messages.Msg
@@ -75,7 +82,7 @@ page model =
             teamEditPage model id
 
         ContainerRoute type_ id ->
-            Html.map ContainerMsg (Container.View.view model.container)
+            Html.map ContainerMsg (Container.View.view model.location.origin model.container)
 
         NotFoundRoute ->
             notFoundView

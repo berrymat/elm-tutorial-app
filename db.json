@@ -1,6 +1,47 @@
 {
   "customers": [
     {
+      "id":"Customer-46-Client",
+      "values":
+        {
+          "name":"A1 Commercial Cleaning",
+          "image":"/PortalBase/GetImage?entityType=Customer&entityId=46&size=200",
+          "address1":"120 High Road",
+          "address2":"Broxbourne",
+          "address3":"Herts",
+          "address4":null,
+          "postcode":"EN58 7ZY",
+          "contact":"John Morely",
+          "tel":"01992 796 744",
+          "email":"john.morely@a1cc.co.uk"
+        },
+      "access":
+        {
+          "name":"r",
+          "image":"r",
+          "address":"r",
+          "contact":"r"
+        },
+      "tabs":
+        [
+          {
+            "id":"folders",
+            "name":"Files"
+          },
+          {
+            "id":"users",
+            "name":"Users"
+          },
+          {
+            "id":"cases",
+            "name":"Cases"
+          }
+        ]
+    },
+
+
+
+    {
       "id": "Customer.46.Client",
       "name": "A1 Commercial Cleaning",
       "address": "120 High Road, Broxbourne, Herts, EN58 7ZY",
@@ -9,7 +50,7 @@
       "email": "john.morely@a1cc.co.uk",
       "tabs" : [
         {
-          "id": "files",
+          "id": "folders",
           "name": "Files"
         },
         {
@@ -34,7 +75,7 @@
       "email": "john.brown@a1rl.net",
       "tabs" : [
         {
-          "id": "files",
+          "id": "folders",
           "name": "Files"
         },
         {
@@ -53,7 +94,7 @@
       "email": "mymailaddress@dot.com",
       "tabs" : [
         {
-          "id": "files",
+          "id": "folders",
           "name": "Files"
         },
         {
@@ -72,7 +113,7 @@
       "email": "",
       "tabs" : [
         {
-          "id": "files",
+          "id": "folders",
           "name": "Files"
         },
         {
@@ -91,7 +132,7 @@
       "email": "",
       "tabs" : [
         {
-          "id": "files",
+          "id": "folders",
           "name": "Files"
         },
         {
@@ -112,7 +153,7 @@
       "email": "",
       "tabs" : [
         {
-          "id": "files",
+          "id": "folders",
           "name": "Files"
         },
         {
@@ -122,157 +163,155 @@
       ]
     }
   ],
-  "files": [
+  "folders": [
     {
       "id": "Customer.46.Client",
       "type": "folder",
       "name": "Files",
-      "folders": [
-        {
-          "id": "f1",
-          "type": "folder",
-          "name": "A1 Commercial Cleaning",
-          "children": [
-            {
-              "id": "f1.1",
-              "type": "folder",
-              "name": "Shared4User",
-              "children": []
-            },
-            {
-              "id": "f1.2",
-              "type": "folder",
-              "name": "Shared4Customer",
-              "children": []
-            },
-            {
-              "id": "f1.3",
-              "type": "folder",
-              "name": "Shared4Client",
-              "children": [
-                {
-                  "id": "f1.3.1",
-                  "type": "folder",
-                  "name": "Client KPI's",
-                  "children": []
-                },
-                {
-                  "id": "f1.3.2",
-                  "type": "folder",
-                  "name": "Invoices",
-                  "children": []
-                },
-                {
-                  "id": "f1.3.3",
-                  "type": "folder",
-                  "name": "Photos",
-                  "children": []
-                },
-                {
-                  "id": "f1.3.4",
-                  "type": "folder",
-                  "name": "Accreditations",
-                  "children": []
-                },
-                {
-                  "id": "f1.3.5",
-                  "type": "folder",
-                  "name": "Insurance",
-                  "children": []
-                }
-              ]
-            },
-            {
-              "id": "f1.4",
-              "type": "folder",
-              "name": "Shared4Site",
-              "children": [
-                {
-                  "id": "f1.4.1",
-                  "type": "folder",
-                  "name": "Audits",
-                  "children": [
-                    {
-                      "id": "f1.4.1.1",
-                      "type": "folder",
-                      "name": "Machinery",
-                      "children": []
-                    },
-                    {
-                      "id": "f1.4.1.2",
-                      "type": "folder",
-                      "name": "Reviews",
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "id": "f1.4.2",
-                  "type": "folder",
-                  "name": "Health & Safety",
-                  "children": [
-                    {
-                      "id": "f1.4.2.1",
-                      "type": "folder",
-                      "name": "COSHH",
-                      "children": []
-                    },
-                    {
-                      "id": "f1.4.2.2",
-                      "type": "folder",
-                      "name": "Method Statements",
-                      "children": []
-                    },
-                    {
-                      "id": "f1.4.2.3",
-                      "type": "folder",
-                      "name": "Policies",
-                      "children": []
-                    },
-                    {
-                      "id": "f1.4.2.4",
-                      "type": "folder",
-                      "name": "Risk Assessments",
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "id": "f1.5",
-              "type": "folder",
-              "name": "Shared4Staff",
-              "children": [
+      "tree": {
+        "id": "f1",
+        "type": "folder",
+        "name": "A1 Commercial Cleaning",
+        "children": [
+          {
+            "id": "f1.1",
+            "type": "folder",
+            "name": "Shared4User",
+            "children": []
+          },
+          {
+            "id": "f1.2",
+            "type": "folder",
+            "name": "Shared4Customer",
+            "children": []
+          },
+          {
+            "id": "f1.3",
+            "type": "folder",
+            "name": "Shared4Client",
+            "children": [
+              {
+                "id": "f1.3.1",
+                "type": "folder",
+                "name": "Client KPI's",
+                "children": []
+              },
+              {
+                "id": "f1.3.2",
+                "type": "folder",
+                "name": "Invoices",
+                "children": []
+              },
+              {
+                "id": "f1.3.3",
+                "type": "folder",
+                "name": "Photos",
+                "children": []
+              },
+              {
+                "id": "f1.3.4",
+                "type": "folder",
+                "name": "Accreditations",
+                "children": []
+              },
+              {
+                "id": "f1.3.5",
+                "type": "folder",
+                "name": "Insurance",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "f1.4",
+            "type": "folder",
+            "name": "Shared4Site",
+            "children": [
+              {
+                "id": "f1.4.1",
+                "type": "folder",
+                "name": "Audits",
+                "children": [
                   {
-                    "id": "f1.5.1",
+                    "id": "f1.4.1.1",
                     "type": "folder",
-                    "name": "P60",
+                    "name": "Machinery",
                     "children": []
                   },
                   {
-                    "id": "f1.5.2",
+                    "id": "f1.4.1.2",
                     "type": "folder",
-                    "name": "Payslips",
-                    "children": []
-                  },
-                  {
-                    "id": "f1.5.3",
-                    "type": "folder",
-                    "name": "Training Records",
-                    "children": []
-                  },
-                  {
-                    "id": "f1.5.4",
-                    "type": "folder",
-                    "name": "Employment Documents",
+                    "name": "Reviews",
                     "children": []
                   }
-              ]
-            }
-          ]
-        }
-      ]
+                ]
+              },
+              {
+                "id": "f1.4.2",
+                "type": "folder",
+                "name": "Health & Safety",
+                "children": [
+                  {
+                    "id": "f1.4.2.1",
+                    "type": "folder",
+                    "name": "COSHH",
+                    "children": []
+                  },
+                  {
+                    "id": "f1.4.2.2",
+                    "type": "folder",
+                    "name": "Method Statements",
+                    "children": []
+                  },
+                  {
+                    "id": "f1.4.2.3",
+                    "type": "folder",
+                    "name": "Policies",
+                    "children": []
+                  },
+                  {
+                    "id": "f1.4.2.4",
+                    "type": "folder",
+                    "name": "Risk Assessments",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f1.5",
+            "type": "folder",
+            "name": "Shared4Staff",
+            "children": [
+                {
+                  "id": "f1.5.1",
+                  "type": "folder",
+                  "name": "P60",
+                  "children": []
+                },
+                {
+                  "id": "f1.5.2",
+                  "type": "folder",
+                  "name": "Payslips",
+                  "children": []
+                },
+                {
+                  "id": "f1.5.3",
+                  "type": "folder",
+                  "name": "Training Records",
+                  "children": []
+                },
+                {
+                  "id": "f1.5.4",
+                  "type": "folder",
+                  "name": "Employment Documents",
+                  "children": []
+                }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "1",
@@ -289,6 +328,23 @@
     {
       "id": "4",
       "name": "Files"
+    }
+  ],
+  "files": [
+    {
+      "id": "f1",
+      "files": [
+        {
+          "id": "g1",
+          "name": "Risk Assessments.pdf",
+          "datetime": 1480564861
+        },
+        {
+          "id": "g2",
+          "name": "Elephants.pdf",
+          "datetime": 1480564061
+        }
+      ]
     }
   ],
   "cases": [

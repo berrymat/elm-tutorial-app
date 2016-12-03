@@ -1,19 +1,31 @@
 module Content.Models exposing (..)
 
-import Tree.Models exposing (NodeId, Node)
+import Tree.Models exposing (NodeId, Tree, Node)
+import Table
 
 
 type Content
-    = FilesContent Files
+    = FoldersContent Folders
     | UsersContent Users
     | CasesContent Cases
     | EmptyContent
 
 
-type alias Files =
+type alias Folders =
     { id : NodeId
     , name : String
-    , folders : List Node
+    , tree : Tree
+    , path : List Node
+    , files : List File
+    , tableState : Table.State
+    , query : String
+    }
+
+
+type alias File =
+    { id : NodeId
+    , name : String
+    , datetime : Int
     }
 
 

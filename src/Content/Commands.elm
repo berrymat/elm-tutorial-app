@@ -6,21 +6,22 @@ import Content.Messages exposing (..)
 import Content.Models exposing (..)
 import Header.Models exposing (..)
 import Tree.Models exposing (..)
+import Table
 import Debug
 
 
-fetchContent : TabType -> NodeId -> Cmd Msg
-fetchContent tabType nodeId =
+fetchContent : String -> TabType -> NodeId -> Cmd Msg
+fetchContent origin tabType nodeId =
     if nodeId /= "" then
         case tabType of
-            FilesType ->
-                fetchFiles nodeId
+            FoldersType ->
+                fetchFolders origin nodeId
 
             UsersType ->
-                fetchUsers nodeId
+                fetchUsers origin nodeId
 
             CasesType ->
-                fetchCases nodeId
+                fetchCases origin nodeId
 
             EmptyTab ->
                 Cmd.none
@@ -28,54 +29,86 @@ fetchContent tabType nodeId =
         Cmd.none
 
 
-fetchFiles : NodeId -> Cmd Msg
-fetchFiles nodeId =
-    Http.get (filesUrl nodeId) filesDecoder
+fetchFolders : String -> NodeId -> Cmd Msg
+fetchFolders origin nodeId =
+    Http.get (foldersUrl origin nodeId) foldersDecoder
+        |> Http.send (OnFetchFolders nodeId)
+
+
+fetchFiles : String -> NodeId -> Cmd Msg
+fetchFiles origin nodeId =
+    Http.get (filesUrl origin nodeId) filesDecoder
         |> Http.send (OnFetchFiles nodeId)
 
 
-fetchUsers : NodeId -> Cmd Msg
-fetchUsers nodeId =
-    Http.get (usersUrl nodeId) usersDecoder
+fetchUsers : String -> NodeId -> Cmd Msg
+fetchUsers origin nodeId =
+    Http.get (usersUrl origin nodeId) usersDecoder
         |> Http.send (OnFetchUsers nodeId)
 
 
-fetchCases : NodeId -> Cmd Msg
-fetchCases nodeId =
-    Http.get (casesUrl nodeId) casesDecoder
+fetchCases : String -> NodeId -> Cmd Msg
+fetchCases origin nodeId =
+    Http.get (casesUrl origin nodeId) casesDecoder
         |> Http.send (OnFetchCases nodeId)
 
 
-apiUrl : String
-apiUrl =
-    "http://localhost:4000/"
+apiUrl : String -> String
+apiUrl origin =
+    origin ++ "/api/"
 
 
-filesUrl : NodeId -> String
-filesUrl nodeId =
-    apiUrl ++ "files/" ++ nodeId
+foldersUrl : String -> NodeId -> String
+foldersUrl origin nodeId =
+    (apiUrl origin) ++ "Folders/" ++ nodeId
 
 
-usersUrl : NodeId -> String
-usersUrl nodeId =
-    apiUrl ++ "users/" ++ nodeId
+filesUrl : String -> NodeId -> String
+filesUrl origin nodeId =
+    (apiUrl origin) ++ "Files/" ++ nodeId
 
 
-casesUrl : NodeId -> String
-casesUrl nodeId =
-    apiUrl ++ "cases/" ++ nodeId
+usersUrl : String -> NodeId -> String
+usersUrl origin nodeId =
+    (apiUrl origin) ++ "Users/" ++ nodeId
+
+
+casesUrl : String -> NodeId -> String
+casesUrl origin nodeId =
+    (apiUrl origin) ++ "Cases/" ++ nodeId
 
 
 
 -- DECODERS
 
 
-filesDecoder : Decode.Decoder Files
-filesDecoder =
-    Decode.map3 Files
+foldersDecoder : Decode.Decoder Folders
+foldersDecoder =
+    Decode.map3 createFolders
         (field "id" Decode.string)
         (field "name" Decode.string)
-        (field "folders" (Decode.list folderDecoder))
+        (field "tree" treeDecoder)
+
+
+createFolders : NodeId -> String -> Tree -> Folders
+createFolders nodeId name tree =
+    Folders
+        nodeId
+        name
+        tree
+        []
+        []
+        (Table.initialSort "Name")
+        ""
+
+
+treeDecoder : Decode.Decoder Tree
+treeDecoder =
+    Decode.map4 createTree
+        (field "id" Decode.string)
+        (field "type" Decode.string)
+        (field "name" Decode.string)
+        (field "children" (Decode.list (Decode.lazy (\_ -> folderDecoder))))
 
 
 folderDecoder : Decode.Decoder Node
@@ -95,23 +128,37 @@ childDecoder =
         (field "name" Decode.string)
 
 
-createNode : NodeId -> String -> String -> List Node -> Node
-createNode nodeId type_ name children =
+createTree : NodeId -> String -> String -> List Node -> Tree
+createTree nodeId type_ name children =
     let
-        a =
-            Debug.log "nodeId" nodeId
+        node =
+            createNode
+                nodeId
+                type_
+                name
+                children
     in
-        Node
+        Tree
             nodeId
             (Maybe.withDefault FolderType (convertNodeType type_))
             name
-            False
-            (if (List.length children) == 0 then
-                NoChildren
-             else
-                Expanded
-            )
-            (ChildNodes children)
+            [ node ]
+            []
+
+
+createNode : NodeId -> String -> String -> List Node -> Node
+createNode nodeId type_ name children =
+    Node
+        nodeId
+        (Maybe.withDefault FolderType (convertNodeType type_))
+        name
+        False
+        (if (List.length children) == 0 then
+            NoChildren
+         else
+            Expanded
+        )
+        (ChildNodes children)
 
 
 createChild : NodeId -> String -> String -> Node
@@ -148,3 +195,17 @@ casesDecoder =
     Decode.map2 Cases
         (field "id" Decode.string)
         (field "name" Decode.string)
+
+
+filesDecoder : Decode.Decoder (List File)
+filesDecoder =
+    Decode.map identity
+        (field "files" (Decode.list fileDecoder))
+
+
+fileDecoder : Decode.Decoder File
+fileDecoder =
+    Decode.map3 File
+        (field "id" Decode.string)
+        (field "name" Decode.string)
+        (field "datetime" Decode.int)

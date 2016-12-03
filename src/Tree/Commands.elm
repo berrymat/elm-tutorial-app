@@ -6,21 +6,21 @@ import Tree.Messages exposing (..)
 import Tree.Models exposing (..)
 
 
-fetchRoot : NodeId -> Cmd Msg
-fetchRoot nodeId =
-    Http.get (fetchNodeUrl nodeId) tempRootDecoder
+fetchRoot : String -> NodeId -> Cmd Msg
+fetchRoot origin nodeId =
+    Http.get (fetchNodeUrl origin nodeId) tempRootDecoder
         |> Http.send OnFetchRoot
 
 
-fetchNode : NodeId -> Cmd Msg
-fetchNode nodeId =
-    Http.get (fetchNodeUrl nodeId) tempChildrenDecoder
+fetchNode : String -> NodeId -> Cmd Msg
+fetchNode origin nodeId =
+    Http.get (fetchNodeUrl origin nodeId) tempChildrenDecoder
         |> Http.send (OnFetchNode nodeId)
 
 
-fetchNodeUrl : NodeId -> String
-fetchNodeUrl nodeId =
-    "http://localhost:4000/node/" ++ nodeId
+fetchNodeUrl : String -> NodeId -> String
+fetchNodeUrl origin nodeId =
+    origin ++ "/api/Node/" ++ nodeId
 
 
 

@@ -18,6 +18,12 @@ type alias HeaderInfo =
     }
 
 
+type AccessType
+    = None
+    | Read
+    | Write
+
+
 type alias Root =
     { id : NodeId
     , name : String
@@ -26,11 +32,40 @@ type alias Root =
 
 type alias Customer =
     { id : NodeId
-    , name : String
-    , address : String
-    , contact : String
-    , phone : String
-    , email : String
+    , access : CustomerAccess
+    , values : CustomerValues
+    }
+
+
+type alias CustomerAccess =
+    { name : AccessType
+    , image : AccessType
+    , address : AccessType
+    , contact : AccessType
+    }
+
+
+convertAccessType : String -> AccessType
+convertAccessType type_ =
+    if type_ == "r" then
+        Read
+    else if type_ == "w" then
+        Write
+    else
+        None
+
+
+type alias CustomerValues =
+    { name : Maybe String
+    , address1 : Maybe String
+    , address2 : Maybe String
+    , address3 : Maybe String
+    , address4 : Maybe String
+    , postcode : Maybe String
+    , contact : Maybe String
+    , tel : Maybe String
+    , email : Maybe String
+    , image : Maybe String
     }
 
 
@@ -63,7 +98,7 @@ type alias Staff =
 
 
 type TabType
-    = FilesType
+    = FoldersType
     | UsersType
     | CasesType
     | EmptyTab

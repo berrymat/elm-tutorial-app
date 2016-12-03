@@ -1,3 +1,41 @@
+/*
+$bg-color-1: rgb(2, 48, 87);
+$color-1: rgb(98, 144, 183);
+
+$bg-color-2: rgb(3, 75, 138);
+$color-2: rgb(99, 171, 234);
+
+$bg-color-3: rgb(3, 102, 189);
+$color-3: rgb(0, 6, 93);
+
+$bg-color-4: rgb(2, 129, 240);
+$color-4: rgb(0, 33, 144);
+
+$bg-color-5: rgb(40, 154, 254);
+$color-5: rgb(0, 58, 158);
+*/
+$bg-color-1: #0591bf;
+$color-1: #e3f8ff;
+$bg-color-2: #05a7db;
+$color-2: #e3f8ff;
+$bg-color-3: #05bcf7;
+$color-3: #033241;
+$bg-color-4: #1dc5fb;
+$color-4: #033241;
+$bg-color-5: #39cdfc;
+$color-5: #033241;
+$bg-color-6: #54d4fd;
+$color-6: #033241;
+$bg-color-7: #70dbfe;
+$color-7: #033241;
+$bg-color-8: #8ce2fe;
+$color-8: #033241;
+$bg-color-9: #a7eaff;
+$color-9: #033241;
+$bg-color-10: #e3f8ff;
+$color-10: #033241;
+
+
 .wrapper {
   margin: 0 auto;
   padding: 40px;
@@ -10,6 +48,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   display: table;
 }
+
 @media screen and (max-width: 580px) {
   .table {
     display: block;
@@ -146,78 +185,134 @@ div.k-treeview {
 
 .k-state-selected {
     color: #fff;
-    background-color: #04c;
-    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    background-color: $color-10;
+    border-color: $color-10;
     border-radius: 4px;
 }
 
 /* ---------------------------------------------- */
 
-.navbar {
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     position: fixed;
-    z-index: 10;
     left: 0;
     top: 0;
     right: 0;
+    bottom: 0;
+}
+
+.navbar {
     height: 52px;
-}
-
-.sidebar {
-    position: fixed;
-    z-index: 10;
-    top: 52px;
-    left: 0;
-    bottom: 0;
-    width: 370px;
-    padding-bottom: 40px;
-    background-color: #F4F4F4;
-    border-right: 1px solid #D5DEE5;
-    overflow: auto;
-    padding: 16px;
-}
-
-.body {
-    position: relative;
-    padding-top: 52px;
-    padding-left: 370px;
-}
-
-.body-header {
-    background-color: #E8E8E8;
-    border-bottom: 1px solid #D5DEE5;
-}
-
-.body-content {
-    background-color: #FFFFFF;
-    position: relative;
-}
-
-.body-content-sidebar {
-    background-color: #FFEFEF;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 280px;
-    bottom: 0;
-}
-
-.body-content-content {
-    background-color: #FFFFFF;
-    padding-left: 280px;
+    color: $color-1;
+    background-color: $bg-color-1;
 }
 
 .fullview {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.footer {
+    height: 40px;
+    color: $color-1;
+    background-color: $bg-color-1;
+}
+
+.sidebar {
+    width: 370px;
+    padding: 16px;
+    overflow: auto;
+    background-color: $bg-color-2;
+    color: $color-2;
+    border-right: 1px solid $bg-color-1;
+}
+
+.body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    /*
+    position: relative;
     padding-top: 52px;
+    padding-left: 370px;
+    */
+}
+
+.body-header {
+    flex: 0 0 auto;
+    display: flex;
+    color: $color-6;
+    border-bottom: 1px solid $bg-color-1;
+}
+
+.body-header-image {
+    flex: 0 0 auto;
+    background-color: $bg-color-9;
+    color: $color-9;
+    width: 280px;
+    border: 8px solid $bg-color-9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.body-header-content {
+    flex: 0 0 auto;
+    background-color: $bg-color-10;
+    border-left: 1px solid $bg-color-1;
+    color: $color-10;
+}
+
+.body-header-extra {
+    flex: 1 1 auto;
+    background-color: $bg-color-10;
+    color: $color-10;
+}
+
+.body-content {
+    display: flex;
+    flex: 1 1 auto;
+    background-color: #FFFFFF;
+    flex-direction: row;
+    align-items: stretch;    
+}
+
+.body-content-sidebar {
+    flex: 0 0 auto;
+    display: flex;
+    background-color: $bg-color-9;
+    border-right: 1px solid $bg-color-1;
+    color: $color-9;
+    width: 280px;
+    padding: 8px;
+    overflow: auto;
+}
+
+.body-content-content {
+    flex: 1 1 auto;
+    background-color: $bg-color-10;
+    color: $color-10;
+    padding: 8px;
+    overflow: auto;
 }
 
 abbr[title] {
     cursor: help;
-    border-bottom: 1px dotted #D5DEE5;
+    border-bottom: 1px dotted $color-10;
 }
 
 div.body-path {
     display: flex;
-    border-bottom: 1px solid #D5DEE5;    
+    flex: 0 0 auto;
+    background-color: $bg-color-3;
+    color: $color-3;
+    border-bottom: 1px solid $bg-color-1;    
 }
 
 .body-path div {
@@ -227,11 +322,12 @@ div.body-path {
 .path-item {
     padding-left: 0.5em;
     padding-right: 0.5em;
+    color: $color-10;
 }
 
 .clickable {
     cursor: pointer;
-    color: #02a;
+    color: $color-1;
 }
 
 .clickable:hover {
@@ -252,7 +348,6 @@ div.body-path {
 .body-path div.tab {
     margin-bottom: -1px;
     margin-right: 0.25em;
-    background-color: white;
     display: block;
     padding: 0.35em 0.75em;
     border-top-left-radius: 0.25em;    
@@ -260,16 +355,20 @@ div.body-path {
 }
 
 .body-path div.tab.active {
-    border-left: 1px solid #D5DEE5;
-    border-top: 1px solid #D5DEE5;
-    border-right: 1px solid #D5DEE5;
+    border-left: 1px solid $bg-color-1;
+    border-top: 1px solid $bg-color-1;
+    border-right: 1px solid $bg-color-1;
+    background-color: $bg-color-10;
+    color: $color-10;
 }
 
 .body-path div.tab.clickable {
-    border-bottom: 1px solid #D5DEE5;
+    border-bottom: 1px solid $bg-color-1;
+    background-color: $bg-color-3;
+    color: $color-5;
 }
 
 .body-path div.tab.clickable:hover {
-    background-color: #ddd;
+    background-color: $bg-color-2;
     text-decoration: none;
 }

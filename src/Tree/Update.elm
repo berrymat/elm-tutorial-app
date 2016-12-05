@@ -39,16 +39,22 @@ selectNode nodeId node =
 select : NodeId -> Tree -> Tree
 select nodeId tree =
     let
+        (ChildNodes childNodes) =
+            tree.childNodes
+
         results =
-            List.map (selectNode nodeId) tree.children
+            List.map (selectNode nodeId) childNodes
 
         ( newChildren, newPathLists ) =
             List.unzip results
 
         newPath =
             List.concat newPathLists
+
+        newSelected =
+            (List.length newPath) == 0
     in
-        { tree | children = newChildren, path = newPath }
+        { tree | childNodes = (ChildNodes newChildren), selected = newSelected, path = newPath }
 
 
 toggleChildNodes : String -> NodeId -> Node -> ( Node, Cmd Msg )
@@ -99,13 +105,16 @@ toggleNode origin nodeId node =
 toggle : String -> NodeId -> Tree -> ( Tree, Cmd Msg )
 toggle origin nodeId tree =
     let
+        (ChildNodes childNodes) =
+            tree.childNodes
+
         results =
-            List.map (toggleNode origin nodeId) tree.children
+            List.map (toggleNode origin nodeId) childNodes
 
         ( newChildren, cmds ) =
             List.unzip results
     in
-        ( { tree | children = newChildren }, Cmd.batch cmds )
+        ( { tree | childNodes = (ChildNodes newChildren) }, Cmd.batch cmds )
 
 
 createNode : TempNode -> Node
@@ -136,7 +145,9 @@ fetchedRoot tempRoot =
         { id = tempRoot.id
         , nodeType = nodeType
         , name = tempRoot.name
-        , children = List.map createNode tempRoot.children
+        , selected = True
+        , childrenState = Expanded
+        , childNodes = (ChildNodes (List.map createNode tempRoot.children))
         , path = []
         }
 
@@ -164,10 +175,13 @@ expandChildren nodeId tempChildren node =
 fetchedNode : NodeId -> TempChildren -> Tree -> Tree
 fetchedNode nodeId tempChildren tree =
     let
+        (ChildNodes childNodes) =
+            tree.childNodes
+
         newChildren =
-            List.map (expandChildren nodeId tempChildren) tree.children
+            List.map (expandChildren nodeId tempChildren) childNodes
     in
-        { tree | children = newChildren }
+        { tree | childNodes = (ChildNodes newChildren) }
 
 
 update : Msg -> Tree -> ( Tree, Cmd Msg, List Node )
@@ -191,6 +205,13 @@ update message tree =
                     toggle origin nodeId tree
             in
                 ( newTree, cmds, tree.path )
+
+        SelectRoot ->
+            let
+                newTree =
+                    select tree.id tree
+            in
+                ( newTree, Cmd.none, newTree.path )
 
         SelectNode nodeId ->
             let

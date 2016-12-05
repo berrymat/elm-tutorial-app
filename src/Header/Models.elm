@@ -24,6 +24,16 @@ type AccessType
     | Write
 
 
+convertAccessType : String -> AccessType
+convertAccessType type_ =
+    if type_ == "r" then
+        Read
+    else if type_ == "w" then
+        Write
+    else
+        None
+
+
 type alias Root =
     { id : NodeId
     , name : String
@@ -45,18 +55,9 @@ type alias CustomerAccess =
     }
 
 
-convertAccessType : String -> AccessType
-convertAccessType type_ =
-    if type_ == "r" then
-        Read
-    else if type_ == "w" then
-        Write
-    else
-        None
-
-
 type alias CustomerValues =
     { name : Maybe String
+    , image : Maybe String
     , address1 : Maybe String
     , address2 : Maybe String
     , address3 : Maybe String
@@ -65,35 +66,100 @@ type alias CustomerValues =
     , contact : Maybe String
     , tel : Maybe String
     , email : Maybe String
-    , image : Maybe String
     }
 
 
 type alias Client =
     { id : NodeId
-    , ref : String
-    , name : String
-    , address : String
-    , contact : String
-    , phone : String
-    , email : String
+    , access : ClientAccess
+    , values : ClientValues
+    }
+
+
+type alias ClientValues =
+    { no : Maybe String
+    , name : Maybe String
+    , image : Maybe String
+    , address1 : Maybe String
+    , address2 : Maybe String
+    , address3 : Maybe String
+    , address4 : Maybe String
+    , postcode : Maybe String
+    , contact : Maybe String
+    , tel : Maybe String
+    , email : Maybe String
+    }
+
+
+type alias ClientAccess =
+    { name : AccessType
+    , image : AccessType
+    , address : AccessType
+    , contact : AccessType
     }
 
 
 type alias Site =
     { id : NodeId
-    , ref : String
-    , name : String
-    , address : String
-    , contact : String
-    , phone : String
-    , email : String
+    , access : SiteAccess
+    , values : SiteValues
+    }
+
+
+type alias SiteValues =
+    { no : Maybe String
+    , name : Maybe String
+    , image : Maybe String
+    , address1 : Maybe String
+    , address2 : Maybe String
+    , address3 : Maybe String
+    , address4 : Maybe String
+    , postcode : Maybe String
+    , contact : Maybe String
+    , tel : Maybe String
+    , email : Maybe String
+    , divisionMgr : Maybe String
+    , areaMgr : Maybe String
+    , supervisor : Maybe String
+    }
+
+
+type alias SiteAccess =
+    { name : AccessType
+    , image : AccessType
+    , address : AccessType
+    , contact : AccessType
+    , managers : AccessType
     }
 
 
 type alias Staff =
     { id : NodeId
-    , name : String
+    , access : StaffAccess
+    , values : StaffValues
+    }
+
+
+type alias StaffValues =
+    { no : Maybe String
+    , name : Maybe String
+    , image : Maybe String
+    , address1 : Maybe String
+    , address2 : Maybe String
+    , address3 : Maybe String
+    , address4 : Maybe String
+    , postcode : Maybe String
+    , tel : Maybe String
+    , mob : Maybe String
+    , email : Maybe String
+    }
+
+
+type alias StaffAccess =
+    { name : AccessType
+    , image : AccessType
+    , address : AccessType
+    , contact : AccessType
     }
 
 

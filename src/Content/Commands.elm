@@ -55,7 +55,7 @@ fetchCases origin nodeId =
 
 apiUrl : String -> String
 apiUrl origin =
-    origin ++ "/api/"
+    origin ++ "api/"
 
 
 foldersUrl : String -> NodeId -> String
@@ -84,31 +84,52 @@ casesUrl origin nodeId =
 
 foldersDecoder : Decode.Decoder Folders
 foldersDecoder =
-    Decode.map3 createFolders
-        (field "id" Decode.string)
-        (field "name" Decode.string)
-        (field "tree" treeDecoder)
-
-
-createFolders : NodeId -> String -> Tree -> Folders
-createFolders nodeId name tree =
-    Folders
-        nodeId
-        name
-        tree
-        []
-        []
-        (Table.initialSort "Name")
-        ""
-
-
-treeDecoder : Decode.Decoder Tree
-treeDecoder =
-    Decode.map4 createTree
+    Decode.map4 createFolders
         (field "id" Decode.string)
         (field "type" Decode.string)
         (field "name" Decode.string)
         (field "children" (Decode.list (Decode.lazy (\_ -> folderDecoder))))
+
+
+
+{-
+
+   Decode.map3 createFolders
+       (field "id" Decode.string)
+       (field "name" Decode.string)
+       (field "tree" treeDecoder)
+-}
+
+
+createFolders : NodeId -> String -> String -> List Node -> Folders
+createFolders nodeId type_ name children =
+    let
+        tree =
+            createTree
+                nodeId
+                type_
+                name
+                children
+    in
+        Folders
+            tree
+            True
+            []
+            []
+            (Table.initialSort "Name")
+            ""
+
+
+
+{-
+   treeDecoder : Decode.Decoder Tree
+   treeDecoder =
+       Decode.map4 createTree
+           (field "id" Decode.string)
+           (field "type" Decode.string)
+           (field "name" Decode.string)
+           (field "children" (Decode.list (Decode.lazy (\_ -> folderDecoder))))
+-}
 
 
 folderDecoder : Decode.Decoder Node
@@ -130,20 +151,14 @@ childDecoder =
 
 createTree : NodeId -> String -> String -> List Node -> Tree
 createTree nodeId type_ name children =
-    let
-        node =
-            createNode
-                nodeId
-                type_
-                name
-                children
-    in
-        Tree
-            nodeId
-            (Maybe.withDefault FolderType (convertNodeType type_))
-            name
-            [ node ]
-            []
+    Tree
+        nodeId
+        (Maybe.withDefault FolderType (convertNodeType type_))
+        name
+        True
+        Expanded
+        (ChildNodes children)
+        []
 
 
 createNode : NodeId -> String -> String -> List Node -> Node

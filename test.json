@@ -1,0 +1,161 @@
+[{
+  "id":"Customer-46-Client-6173",
+  "values":
+  {
+    "no":"A1R001",
+    "name":"A1 Retail",
+    "image":"/PortalBase/GetImage?entityType=Client&entityId=6173&size=200",
+    "address1":"Retail House",
+    "address2":"Main Square",
+    "address3":"Birmingham",
+    "address4":"West Midlands",
+    "postcode":"B1 1AC",
+    "contact":"John Brown",
+    "tel":"0121 555789",
+    "email":"john.brown@a1rl.net"
+  },
+  "access":
+  {
+    "name":"r",
+    "image":"r",
+    "address":"r",
+    "contact":"r"
+  },
+  "tabs":
+  [
+    {
+      "id":"folders",
+      "name":"Files"
+    },
+    {
+      "id":"users",
+      "name":"Users"
+    },
+    {
+      "id":"cases",
+      "name":"Cases"
+    }
+  ]
+},
+
+{
+  "id":"Customer-46-Client-6173-Site-10756",
+  "values":
+  {
+    "no":"A1R0010003",
+    "name":"A1 Retail London",
+    "image":"/CleanLink.WebUI/PortalBase/GetImage?entityType=Site&entityId=10756&size=200",
+    "address1":"Retail House",
+    "address2":"99 Oxford Street",
+    "address3":"London",
+    "address4":"",
+    "postcode":"SW1 1CD",
+    "contact":"Roger",
+    "tel":"0207 5557896",
+    "email":"",
+    "divisionMgr":null,
+    "areaMgr":null,
+    "supervisor":null
+  },
+  "access":
+  {
+    "name":"r",
+    "image":"r",
+    "address":"r",
+    "contact":"r",
+    "managers":"r"
+  },
+  "tabs":
+  [
+    {
+      "id":"folders",
+      "name":"Files"
+    },
+    {
+      "id":"users",
+      "name":"Users"
+    },
+    {
+      "id":"cases",
+      "name":"Cases"
+    }
+  ]
+},
+{
+  "id":"Customer-46-Client-6173-Site-10756-Staff-11358",
+  "values":
+  {
+    "no":"00057",
+    "name":"00057 - FOOT, Ray",
+    "image":"https://placehold.it/200x150.png",
+    "address1":"987 Bassett Drive",
+    "address2":"Windermere",
+    "address3":"Cumbria",
+    "address4":"",
+    "postcode":"CM4 6TR",
+    "tel":"020 7946 0099",
+    "mob":"0770099878",
+    "email":"Ray@dot.com"
+  },
+  "access":
+  {
+    "name":"r",
+    "image":"r",
+    "address":"r",
+    "contact":"r"
+  },
+  "tabs":
+  [
+    {
+      "id":"folders",
+      "name":"Files"
+    },
+    {
+      "id":"users",
+      "name":"Users"
+    }
+  ]
+},
+
+{
+  "id":"Customer-46-Client/A1 Commercial Cleaning",
+  "type":"folder",
+  "name":"A1 Commercial Cleaning",
+  "children":
+  [
+    {
+      "id":"Customer-46-Client/A1 Commercial Cleaning/Shared4User",
+      "type":"folder",
+      "name":"Shared4User",
+      "children":[]
+    },
+    {
+      "id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Customer",
+      "type":"folder",
+      "name":"Shared4Customer",
+      "children":[]
+    },
+    {
+      "id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Client",
+      "type":"folder",
+      "name":"Shared4Client",
+      "children":
+      [
+        {
+          "id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Client/Client KPI's",
+          "type":"folder",
+          "name":"Client KPI's",
+          "children":[]
+        },
+        {
+          "id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Client/Invoices",
+          "type":"folder",
+          "name":"Invoices",
+          "children":[]
+        },
+        {
+          "id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Client/Photos",
+          "type":"folder","name":"Photos","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Client/Accreditations","type":"folder","name":"Accreditations","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Client/Insurance","type":"folder","name":"Insurance","children":[]}]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site","type":"folder","name":"Shared4Site","children":[{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Audits","type":"folder","name":"Audits","children":[{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Audits/Machinery","type":"folder","name":"Machinery","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Audits/Reviews","type":"folder","name":"Reviews","children":[]}]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Health & Safety","type":"folder","name":"Health & Safety","children":[{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Health & Safety/COSHH","type":"folder","name":"COSHH","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Health & Safety/Method Statements","type":"folder","name":"Method Statements","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Health & Safety/Policies","type":"folder","name":"Policies","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Site/Health & Safety/Risk Assessments","type":"folder","name":"Risk Assessments","children":[]}]}]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Staff","type":"folder","name":"Shared4Staff","children":[{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Staff/P60","type":"folder","name":"P60","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Staff/Payslips","type":"folder","name":"Payslips","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Staff/Training Records","type":"folder","name":"Training Records","children":[]},{"id":"Customer-46-Client/A1 Commercial Cleaning/Shared4Staff/Employment Documents","type":"folder","name":"Employment Documents","children":[]}]}]}
+
+
+]

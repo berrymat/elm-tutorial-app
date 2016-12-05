@@ -527,7 +527,7 @@
 
 
 	// module
-	exports.push([module.id, "/*\n$bg-color-1: rgb(2, 48, 87);\n$color-1: rgb(98, 144, 183);\n\n$bg-color-2: rgb(3, 75, 138);\n$color-2: rgb(99, 171, 234);\n\n$bg-color-3: rgb(3, 102, 189);\n$color-3: rgb(0, 6, 93);\n\n$bg-color-4: rgb(2, 129, 240);\n$color-4: rgb(0, 33, 144);\n\n$bg-color-5: rgb(40, 154, 254);\n$color-5: rgb(0, 58, 158);\n*/\n.wrapper {\n  margin: 0 auto;\n  padding: 40px;\n  max-width: 800px; }\n\n.table {\n  margin: 0 0 40px 0;\n  width: 100%;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  display: table; }\n\n@media screen and (max-width: 580px) {\n  .table {\n    display: block; } }\n\n.row {\n  display: table-row;\n  background: #f6f6f6; }\n\n.row:nth-of-type(odd) {\n  background: #e9e9e9; }\n\n.row.header {\n  font-weight: 900;\n  color: #ffffff;\n  background: #ea6153; }\n\n.row.green {\n  background: #27ae60; }\n\n.row.blue {\n  background: #2980b9; }\n\n@media screen and (max-width: 580px) {\n  .row {\n    padding: 8px 0;\n    display: block; } }\n\n.cell {\n  padding: 6px 12px;\n  display: table-cell; }\n\n@media screen and (max-width: 580px) {\n  .cell {\n    padding: 2px 12px;\n    display: block; } }\n\n/*-------------------------*/\n.k-icon {\n  min-width: 16px; }\n\ndiv.k-treeview {\n  border-width: 0;\n  background: 0;\n  overflow: auto;\n  white-space: nowrap; }\n\n.k-treeview .k-item {\n  display: block;\n  border-width: 0;\n  margin: 0;\n  padding: 0 0 0 16px; }\n\n.k-treeview > .k-group, .k-treeview .k-item > .k-group, .k-treeview .k-content {\n  margin: 0;\n  padding: 0;\n  background: 0;\n  list-style-type: none;\n  position: relative; }\n\n.k-treeview .k-icon, .k-treeview .k-image, .k-treeview .k-sprite, .k-treeview .k-checkbox, .k-treeview .k-in {\n  display: inline-block;\n  vertical-align: top; }\n\n.k-treeview .k-plus, .k-treeview .k-minus, .k-treeview .k-plus-disabled, .k-treeview .k-minus-disabled {\n  /*margin-top: 3px;*/\n  margin-left: -16px;\n  cursor: pointer; }\n\n.k-treeview .k-plus-disabled, .k-treeview .k-minus-disabled {\n  cursor: default; }\n\n.k-treeview .k-sprite, .k-treeview .k-image {\n  margin-right: 3px; }\n\n.k-treeview .k-in {\n  margin: 1px 0 1px 2px;\n  padding: 2px 4px 2px 3px;\n  line-height: 16px;\n  text-decoration: none; }\n\n.k-treeview span.k-in {\n  cursor: default; }\n\n.k-treeview .k-in.k-state-hover, .k-treeview .k-in.k-state-selected, .k-treeview .k-in.k-state-focused {\n  border-style: solid;\n  border-width: 1px;\n  padding: 1px 3px 1px 2px; }\n\n.k-treeview .k-drop-hint {\n  position: absolute;\n  z-index: 10000;\n  visibility: hidden;\n  width: 80px;\n  height: 5px;\n  margin-top: -3px;\n  background-color: transparent;\n  background-repeat: no-repeat; }\n\n/* --------------------------------------------- */\n.k-icon:hover, .k-state-hover .k-icon, .k-state-selected .k-icon, .k-state-focused .k-icon, .k-column-menu .k-state-hover .k-sprite, .k-column-menu .k-state-active .k-sprite {\n  opacity: 1; }\n\n.k-icon, .k-state-disabled .k-icon, .k-column-menu .k-sprite {\n  opacity: 1; }\n\n.k-icon, .k-tool-icon, .k-grouping-dropclue, .k-drop-hint, .k-column-menu .k-sprite {\n  /*background-image: url('Bootstrap/sprite.png');*/\n  border-color: transparent;\n  /*padding-right: 4px;*/ }\n\n.k-state-selected {\n  color: #fff;\n  background-color: #033241;\n  border-color: #033241;\n  border-radius: 4px; }\n\n/* ---------------------------------------------- */\n.layout {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  position: fixed;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0; }\n\n.navbar {\n  height: 52px;\n  color: #e3f8ff;\n  background-color: #0591bf; }\n\n.fullview {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: row;\n  align-items: stretch; }\n\n.footer {\n  height: 40px;\n  color: #e3f8ff;\n  background-color: #0591bf; }\n\n.sidebar {\n  width: 370px;\n  padding: 16px;\n  overflow: auto;\n  background-color: #05a7db;\n  color: #e3f8ff;\n  border-right: 1px solid #0591bf; }\n\n.body {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  /*\n    position: relative;\n    padding-top: 52px;\n    padding-left: 370px;\n    */ }\n\n.body-header {\n  flex: 0 0 auto;\n  display: flex;\n  color: #033241;\n  border-bottom: 1px solid #0591bf; }\n\n.body-header-image {\n  flex: 0 0 auto;\n  background-color: #a7eaff;\n  color: #033241;\n  width: 280px;\n  border: 8px solid #a7eaff;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position-x: center; }\n\n.body-header-content {\n  flex: 0 0 auto;\n  background-color: #e3f8ff;\n  border-left: 1px solid #0591bf;\n  color: #033241; }\n\n.body-header-extra {\n  flex: 1 1 auto;\n  background-color: #e3f8ff;\n  color: #033241; }\n\n.body-content {\n  display: flex;\n  flex: 1 1 auto;\n  background-color: #FFFFFF;\n  flex-direction: row;\n  align-items: stretch; }\n\n.body-content-sidebar {\n  flex: 0 0 auto;\n  display: flex;\n  background-color: #a7eaff;\n  border-right: 1px solid #0591bf;\n  color: #033241;\n  width: 280px;\n  padding: 8px;\n  overflow: auto; }\n\n.body-content-content {\n  flex: 1 1 auto;\n  background-color: #e3f8ff;\n  color: #033241;\n  padding: 8px;\n  overflow: auto; }\n\nabbr[title] {\n  cursor: help;\n  border-bottom: 1px dotted #033241; }\n\ndiv.body-path {\n  display: flex;\n  flex: 0 0 auto;\n  background-color: #05bcf7;\n  color: #033241;\n  border-bottom: 1px solid #0591bf; }\n\n.body-path div {\n  display: inline-block; }\n\n.path-item {\n  padding-left: 0.5em;\n  padding-right: 0.5em;\n  color: #033241; }\n\n.clickable {\n  cursor: pointer;\n  color: #e3f8ff; }\n\n.clickable:hover {\n  text-decoration: underline; }\n\n.breadcrumb {\n  flex: 1 1 auto;\n  padding: 0.5em; }\n\n.body-path div.tabs {\n  flex: 0 1 auto;\n  display: flex;\n  align-items: flex-end; }\n\n.body-path div.tab {\n  margin-bottom: -1px;\n  margin-right: 0.25em;\n  display: block;\n  padding: 0.35em 0.75em;\n  border-top-left-radius: 0.25em;\n  border-top-right-radius: 0.25em; }\n\n.body-path div.tab.active {\n  border-left: 1px solid #0591bf;\n  border-top: 1px solid #0591bf;\n  border-right: 1px solid #0591bf;\n  background-color: #e3f8ff;\n  color: #033241; }\n\n.body-path div.tab.clickable {\n  border-bottom: 1px solid #0591bf;\n  background-color: #05bcf7;\n  color: #033241; }\n\n.body-path div.tab.clickable:hover {\n  background-color: #05a7db;\n  text-decoration: none; }\n", ""]);
+	exports.push([module.id, "/*\n$bg-color-1: rgb(2, 48, 87);\n$color-1: rgb(98, 144, 183);\n\n$bg-color-2: rgb(3, 75, 138);\n$color-2: rgb(99, 171, 234);\n\n$bg-color-3: rgb(3, 102, 189);\n$color-3: rgb(0, 6, 93);\n\n$bg-color-4: rgb(2, 129, 240);\n$color-4: rgb(0, 33, 144);\n\n$bg-color-5: rgb(40, 154, 254);\n$color-5: rgb(0, 58, 158);\n*/\n::-webkit-scrollbar {\n  width: 6px;\n  /* for vertical scrollbars */\n  height: 6px;\n  /* for horizontal scrollbars */ }\n\n::-webkit-scrollbar-track {\n  background: rgba(0, 0, 0, 0.1); }\n\n::-webkit-scrollbar-thumb {\n  background: rgba(0, 0, 0, 0.5); }\n\n.wrapper {\n  margin: 0 auto;\n  padding: 40px;\n  max-width: 800px; }\n\n.table {\n  margin: 0 0 40px 0;\n  width: 100%;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  display: table; }\n\n@media screen and (max-width: 580px) {\n  .table {\n    display: block; } }\n\n.row {\n  display: table-row;\n  background: #f6f6f6; }\n\n.row:nth-of-type(odd) {\n  background: #e9e9e9; }\n\n.row.header {\n  font-weight: 900;\n  color: #ffffff;\n  background: #ea6153; }\n\n.row.green {\n  background: #27ae60; }\n\n.row.blue {\n  background: #2980b9; }\n\n@media screen and (max-width: 580px) {\n  .row {\n    padding: 8px 0;\n    display: block; } }\n\n.cell {\n  padding: 6px 12px;\n  display: table-cell; }\n\n@media screen and (max-width: 580px) {\n  .cell {\n    padding: 2px 12px;\n    display: block; } }\n\n/*-------------------------*/\n.k-icon {\n  min-width: 16px; }\n\ndiv.k-treeview {\n  border-width: 0;\n  background: 0;\n  overflow: auto;\n  white-space: nowrap; }\n\n.k-treeview .k-item {\n  display: block;\n  border-width: 0;\n  margin: 0;\n  padding: 0 0 0 16px; }\n\n.k-treeview > .k-group, .k-treeview .k-item > .k-group, .k-treeview .k-content {\n  margin: 0;\n  padding: 0;\n  background: 0;\n  list-style-type: none;\n  position: relative; }\n\n.k-treeview .k-icon, .k-treeview .k-image, .k-treeview .k-sprite, .k-treeview .k-checkbox, .k-treeview .k-in {\n  display: inline-block;\n  vertical-align: top; }\n\n.k-treeview .k-plus, .k-treeview .k-minus, .k-treeview .k-plus-disabled, .k-treeview .k-minus-disabled {\n  /*margin-top: 3px;*/\n  margin-left: -16px;\n  cursor: pointer; }\n\n.k-treeview .k-plus-disabled, .k-treeview .k-minus-disabled {\n  cursor: default; }\n\n.k-treeview .k-sprite, .k-treeview .k-image {\n  margin-right: 3px; }\n\n.k-treeview .k-in {\n  margin: 1px 0 1px 2px;\n  padding: 2px 4px 2px 3px;\n  line-height: 16px;\n  text-decoration: none; }\n\n.k-treeview span.k-in {\n  cursor: default; }\n\n.k-treeview .k-in.k-state-hover, .k-treeview .k-in.k-state-selected, .k-treeview .k-in.k-state-focused {\n  border-style: solid;\n  border-width: 1px;\n  padding: 1px 3px 1px 2px; }\n\n.k-treeview .k-drop-hint {\n  position: absolute;\n  z-index: 10000;\n  visibility: hidden;\n  width: 80px;\n  height: 5px;\n  margin-top: -3px;\n  background-color: transparent;\n  background-repeat: no-repeat; }\n\n/* --------------------------------------------- */\n.k-icon:hover, .k-state-hover .k-icon, .k-state-selected .k-icon, .k-state-focused .k-icon, .k-column-menu .k-state-hover .k-sprite, .k-column-menu .k-state-active .k-sprite {\n  opacity: 1; }\n\n.k-icon, .k-state-disabled .k-icon, .k-column-menu .k-sprite {\n  opacity: 1; }\n\n.k-icon, .k-tool-icon, .k-grouping-dropclue, .k-drop-hint, .k-column-menu .k-sprite {\n  /*background-image: url('Bootstrap/sprite.png');*/\n  border-color: transparent;\n  /*padding-right: 4px;*/ }\n\n.k-state-selected {\n  color: #fff;\n  background-color: #033241;\n  border-color: #033241;\n  border-radius: 4px; }\n\n/* ---------------------------------------------- */\n.layout {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  position: fixed;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0; }\n\n.navbar {\n  height: 52px;\n  color: #e3f8ff;\n  background-color: #0591bf; }\n\n.fullview {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: row;\n  align-items: stretch; }\n\n.footer {\n  height: 40px;\n  color: #e3f8ff;\n  background-color: #0591bf; }\n\n.sidebar {\n  width: 370px;\n  padding: 16px;\n  overflow: auto;\n  background-color: #05a7db;\n  color: #e3f8ff;\n  border-right: 1px solid #0591bf; }\n\n.body {\n  flex: 1 1 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  /*\n    position: relative;\n    padding-top: 52px;\n    padding-left: 370px;\n    */ }\n\n.body-header {\n  flex: 0 0 auto;\n  display: flex;\n  color: #033241;\n  border-bottom: 1px solid #0591bf; }\n\n.body-header-image {\n  flex: 0 0 auto;\n  background-color: #a7eaff;\n  color: #033241;\n  width: 280px;\n  border: 8px solid #a7eaff;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position-x: center; }\n\n.body-header-content {\n  flex: 0 0 auto;\n  background-color: #e3f8ff;\n  border-left: 1px solid #0591bf;\n  color: #033241; }\n\n.body-header-extra {\n  flex: 1 1 auto;\n  background-color: #e3f8ff;\n  color: #033241; }\n\n.body-content {\n  display: flex;\n  flex: 1 1 auto;\n  background-color: #FFFFFF;\n  flex-direction: row;\n  align-items: stretch; }\n\n.body-content-sidebar {\n  flex: 0 0 auto;\n  display: flex;\n  background-color: #a7eaff;\n  border-right: 1px solid #0591bf;\n  color: #033241;\n  width: 280px;\n  padding: 8px;\n  overflow: auto; }\n\n.body-content-content {\n  flex: 1 1 auto;\n  background-color: #e3f8ff;\n  color: #033241;\n  padding: 8px;\n  overflow: auto; }\n\nabbr[title] {\n  cursor: help;\n  border-bottom: 1px dotted #033241; }\n\ndiv.body-path {\n  display: flex;\n  flex: 0 0 auto;\n  background-color: #05bcf7;\n  color: #033241;\n  border-bottom: 1px solid #0591bf; }\n\n.body-path div {\n  display: inline-block; }\n\n.path-item {\n  padding-left: 0.5em;\n  padding-right: 0.5em;\n  color: #033241; }\n\n.clickable {\n  cursor: pointer;\n  color: #e3f8ff; }\n\n.clickable:hover {\n  text-decoration: underline; }\n\n.breadcrumb {\n  flex: 1 1 auto;\n  padding: 0.5em; }\n\n.body-path div.tabs {\n  flex: 0 1 auto;\n  display: flex;\n  align-items: flex-end; }\n\n.body-path div.tab {\n  margin-bottom: -1px;\n  margin-right: 0.25em;\n  display: block;\n  padding: 0.35em 0.75em;\n  border-top-left-radius: 0.25em;\n  border-top-right-radius: 0.25em; }\n\n.body-path div.tab.active {\n  border-left: 1px solid #0591bf;\n  border-top: 1px solid #0591bf;\n  border-right: 1px solid #0591bf;\n  background-color: #e3f8ff;\n  color: #033241; }\n\n.body-path div.tab.clickable {\n  border-bottom: 1px solid #0591bf;\n  background-color: #05bcf7;\n  color: #033241; }\n\n.body-path div.tab.clickable:hover {\n  background-color: #05a7db;\n  text-decoration: none; }\n", ""]);
 
 	// exports
 
@@ -14861,9 +14861,9 @@
 		function (a, b, c, d, e, f) {
 			return {id: a, nodeType: b, name: c, selected: d, childrenState: e, childNodes: f};
 		});
-	var _user$project$Tree_Models$Tree = F5(
-		function (a, b, c, d, e) {
-			return {id: a, nodeType: b, name: c, children: d, path: e};
+	var _user$project$Tree_Models$Tree = F7(
+		function (a, b, c, d, e, f, g) {
+			return {id: a, nodeType: b, name: c, selected: d, childrenState: e, childNodes: f, path: g};
 		});
 	var _user$project$Tree_Models$Expanded = {ctor: 'Expanded'};
 	var _user$project$Tree_Models$Expanding = {ctor: 'Expanding'};
@@ -14878,15 +14878,18 @@
 	var _user$project$Tree_Models$convertNodeType = function (type_) {
 		return _elm_lang$core$Native_Utils.eq(type_, 'root') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$RootType) : (_elm_lang$core$Native_Utils.eq(type_, 'customer') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$CustomerType) : (_elm_lang$core$Native_Utils.eq(type_, 'client') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$ClientType) : (_elm_lang$core$Native_Utils.eq(type_, 'site') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$SiteType) : (_elm_lang$core$Native_Utils.eq(type_, 'staff') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$StaffType) : (_elm_lang$core$Native_Utils.eq(type_, 'folder') ? _elm_lang$core$Maybe$Just(_user$project$Tree_Models$FolderType) : _elm_lang$core$Maybe$Nothing)))));
 	};
+	var _user$project$Tree_Models$ChildNodes = function (a) {
+		return {ctor: 'ChildNodes', _0: a};
+	};
 	var _user$project$Tree_Models$initialTree = {
 		id: '',
 		nodeType: _user$project$Tree_Models$RootType,
 		name: '',
-		children: {ctor: '[]'},
+		selected: true,
+		childrenState: _user$project$Tree_Models$NoChildren,
+		childNodes: _user$project$Tree_Models$ChildNodes(
+			{ctor: '[]'}),
 		path: {ctor: '[]'}
-	};
-	var _user$project$Tree_Models$ChildNodes = function (a) {
-		return {ctor: 'ChildNodes', _0: a};
 	};
 
 	var _user$project$Header_Models$headerId = function (headerInfo) {
@@ -14932,7 +14935,7 @@
 								return function (h) {
 									return function (i) {
 										return function (j) {
-											return {name: a, address1: b, address2: c, address3: d, address4: e, postcode: f, contact: g, tel: h, email: i, image: j};
+											return {name: a, image: b, address1: c, address2: d, address3: e, address4: f, postcode: g, contact: h, tel: i, email: j};
 										};
 									};
 								};
@@ -14943,17 +14946,104 @@
 			};
 		};
 	};
-	var _user$project$Header_Models$Client = F7(
-		function (a, b, c, d, e, f, g) {
-			return {id: a, ref: b, name: c, address: d, contact: e, phone: f, email: g};
+	var _user$project$Header_Models$Client = F3(
+		function (a, b, c) {
+			return {id: a, access: b, values: c};
 		});
-	var _user$project$Header_Models$Site = F7(
-		function (a, b, c, d, e, f, g) {
-			return {id: a, ref: b, name: c, address: d, contact: e, phone: f, email: g};
+	var _user$project$Header_Models$ClientValues = function (a) {
+		return function (b) {
+			return function (c) {
+				return function (d) {
+					return function (e) {
+						return function (f) {
+							return function (g) {
+								return function (h) {
+									return function (i) {
+										return function (j) {
+											return function (k) {
+												return {no: a, name: b, image: c, address1: d, address2: e, address3: f, address4: g, postcode: h, contact: i, tel: j, email: k};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+	var _user$project$Header_Models$ClientAccess = F4(
+		function (a, b, c, d) {
+			return {name: a, image: b, address: c, contact: d};
 		});
-	var _user$project$Header_Models$Staff = F2(
-		function (a, b) {
-			return {id: a, name: b};
+	var _user$project$Header_Models$Site = F3(
+		function (a, b, c) {
+			return {id: a, access: b, values: c};
+		});
+	var _user$project$Header_Models$SiteValues = function (a) {
+		return function (b) {
+			return function (c) {
+				return function (d) {
+					return function (e) {
+						return function (f) {
+							return function (g) {
+								return function (h) {
+									return function (i) {
+										return function (j) {
+											return function (k) {
+												return function (l) {
+													return function (m) {
+														return function (n) {
+															return {no: a, name: b, image: c, address1: d, address2: e, address3: f, address4: g, postcode: h, contact: i, tel: j, email: k, divisionMgr: l, areaMgr: m, supervisor: n};
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+	var _user$project$Header_Models$SiteAccess = F5(
+		function (a, b, c, d, e) {
+			return {name: a, image: b, address: c, contact: d, managers: e};
+		});
+	var _user$project$Header_Models$Staff = F3(
+		function (a, b, c) {
+			return {id: a, access: b, values: c};
+		});
+	var _user$project$Header_Models$StaffValues = function (a) {
+		return function (b) {
+			return function (c) {
+				return function (d) {
+					return function (e) {
+						return function (f) {
+							return function (g) {
+								return function (h) {
+									return function (i) {
+										return function (j) {
+											return function (k) {
+												return {no: a, name: b, image: c, address1: d, address2: e, address3: f, address4: g, postcode: h, tel: i, mob: j, email: k};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+	var _user$project$Header_Models$StaffAccess = F4(
+		function (a, b, c, d) {
+			return {name: a, image: b, address: c, contact: d};
 		});
 	var _user$project$Header_Models$Tab = F2(
 		function (a, b) {
@@ -14993,6 +15083,7 @@
 	var _user$project$Tree_Messages$SelectNode = function (a) {
 		return {ctor: 'SelectNode', _0: a};
 	};
+	var _user$project$Tree_Messages$SelectRoot = {ctor: 'SelectRoot'};
 	var _user$project$Tree_Messages$ToggleNode = F2(
 		function (a, b) {
 			return {ctor: 'ToggleNode', _0: a, _1: b};
@@ -15026,9 +15117,9 @@
 			return {ctor: 'OnFetchRoot', _0: a, _1: b};
 		});
 
-	var _user$project$Content_Models$Folders = F7(
-		function (a, b, c, d, e, f, g) {
-			return {id: a, name: b, tree: c, path: d, files: e, tableState: f, query: g};
+	var _user$project$Content_Models$Folders = F6(
+		function (a, b, c, d, e, f) {
+			return {tree: a, selected: b, path: c, files: d, tableState: e, query: f};
 		});
 	var _user$project$Content_Models$File = F3(
 		function (a, b, c) {
@@ -15144,7 +15235,7 @@
 			return A2(
 				_elm_lang$core$Basics_ops['++'],
 				origin,
-				A2(_elm_lang$core$Basics_ops['++'], '/api/Node/', nodeId));
+				A2(_elm_lang$core$Basics_ops['++'], 'api/Node/', nodeId));
 		});
 	var _user$project$Tree_Commands$fetchNode = F2(
 		function (origin, nodeId) {
@@ -15176,68 +15267,13 @@
 		_user$project$Header_Commands$createTab,
 		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
 		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string));
-	var _user$project$Header_Commands$staffDecoder = A3(
-		_elm_lang$core$Json_Decode$map2,
-		_user$project$Header_Models$HeaderInfo,
-		A2(
-			_elm_lang$core$Json_Decode$map,
-			_user$project$Header_Models$StaffHeader,
-			A3(
-				_elm_lang$core$Json_Decode$map2,
-				_user$project$Header_Models$Staff,
-				A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string))),
-		A2(
-			_elm_lang$core$Json_Decode$field,
-			'tabs',
-			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
-	var _user$project$Header_Commands$siteDecoder = A3(
-		_elm_lang$core$Json_Decode$map2,
-		_user$project$Header_Models$HeaderInfo,
-		A2(
-			_elm_lang$core$Json_Decode$map,
-			_user$project$Header_Models$SiteHeader,
-			A8(
-				_elm_lang$core$Json_Decode$map7,
-				_user$project$Header_Models$Site,
-				A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'ref', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'address', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'contact', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'phone', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'email', _elm_lang$core$Json_Decode$string))),
-		A2(
-			_elm_lang$core$Json_Decode$field,
-			'tabs',
-			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
-	var _user$project$Header_Commands$clientDecoder = A3(
-		_elm_lang$core$Json_Decode$map2,
-		_user$project$Header_Models$HeaderInfo,
-		A2(
-			_elm_lang$core$Json_Decode$map,
-			_user$project$Header_Models$ClientHeader,
-			A8(
-				_elm_lang$core$Json_Decode$map7,
-				_user$project$Header_Models$Client,
-				A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'ref', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'address', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'contact', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'phone', _elm_lang$core$Json_Decode$string),
-				A2(_elm_lang$core$Json_Decode$field, 'email', _elm_lang$core$Json_Decode$string))),
-		A2(
-			_elm_lang$core$Json_Decode$field,
-			'tabs',
-			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
-	var _user$project$Header_Commands$customerValuesDecoder = A3(
+	var _user$project$Header_Commands$staffValuesDecoder = A3(
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-		'image',
+		'email',
 		_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 		A3(
 			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-			'email',
+			'mob',
 			_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 			A3(
 				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
@@ -15245,27 +15281,326 @@
 				_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 				A3(
 					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-					'contact',
+					'postcode',
 					_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 					A3(
 						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-						'postcode',
+						'address4',
 						_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 						A3(
 							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-							'address4',
+							'address3',
 							_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 							A3(
 								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-								'address3',
+								'address2',
 								_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 								A3(
 									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-									'address2',
+									'address1',
 									_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 									A3(
 										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-										'address1',
+										'image',
+										_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+										A3(
+											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+											'name',
+											_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+											A3(
+												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+												'no',
+												_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$StaffValues))))))))))));
+	var _user$project$Header_Commands$createStaffAccess = F4(
+		function (name, image, address, contact) {
+			return A4(
+				_user$project$Header_Models$StaffAccess,
+				_user$project$Header_Models$convertAccessType(name),
+				_user$project$Header_Models$convertAccessType(image),
+				_user$project$Header_Models$convertAccessType(address),
+				_user$project$Header_Models$convertAccessType(contact));
+		});
+	var _user$project$Header_Commands$staffAccessDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'contact',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'address',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'image',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'name',
+					_elm_lang$core$Json_Decode$string,
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Commands$createStaffAccess)))));
+	var _user$project$Header_Commands$staffDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$StaffHeader,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'values',
+				_user$project$Header_Commands$staffValuesDecoder,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'access',
+					_user$project$Header_Commands$staffAccessDecoder,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'id',
+						_elm_lang$core$Json_Decode$string,
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$Staff))))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$siteValuesDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'supervisor',
+		_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'areaMgr',
+			_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'divisionMgr',
+				_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'email',
+					_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'tel',
+						_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'contact',
+							_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+							A3(
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+								'postcode',
+								_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+								A3(
+									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+									'address4',
+									_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+									A3(
+										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+										'address3',
+										_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+										A3(
+											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+											'address2',
+											_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+											A3(
+												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+												'address1',
+												_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+												A3(
+													_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+													'image',
+													_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+													A3(
+														_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+														'name',
+														_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+														A3(
+															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+															'no',
+															_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+															_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$SiteValues)))))))))))))));
+	var _user$project$Header_Commands$createSiteAccess = F5(
+		function (name, image, address, contact, managers) {
+			return A5(
+				_user$project$Header_Models$SiteAccess,
+				_user$project$Header_Models$convertAccessType(name),
+				_user$project$Header_Models$convertAccessType(image),
+				_user$project$Header_Models$convertAccessType(address),
+				_user$project$Header_Models$convertAccessType(contact),
+				_user$project$Header_Models$convertAccessType(managers));
+		});
+	var _user$project$Header_Commands$siteAccessDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'managers',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'contact',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'address',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'image',
+					_elm_lang$core$Json_Decode$string,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'name',
+						_elm_lang$core$Json_Decode$string,
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Commands$createSiteAccess))))));
+	var _user$project$Header_Commands$siteDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$SiteHeader,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'values',
+				_user$project$Header_Commands$siteValuesDecoder,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'access',
+					_user$project$Header_Commands$siteAccessDecoder,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'id',
+						_elm_lang$core$Json_Decode$string,
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$Site))))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$clientValuesDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'email',
+		_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'tel',
+			_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'contact',
+				_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'postcode',
+					_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'address4',
+						_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'address3',
+							_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+							A3(
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+								'address2',
+								_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+								A3(
+									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+									'address1',
+									_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+									A3(
+										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+										'image',
+										_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+										A3(
+											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+											'name',
+											_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+											A3(
+												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+												'no',
+												_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+												_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$ClientValues))))))))))));
+	var _user$project$Header_Commands$createClientAccess = F4(
+		function (name, image, address, contact) {
+			return A4(
+				_user$project$Header_Models$ClientAccess,
+				_user$project$Header_Models$convertAccessType(name),
+				_user$project$Header_Models$convertAccessType(image),
+				_user$project$Header_Models$convertAccessType(address),
+				_user$project$Header_Models$convertAccessType(contact));
+		});
+	var _user$project$Header_Commands$clientAccessDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'contact',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'address',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'image',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'name',
+					_elm_lang$core$Json_Decode$string,
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Commands$createClientAccess)))));
+	var _user$project$Header_Commands$clientDecoder = A3(
+		_elm_lang$core$Json_Decode$map2,
+		_user$project$Header_Models$HeaderInfo,
+		A2(
+			_elm_lang$core$Json_Decode$map,
+			_user$project$Header_Models$ClientHeader,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'values',
+				_user$project$Header_Commands$clientValuesDecoder,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'access',
+					_user$project$Header_Commands$clientAccessDecoder,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'id',
+						_elm_lang$core$Json_Decode$string,
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Header_Models$Client))))),
+		A2(
+			_elm_lang$core$Json_Decode$field,
+			'tabs',
+			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
+	var _user$project$Header_Commands$customerValuesDecoder = A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'email',
+		_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'tel',
+			_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'contact',
+				_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'postcode',
+					_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'address4',
+						_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'address3',
+							_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+							A3(
+								_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+								'address2',
+								_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+								A3(
+									_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+									'address1',
+									_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
+									A3(
+										_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+										'image',
 										_elm_lang$core$Json_Decode$nullable(_elm_lang$core$Json_Decode$string),
 										A3(
 											_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
@@ -15337,7 +15672,7 @@
 			'tabs',
 			_elm_lang$core$Json_Decode$list(_user$project$Header_Commands$tabDecoder)));
 	var _user$project$Header_Commands$apiUrl = function (origin) {
-		return A2(_elm_lang$core$Basics_ops['++'], origin, '/api/');
+		return A2(_elm_lang$core$Basics_ops['++'], origin, 'api/');
 	};
 	var _user$project$Header_Commands$rootUrl = F2(
 		function (origin, nodeId) {
@@ -15453,7 +15788,7 @@
 				_elm_lang$core$Platform_Cmd$map,
 				_user$project$Container_Messages$HeaderMsg,
 				A3(_user$project$Header_Commands$fetchHeader, origin, nodeType, nodeId)) : _elm_lang$core$Platform_Cmd$none;
-			var treeCmd = _elm_lang$core$List$isEmpty(container.tree.children) ? A2(
+			var treeCmd = _elm_lang$core$Native_Utils.eq(container.tree.childrenState, _user$project$Tree_Models$NoChildren) ? A2(
 				_elm_lang$core$Platform_Cmd$map,
 				_user$project$Container_Messages$TreeMsg,
 				A2(_user$project$Tree_Commands$fetchRoot, origin, nodeId)) : _elm_lang$core$Platform_Cmd$none;
@@ -15493,7 +15828,10 @@
 			id: tempRoot.id,
 			nodeType: nodeType,
 			name: tempRoot.name,
-			children: A2(_elm_lang$core$List$map, _user$project$Tree_Update$createNode, tempRoot.children),
+			selected: true,
+			childrenState: _user$project$Tree_Models$Expanded,
+			childNodes: _user$project$Tree_Models$ChildNodes(
+				A2(_elm_lang$core$List$map, _user$project$Tree_Update$createNode, tempRoot.children)),
 			path: {ctor: '[]'}
 		};
 	};
@@ -15526,25 +15864,29 @@
 		});
 	var _user$project$Tree_Update$fetchedNode = F3(
 		function (nodeId, tempChildren, tree) {
+			var _p1 = tree.childNodes;
+			var childNodes = _p1._0;
 			var newChildren = A2(
 				_elm_lang$core$List$map,
 				A2(_user$project$Tree_Update$expandChildren, nodeId, tempChildren),
-				tree.children);
+				childNodes);
 			return _elm_lang$core$Native_Utils.update(
 				tree,
-				{children: newChildren});
+				{
+					childNodes: _user$project$Tree_Models$ChildNodes(newChildren)
+				});
 		});
 	var _user$project$Tree_Update$toggleChildNodes = F3(
 		function (origin, nodeId, node) {
-			var _p1 = node.childNodes;
-			var childNodes = _p1._0;
+			var _p2 = node.childNodes;
+			var childNodes = _p2._0;
 			var results = A2(
 				_elm_lang$core$List$map,
 				A2(_user$project$Tree_Update$toggleNode, origin, nodeId),
 				childNodes);
-			var _p2 = _elm_lang$core$List$unzip(results);
-			var newChildNodes = _p2._0;
-			var cmds = _p2._1;
+			var _p3 = _elm_lang$core$List$unzip(results);
+			var newChildNodes = _p3._0;
+			var cmds = _p3._1;
 			return {
 				ctor: '_Tuple2',
 				_0: _elm_lang$core$Native_Utils.update(
@@ -15557,15 +15899,15 @@
 		});
 	var _user$project$Tree_Update$toggleNode = F3(
 		function (origin, nodeId, node) {
-			var _p3 = function () {
+			var _p4 = function () {
 				if (_elm_lang$core$Native_Utils.eq(nodeId, node.id)) {
-					var _p4 = node.childrenState;
-					switch (_p4.ctor) {
+					var _p5 = node.childrenState;
+					switch (_p5.ctor) {
 						case 'NoChildren':
 							return {ctor: '_Tuple2', _0: node, _1: _elm_lang$core$Platform_Cmd$none};
 						case 'Collapsed':
-							var _p5 = node.childNodes;
-							var childNodes = _p5._0;
+							var _p6 = node.childNodes;
+							var childNodes = _p6._0;
 							return _elm_lang$core$List$isEmpty(childNodes) ? {
 								ctor: '_Tuple2',
 								_0: _elm_lang$core$Native_Utils.update(
@@ -15594,38 +15936,42 @@
 					return A3(_user$project$Tree_Update$toggleChildNodes, origin, nodeId, node);
 				}
 			}();
-			var newNode = _p3._0;
-			var cmd = _p3._1;
+			var newNode = _p4._0;
+			var cmd = _p4._1;
 			return {ctor: '_Tuple2', _0: newNode, _1: cmd};
 		});
 	var _user$project$Tree_Update$toggle = F3(
 		function (origin, nodeId, tree) {
+			var _p7 = tree.childNodes;
+			var childNodes = _p7._0;
 			var results = A2(
 				_elm_lang$core$List$map,
 				A2(_user$project$Tree_Update$toggleNode, origin, nodeId),
-				tree.children);
-			var _p6 = _elm_lang$core$List$unzip(results);
-			var newChildren = _p6._0;
-			var cmds = _p6._1;
+				childNodes);
+			var _p8 = _elm_lang$core$List$unzip(results);
+			var newChildren = _p8._0;
+			var cmds = _p8._1;
 			return {
 				ctor: '_Tuple2',
 				_0: _elm_lang$core$Native_Utils.update(
 					tree,
-					{children: newChildren}),
+					{
+						childNodes: _user$project$Tree_Models$ChildNodes(newChildren)
+					}),
 				_1: _elm_lang$core$Platform_Cmd$batch(cmds)
 			};
 		});
 	var _user$project$Tree_Update$selectNode = F2(
 		function (nodeId, node) {
-			var _p7 = node.childNodes;
-			var childNodes = _p7._0;
+			var _p9 = node.childNodes;
+			var childNodes = _p9._0;
 			var results = A2(
 				_elm_lang$core$List$map,
 				_user$project$Tree_Update$selectNode(nodeId),
 				childNodes);
-			var _p8 = _elm_lang$core$List$unzip(results);
-			var newChildNodes = _p8._0;
-			var newPathLists = _p8._1;
+			var _p10 = _elm_lang$core$List$unzip(results);
+			var newChildNodes = _p10._0;
+			var newPathLists = _p10._1;
 			var newNode = _elm_lang$core$Native_Utils.update(
 				node,
 				{
@@ -15655,27 +16001,36 @@
 		});
 	var _user$project$Tree_Update$select = F2(
 		function (nodeId, tree) {
+			var _p11 = tree.childNodes;
+			var childNodes = _p11._0;
 			var results = A2(
 				_elm_lang$core$List$map,
 				_user$project$Tree_Update$selectNode(nodeId),
-				tree.children);
-			var _p9 = _elm_lang$core$List$unzip(results);
-			var newChildren = _p9._0;
-			var newPathLists = _p9._1;
+				childNodes);
+			var _p12 = _elm_lang$core$List$unzip(results);
+			var newChildren = _p12._0;
+			var newPathLists = _p12._1;
 			var newPath = _elm_lang$core$List$concat(newPathLists);
+			var newSelected = _elm_lang$core$Native_Utils.eq(
+				_elm_lang$core$List$length(newPath),
+				0);
 			return _elm_lang$core$Native_Utils.update(
 				tree,
-				{children: newChildren, path: newPath});
+				{
+					childNodes: _user$project$Tree_Models$ChildNodes(newChildren),
+					selected: newSelected,
+					path: newPath
+				});
 		});
 	var _user$project$Tree_Update$update = F2(
 		function (message, tree) {
-			var _p10 = message;
-			switch (_p10.ctor) {
+			var _p13 = message;
+			switch (_p13.ctor) {
 				case 'OnFetchRoot':
-					if (_p10._0.ctor === 'Ok') {
+					if (_p13._0.ctor === 'Ok') {
 						return {
 							ctor: '_Tuple3',
-							_0: _user$project$Tree_Update$fetchedRoot(_p10._0._0),
+							_0: _user$project$Tree_Update$fetchedRoot(_p13._0._0),
 							_1: _elm_lang$core$Platform_Cmd$none,
 							_2: tree.path
 						};
@@ -15683,10 +16038,10 @@
 						return {ctor: '_Tuple3', _0: tree, _1: _elm_lang$core$Platform_Cmd$none, _2: tree.path};
 					}
 				case 'OnFetchNode':
-					if (_p10._1.ctor === 'Ok') {
+					if (_p13._1.ctor === 'Ok') {
 						return {
 							ctor: '_Tuple3',
-							_0: A3(_user$project$Tree_Update$fetchedNode, _p10._0, _p10._1._0, tree),
+							_0: A3(_user$project$Tree_Update$fetchedNode, _p13._0, _p13._1._0, tree),
 							_1: _elm_lang$core$Platform_Cmd$none,
 							_2: tree.path
 						};
@@ -15694,12 +16049,15 @@
 						return {ctor: '_Tuple3', _0: tree, _1: _elm_lang$core$Platform_Cmd$none, _2: tree.path};
 					}
 				case 'ToggleNode':
-					var _p11 = A3(_user$project$Tree_Update$toggle, _p10._0, _p10._1, tree);
-					var newTree = _p11._0;
-					var cmds = _p11._1;
+					var _p14 = A3(_user$project$Tree_Update$toggle, _p13._0, _p13._1, tree);
+					var newTree = _p14._0;
+					var cmds = _p14._1;
 					return {ctor: '_Tuple3', _0: newTree, _1: cmds, _2: tree.path};
+				case 'SelectRoot':
+					var newTree = A2(_user$project$Tree_Update$select, tree.id, tree);
+					return {ctor: '_Tuple3', _0: newTree, _1: _elm_lang$core$Platform_Cmd$none, _2: newTree.path};
 				default:
-					var newTree = A2(_user$project$Tree_Update$select, _p10._0, tree);
+					var newTree = A2(_user$project$Tree_Update$select, _p13._0, tree);
 					return {ctor: '_Tuple3', _0: newTree, _1: _elm_lang$core$Platform_Cmd$none, _2: newTree.path};
 			}
 		});
@@ -15800,8 +16158,7 @@
 		});
 	var _user$project$Content_Commands$createTree = F4(
 		function (nodeId, type_, name, children) {
-			var node = A4(_user$project$Content_Commands$createNode, nodeId, type_, name, children);
-			return A5(
+			return A7(
 				_user$project$Tree_Models$Tree,
 				nodeId,
 				A2(
@@ -15809,11 +16166,9 @@
 					_user$project$Tree_Models$FolderType,
 					_user$project$Tree_Models$convertNodeType(type_)),
 				name,
-				{
-					ctor: '::',
-					_0: node,
-					_1: {ctor: '[]'}
-				},
+				true,
+				_user$project$Tree_Models$Expanded,
+				_user$project$Tree_Models$ChildNodes(children),
 				{ctor: '[]'});
 		});
 	var _user$project$Content_Commands$childDecoder = A4(
@@ -15836,9 +16191,21 @@
 					function (_p0) {
 						return _user$project$Content_Commands$folderDecoder;
 					}))));
-	var _user$project$Content_Commands$treeDecoder = A5(
+	var _user$project$Content_Commands$createFolders = F4(
+		function (nodeId, type_, name, children) {
+			var tree = A4(_user$project$Content_Commands$createTree, nodeId, type_, name, children);
+			return A6(
+				_user$project$Content_Models$Folders,
+				tree,
+				true,
+				{ctor: '[]'},
+				{ctor: '[]'},
+				_evancz$elm_sortable_table$Table$initialSort('Name'),
+				'');
+		});
+	var _user$project$Content_Commands$foldersDecoder = A5(
 		_elm_lang$core$Json_Decode$map4,
-		_user$project$Content_Commands$createTree,
+		_user$project$Content_Commands$createFolders,
 		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
 		A2(_elm_lang$core$Json_Decode$field, 'type', _elm_lang$core$Json_Decode$string),
 		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
@@ -15850,26 +16217,8 @@
 					function (_p1) {
 						return _user$project$Content_Commands$folderDecoder;
 					}))));
-	var _user$project$Content_Commands$createFolders = F3(
-		function (nodeId, name, tree) {
-			return A7(
-				_user$project$Content_Models$Folders,
-				nodeId,
-				name,
-				tree,
-				{ctor: '[]'},
-				{ctor: '[]'},
-				_evancz$elm_sortable_table$Table$initialSort('Name'),
-				'');
-		});
-	var _user$project$Content_Commands$foldersDecoder = A4(
-		_elm_lang$core$Json_Decode$map3,
-		_user$project$Content_Commands$createFolders,
-		A2(_elm_lang$core$Json_Decode$field, 'id', _elm_lang$core$Json_Decode$string),
-		A2(_elm_lang$core$Json_Decode$field, 'name', _elm_lang$core$Json_Decode$string),
-		A2(_elm_lang$core$Json_Decode$field, 'tree', _user$project$Content_Commands$treeDecoder));
 	var _user$project$Content_Commands$apiUrl = function (origin) {
-		return A2(_elm_lang$core$Basics_ops['++'], origin, '/api/');
+		return A2(_elm_lang$core$Basics_ops['++'], origin, 'api/');
 	};
 	var _user$project$Content_Commands$foldersUrl = F2(
 		function (origin, nodeId) {
@@ -16109,22 +16458,30 @@
 	var _user$project$Container_Update$updatePathFromTree = F5(
 		function (origin, container, updatedTree, cmdTree, path) {
 			var maybeSelected = _elm_lang$core$List$head(path);
-			var cmdHeader = function () {
-				var _p0 = maybeSelected;
-				if (_p0.ctor === 'Just') {
-					var _p1 = _p0._0;
-					return A3(_user$project$Header_Commands$fetchHeader, origin, _p1.nodeType, _p1.id);
+			var _p0 = function () {
+				var _p1 = maybeSelected;
+				if (_p1.ctor === 'Just') {
+					var _p2 = _p1._0;
+					return {ctor: '_Tuple2', _0: _p2.id, _1: _p2.nodeType};
 				} else {
-					return A3(_user$project$Header_Commands$fetchHeader, origin, container.tree.nodeType, container.tree.id);
+					return {ctor: '_Tuple2', _0: container.tree.id, _1: container.tree.nodeType};
 				}
 			}();
+			var headerId = _p0._0;
+			var headerType = _p0._1;
+			var cmdHeader = (!_elm_lang$core$Native_Utils.eq(
+				headerId,
+				_user$project$Header_Models$headerId(container.headerInfo))) ? A2(
+				_elm_lang$core$Platform_Cmd$map,
+				_user$project$Container_Messages$HeaderMsg,
+				A3(_user$project$Header_Commands$fetchHeader, origin, headerType, headerId)) : _elm_lang$core$Platform_Cmd$none;
 			var cmdBatch = _elm_lang$core$Platform_Cmd$batch(
 				{
 					ctor: '::',
 					_0: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$TreeMsg, cmdTree),
 					_1: {
 						ctor: '::',
-						_0: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$HeaderMsg, cmdHeader),
+						_0: cmdHeader,
 						_1: {ctor: '[]'}
 					}
 				});
@@ -16138,8 +16495,8 @@
 		});
 	var _user$project$Container_Update$update = F3(
 		function (origin, message, container) {
-			var _p2 = message;
-			switch (_p2.ctor) {
+			var _p3 = message;
+			switch (_p3.ctor) {
 				case 'ShowContainer':
 					return {
 						ctor: '_Tuple2',
@@ -16147,27 +16504,27 @@
 						_1: _elm_lang$navigation$Navigation$newUrl('#container/customer/path/Customer-46-Client')
 					};
 				case 'SelectPath':
-					var _p3 = A2(
+					var _p4 = A2(
 						_user$project$Tree_Update$update,
-						_user$project$Tree_Messages$SelectNode(_p2._0),
+						_user$project$Tree_Messages$SelectNode(_p3._0),
 						container.tree);
-					var updatedTree = _p3._0;
-					var cmdTree = _p3._1;
-					var path = _p3._2;
+					var updatedTree = _p4._0;
+					var cmdTree = _p4._1;
+					var path = _p4._2;
 					return A5(_user$project$Container_Update$updatePathFromTree, origin, container, updatedTree, cmdTree, path);
 				case 'SelectTab':
-					var _p5 = _p2._0;
+					var _p6 = _p3._0;
 					var maybeTab = _elm_lang$core$List$head(
 						A2(
 							_elm_lang$core$List$filter,
 							function (t) {
-								return _elm_lang$core$Native_Utils.eq(t.tabType, _p5);
+								return _elm_lang$core$Native_Utils.eq(t.tabType, _p6);
 							},
 							container.headerInfo.tabs));
 					var updatedTab = function () {
-						var _p4 = maybeTab;
-						if (_p4.ctor === 'Just') {
-							return _p4._0;
+						var _p5 = maybeTab;
+						if (_p5.ctor === 'Just') {
+							return _p5._0;
 						} else {
 							return A2(
 								_elm_lang$core$Maybe$withDefault,
@@ -16176,7 +16533,7 @@
 						}
 					}();
 					var nodeId = _user$project$Header_Models$headerId(container.headerInfo);
-					var cmdContent = A3(_user$project$Content_Commands$fetchContent, origin, _p5, nodeId);
+					var cmdContent = A3(_user$project$Content_Commands$fetchContent, origin, _p6, nodeId);
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
@@ -16185,15 +16542,15 @@
 						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Container_Messages$ContentMsg, cmdContent)
 					};
 				case 'TreeMsg':
-					var _p6 = A2(_user$project$Tree_Update$update, _p2._0, container.tree);
-					var updatedTree = _p6._0;
-					var cmdTree = _p6._1;
-					var path = _p6._2;
+					var _p7 = A2(_user$project$Tree_Update$update, _p3._0, container.tree);
+					var updatedTree = _p7._0;
+					var cmdTree = _p7._1;
+					var path = _p7._2;
 					return A5(_user$project$Container_Update$updatePathFromTree, origin, container, updatedTree, cmdTree, path);
 				case 'HeaderMsg':
-					var _p7 = A2(_user$project$Header_Update$update, _p2._0, container.headerInfo);
-					var updatedHeaderInfo = _p7._0;
-					var cmdHeader = _p7._1;
+					var _p8 = A2(_user$project$Header_Update$update, _p3._0, container.headerInfo);
+					var updatedHeaderInfo = _p8._0;
+					var cmdHeader = _p8._1;
 					var nodeId = _user$project$Header_Models$headerId(updatedHeaderInfo);
 					var maybeTab = _elm_lang$core$List$head(
 						A2(
@@ -16203,9 +16560,9 @@
 							},
 							updatedHeaderInfo.tabs));
 					var updatedTab = function () {
-						var _p8 = maybeTab;
-						if (_p8.ctor === 'Just') {
-							return _p8._0;
+						var _p9 = maybeTab;
+						if (_p9.ctor === 'Just') {
+							return _p9._0;
 						} else {
 							return A2(
 								_elm_lang$core$Maybe$withDefault,
@@ -16232,9 +16589,9 @@
 						_1: cmdBatch
 					};
 				default:
-					var _p9 = A3(_user$project$Content_Update$update, origin, _p2._0, container.content);
-					var updatedContent = _p9._0;
-					var cmdContent = _p9._1;
+					var _p10 = A3(_user$project$Content_Update$update, origin, _p3._0, container.content);
+					var updatedContent = _p10._0;
+					var cmdContent = _p10._1;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
@@ -16375,6 +16732,135 @@
 					}
 				});
 		});
+	var _user$project$Tree_View$viewRoot = F2(
+		function (origin, tree) {
+			var _p3 = tree.childNodes;
+			var childNodes = _p3._0;
+			var nodeStyle = A2(
+				_elm_lang$core$Basics_ops['++'],
+				'k-in btn regular p0',
+				tree.selected ? ' k-state-selected' : '');
+			var _p4 = function () {
+				var _p5 = tree.childrenState;
+				switch (_p5.ctor) {
+					case 'Collapsed':
+						return {ctor: '_Tuple2', _0: 'k-icon k-plus', _1: 'fa fa-caret-right'};
+					case 'Expanding':
+						return {ctor: '_Tuple2', _0: 'k-icon k-minus', _1: 'fa fa-spin fa-refresh'};
+					case 'Expanded':
+						return {ctor: '_Tuple2', _0: 'k-icon k-minus', _1: 'fa fa-caret-down'};
+					default:
+						return {ctor: '_Tuple2', _0: '', _1: ''};
+				}
+			}();
+			var iconClass = _p4._0;
+			var faClass = _p4._1;
+			var expandedValue = _elm_lang$core$Native_Utils.eq(tree.childrenState, _user$project$Tree_Models$Expanded) ? 'true' : 'false';
+			var childStyle = _elm_lang$core$Native_Utils.eq(tree.childrenState, _user$project$Tree_Models$Expanded) ? 'display: block;' : 'display: none; overflow: visible; height: 0px;';
+			return A2(
+				_elm_lang$html$Html$li,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('k-item'),
+					_1: {
+						ctor: '::',
+						_0: A2(_elm_lang$html$Html_Attributes$attribute, 'aria-expanded', expandedValue),
+						_1: {
+							ctor: '::',
+							_0: A2(_elm_lang$html$Html_Attributes$attribute, 'data-expanded', expandedValue),
+							_1: {
+								ctor: '::',
+								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'treeitem'),
+								_1: {ctor: '[]'}
+							}
+						}
+					}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('k-mid'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class(iconClass),
+									_1: {
+										ctor: '::',
+										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'presentation'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												A2(_user$project$Tree_Messages$ToggleNode, origin, tree.id)),
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$i,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class(faClass),
+											_1: {ctor: '[]'}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class(nodeStyle),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(_user$project$Tree_Messages$SelectRoot),
+											_1: {ctor: '[]'}
+										}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(tree.name),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$ul,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('k-group'),
+								_1: {
+									ctor: '::',
+									_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'group'),
+									_1: {
+										ctor: '::',
+										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'style', childStyle),
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							A2(
+								_elm_lang$core$List$map,
+								_user$project$Tree_View$viewNode(origin),
+								childNodes)),
+						_1: {ctor: '[]'}
+					}
+				});
+		});
 	var _user$project$Tree_View$viewTree = F2(
 		function (origin, tree) {
 			return A2(
@@ -16401,10 +16887,11 @@
 								}
 							}
 						},
-						A2(
-							_elm_lang$core$List$map,
-							_user$project$Tree_View$viewNode(origin),
-							tree.children)),
+						{
+							ctor: '::',
+							_0: A2(_user$project$Tree_View$viewRoot, origin, tree),
+							_1: {ctor: '[]'}
+						}),
 					_1: {ctor: '[]'}
 				});
 		});
@@ -16432,48 +16919,6 @@
 			_0: _elm_lang$html$Html$text('Empty'),
 			_1: {ctor: '[]'}
 		});
-	var _user$project$Header_View$headerStaff = function (staff) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('body-header'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('Staff'),
-				_1: {ctor: '[]'}
-			});
-	};
-	var _user$project$Header_View$headerSite = function (site) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('body-header'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('Site'),
-				_1: {ctor: '[]'}
-			});
-	};
-	var _user$project$Header_View$headerClient = function (client) {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('body-header'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('Client'),
-				_1: {ctor: '[]'}
-			});
-	};
 	var _user$project$Header_View$fullAddress = F5(
 		function (maybeAddress1, maybeAddress2, maybeAddress3, maybeAddress4, maybePostcode) {
 			return _elm_lang$core$Maybe$Just(
@@ -16520,10 +16965,13 @@
 			var _p0 = function () {
 				var _p1 = maybeValue;
 				if (_p1.ctor === 'Just') {
-					return (!_elm_lang$core$Native_Utils.eq(accessType, _user$project$Header_Models$None)) ? {
+					var _p2 = _p1._0;
+					return ((!_elm_lang$core$Native_Utils.eq(accessType, _user$project$Header_Models$None)) && (_elm_lang$core$Native_Utils.cmp(
+						_elm_lang$core$String$length(_p2),
+						0) > 0)) ? {
 						ctor: '_Tuple2',
 						_0: 'display: block;',
-						_1: A2(_elm_lang$core$Basics_ops['++'], ' ', _p1._0)
+						_1: A2(_elm_lang$core$Basics_ops['++'], ' ', _p2)
 					} : hidden;
 				} else {
 					return hidden;
@@ -16571,15 +17019,15 @@
 		var values = customer.values;
 		var address = A5(_user$project$Header_View$fullAddress, values.address1, values.address2, values.address3, values.address4, values.postcode);
 		var backgroundImage = function () {
-			var _p2 = values.image;
-			if (_p2.ctor === 'Just') {
+			var _p3 = values.image;
+			if (_p3.ctor === 'Just') {
 				return {
 					ctor: '_Tuple2',
 					_0: 'background-image',
 					_1: A2(
 						_elm_lang$core$Basics_ops['++'],
 						'url(\'',
-						A2(_elm_lang$core$Basics_ops['++'], _p2._0, '\')'))
+						A2(_elm_lang$core$Basics_ops['++'], _p3._0, '\')'))
 				};
 			} else {
 				return {ctor: '_Tuple2', _0: 'display', _1: 'none'};
@@ -16661,6 +17109,312 @@
 				}
 			});
 	};
+	var _user$project$Header_View$headerClient = function (client) {
+		var values = client.values;
+		var address = A5(_user$project$Header_View$fullAddress, values.address1, values.address2, values.address3, values.address4, values.postcode);
+		var backgroundImage = function () {
+			var _p4 = values.image;
+			if (_p4.ctor === 'Just') {
+				return {
+					ctor: '_Tuple2',
+					_0: 'background-image',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'url(\'',
+						A2(_elm_lang$core$Basics_ops['++'], _p4._0, '\')'))
+				};
+			} else {
+				return {ctor: '_Tuple2', _0: 'display', _1: 'none'};
+			}
+		}();
+		var access = client.access;
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('body-header-image'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$style(
+								{
+									ctor: '::',
+									_0: backgroundImage,
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('body-header-content clearfix pl2 pr2'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A4(_user$project$Header_View$headerItem, 'Ref', 'wrench', access.name, values.no),
+							_1: {
+								ctor: '::',
+								_0: A4(_user$project$Header_View$headerItem, 'Name', 'globe', access.name, values.name),
+								_1: {
+									ctor: '::',
+									_0: A4(_user$project$Header_View$headerItem, 'Address', 'home', access.address, address),
+									_1: {
+										ctor: '::',
+										_0: A4(_user$project$Header_View$headerItem, 'Contact', 'user-o', access.contact, values.contact),
+										_1: {
+											ctor: '::',
+											_0: A4(_user$project$Header_View$headerItem, 'Phone', 'phone', access.contact, values.tel),
+											_1: {
+												ctor: '::',
+												_0: A4(_user$project$Header_View$headerItem, 'Email', 'envelope', access.contact, values.email),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('body-header-extra'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Extra'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	};
+	var _user$project$Header_View$headerSite = function (site) {
+		var values = site.values;
+		var address = A5(_user$project$Header_View$fullAddress, values.address1, values.address2, values.address3, values.address4, values.postcode);
+		var backgroundImage = function () {
+			var _p5 = values.image;
+			if (_p5.ctor === 'Just') {
+				return {
+					ctor: '_Tuple2',
+					_0: 'background-image',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'url(\'',
+						A2(_elm_lang$core$Basics_ops['++'], _p5._0, '\')'))
+				};
+			} else {
+				return {ctor: '_Tuple2', _0: 'display', _1: 'none'};
+			}
+		}();
+		var access = site.access;
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('body-header-image'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$style(
+								{
+									ctor: '::',
+									_0: backgroundImage,
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('body-header-content clearfix pl2 pr2'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A4(_user$project$Header_View$headerItem, 'Ref', 'wrench', access.name, values.no),
+							_1: {
+								ctor: '::',
+								_0: A4(_user$project$Header_View$headerItem, 'Name', 'globe', access.name, values.name),
+								_1: {
+									ctor: '::',
+									_0: A4(_user$project$Header_View$headerItem, 'Address', 'home', access.address, address),
+									_1: {
+										ctor: '::',
+										_0: A4(_user$project$Header_View$headerItem, 'Contact', 'user-o', access.contact, values.contact),
+										_1: {
+											ctor: '::',
+											_0: A4(_user$project$Header_View$headerItem, 'Phone', 'phone', access.contact, values.tel),
+											_1: {
+												ctor: '::',
+												_0: A4(_user$project$Header_View$headerItem, 'Email', 'envelope', access.contact, values.email),
+												_1: {
+													ctor: '::',
+													_0: A4(_user$project$Header_View$headerItem, 'Division Mgr', 'user-o', access.managers, values.divisionMgr),
+													_1: {
+														ctor: '::',
+														_0: A4(_user$project$Header_View$headerItem, 'Area Mgr', 'user-o', access.managers, values.areaMgr),
+														_1: {
+															ctor: '::',
+															_0: A4(_user$project$Header_View$headerItem, 'Supervisor', 'user-o', access.managers, values.supervisor),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('body-header-extra'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Extra'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	};
+	var _user$project$Header_View$headerStaff = function (staff) {
+		var values = staff.values;
+		var address = A5(_user$project$Header_View$fullAddress, values.address1, values.address2, values.address3, values.address4, values.postcode);
+		var backgroundImage = function () {
+			var _p6 = values.image;
+			if (_p6.ctor === 'Just') {
+				return {
+					ctor: '_Tuple2',
+					_0: 'background-image',
+					_1: A2(
+						_elm_lang$core$Basics_ops['++'],
+						'url(\'',
+						A2(_elm_lang$core$Basics_ops['++'], _p6._0, '\')'))
+				};
+			} else {
+				return {ctor: '_Tuple2', _0: 'display', _1: 'none'};
+			}
+		}();
+		var access = staff.access;
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class('body-header'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('body-header-image'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$style(
+								{
+									ctor: '::',
+									_0: backgroundImage,
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('body-header-content clearfix pl2 pr2'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A4(_user$project$Header_View$headerItem, 'Ref', 'wrench', access.name, values.no),
+							_1: {
+								ctor: '::',
+								_0: A4(_user$project$Header_View$headerItem, 'Name', 'globe', access.name, values.name),
+								_1: {
+									ctor: '::',
+									_0: A4(_user$project$Header_View$headerItem, 'Address', 'home', access.address, address),
+									_1: {
+										ctor: '::',
+										_0: A4(_user$project$Header_View$headerItem, 'Tel', 'phone', access.contact, values.tel),
+										_1: {
+											ctor: '::',
+											_0: A4(_user$project$Header_View$headerItem, 'Mob', 'phone', access.contact, values.mob),
+											_1: {
+												ctor: '::',
+												_0: A4(_user$project$Header_View$headerItem, 'Email', 'envelope', access.contact, values.email),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('body-header-extra'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Extra'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			});
+	};
 	var _user$project$Header_View$headerRoot = function (root) {
 		return A2(
 			_elm_lang$html$Html$div,
@@ -16676,18 +17430,18 @@
 			});
 	};
 	var _user$project$Header_View$view = function (headerInfo) {
-		var _p3 = headerInfo.header;
-		switch (_p3.ctor) {
+		var _p7 = headerInfo.header;
+		switch (_p7.ctor) {
 			case 'RootHeader':
-				return _user$project$Header_View$headerRoot(_p3._0);
+				return _user$project$Header_View$headerRoot(_p7._0);
 			case 'CustomerHeader':
-				return _user$project$Header_View$headerCustomer(_p3._0);
+				return _user$project$Header_View$headerCustomer(_p7._0);
 			case 'ClientHeader':
-				return _user$project$Header_View$headerClient(_p3._0);
+				return _user$project$Header_View$headerClient(_p7._0);
 			case 'SiteHeader':
-				return _user$project$Header_View$headerSite(_p3._0);
+				return _user$project$Header_View$headerSite(_p7._0);
 			case 'StaffHeader':
-				return _user$project$Header_View$headerStaff(_p3._0);
+				return _user$project$Header_View$headerStaff(_p7._0);
 			default:
 				return _user$project$Header_View$headerEmpty;
 		}
@@ -17260,6 +18014,21 @@
 		}
 	};
 
+	var _user$project$Models$baseUrl = function (location) {
+		var parts = A2(_elm_lang$core$String$split, '/', location.pathname);
+		var pathname = A2(
+			_elm_lang$core$String$join,
+			'/',
+			A2(
+				_elm_lang$core$List$take,
+				_elm_lang$core$List$length(parts) - 2,
+				parts));
+		var origin = location.origin;
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			origin,
+			A2(_elm_lang$core$Basics_ops['++'], pathname, '/'));
+	};
 	var _user$project$Models$initialModel = F2(
 		function (route, location) {
 			return {
@@ -17539,7 +18308,12 @@
 					return A2(
 						_elm_lang$core$Platform_Cmd$map,
 						_user$project$Messages$ContainerMsg,
-						A4(_user$project$Container_Commands$fetchAll, model.location.origin, _p1._0, _p0._1, model.container));
+						A4(
+							_user$project$Container_Commands$fetchAll,
+							_user$project$Models$baseUrl(model.location),
+							_p1._0,
+							_p0._1,
+							model.container));
 				} else {
 					return _elm_lang$core$Platform_Cmd$none;
 				}
@@ -17574,7 +18348,11 @@
 						_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Messages$TeamsMsg, cmd)
 					};
 				case 'ContainerMsg':
-					var _p5 = A3(_user$project$Container_Update$update, model.location.origin, _p2._0, model.container);
+					var _p5 = A3(
+						_user$project$Container_Update$update,
+						_user$project$Models$baseUrl(model.location),
+						_p2._0,
+						model.container);
 					var updatedContainer = _p5._0;
 					var cmd = _p5._1;
 					return {
@@ -18531,7 +19309,10 @@
 				return A2(
 					_elm_lang$html$Html$map,
 					_user$project$Messages$ContainerMsg,
-					A2(_user$project$Container_View$view, model.location.origin, model.container));
+					A2(
+						_user$project$Container_View$view,
+						_user$project$Models$baseUrl(model.location),
+						model.container));
 			default:
 				return _user$project$View$notFoundView;
 		}
@@ -18666,7 +19447,7 @@
 	var Elm = {};
 	Elm['Main'] = Elm['Main'] || {};
 	if (typeof _user$project$Main$main !== 'undefined') {
-	    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Messages.Msg":{"args":[],"tags":{"OnLocationChange":["Navigation.Location"],"TeamsMsg":["Teams.Messages.Msg"],"ContainerMsg":["Container.Messages.Msg"],"PlayersMsg":["Players.Messages.Msg"]}},"Dict.LeafColor":{"args":[],"tags":{"LBBlack":[],"LBlack":[]}},"Teams.Messages.Msg":{"args":[],"tags":{"OnSave":["Result.Result Http.Error Teams.Models.Team"],"OnFetchAll":["Result.Result Http.Error (List Teams.Models.Team)"],"ShowTeams":[],"ChangeLevel":["Teams.Models.TeamId","Int"],"ShowTeam":["Teams.Models.TeamId"]}},"Tree.Messages.Msg":{"args":[],"tags":{"ToggleNode":["String","Tree.Models.NodeId"],"OnFetchNode":["Tree.Models.NodeId","Result.Result Http.Error Tree.Models.TempChildren"],"SelectNode":["Tree.Models.NodeId"],"OnFetchRoot":["Result.Result Http.Error Tree.Models.TempRoot"]}},"Content.Messages.Msg":{"args":[],"tags":{"OnFetchFiles":["Tree.Models.NodeId","Result.Result Http.Error (List Content.Models.File)"],"SetTableState":["Table.State"],"OnFetchUsers":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Users"],"TreeMsg":["Tree.Messages.Msg"],"OnFetchCases":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Cases"],"SetQuery":["String"],"OnFetchFolders":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Folders"]}},"Dict.Dict":{"args":["k","v"],"tags":{"RBNode_elm_builtin":["Dict.NColor","k","v","Dict.Dict k v","Dict.Dict k v"],"RBEmpty_elm_builtin":["Dict.LeafColor"]}},"Tree.Models.ChildrenState":{"args":[],"tags":{"Expanded":[],"NoChildren":[],"Expanding":[],"Collapsed":[]}},"Maybe.Maybe":{"args":["a"],"tags":{"Just":["a"],"Nothing":[]}},"Container.Messages.Msg":{"args":[],"tags":{"SelectTab":["Header.Models.TabType"],"ShowContainer":[],"TreeMsg":["Tree.Messages.Msg"],"SelectPath":["Tree.Models.NodeId"],"ContentMsg":["Content.Messages.Msg"],"HeaderMsg":["Header.Messages.Msg"]}},"Header.Messages.Msg":{"args":[],"tags":{"OnFetchSite":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchClient":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchStaff":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchRoot":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchCustomer":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"]}},"Players.Messages.Msg":{"args":[],"tags":{"ShowPlayer":["Players.Models.PlayerId"],"OnSave":["Result.Result Http.Error Players.Models.Player"],"OnFetchAll":["Result.Result Http.Error (List Players.Models.Player)"],"ChangeLevel":["Players.Models.PlayerId","Int"],"ShowPlayers":[]}},"Header.Models.Header":{"args":[],"tags":{"SiteHeader":["Header.Models.Site"],"Empty":[],"CustomerHeader":["Header.Models.Customer"],"RootHeader":["Header.Models.Root"],"ClientHeader":["Header.Models.Client"],"StaffHeader":["Header.Models.Staff"]}},"Header.Models.TabType":{"args":[],"tags":{"EmptyTab":[],"CasesType":[],"UsersType":[],"FoldersType":[]}},"Header.Models.AccessType":{"args":[],"tags":{"Read":[],"None":[],"Write":[]}},"Table.State":{"args":[],"tags":{"State":["String","Bool"]}},"Dict.NColor":{"args":[],"tags":{"BBlack":[],"Red":[],"NBlack":[],"Black":[]}},"Tree.Models.NodeType":{"args":[],"tags":{"CustomerType":[],"SiteType":[],"StaffType":[],"ClientType":[],"RootType":[],"FolderType":[]}},"Tree.Models.ChildNodes":{"args":[],"tags":{"ChildNodes":["List Tree.Models.Node"]}},"Http.Error":{"args":[],"tags":{"BadUrl":["String"],"NetworkError":[],"Timeout":[],"BadStatus":["Http.Response String"],"BadPayload":["String","Http.Response String"]}},"Result.Result":{"args":["error","value"],"tags":{"Ok":["value"],"Err":["error"]}}},"aliases":{"Header.Models.Tab":{"args":[],"type":"{ tabType : Header.Models.TabType, name : String }"},"Content.Models.Users":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Content.Models.Cases":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Teams.Models.TeamId":{"args":[],"type":"String"},"Tree.Models.Node":{"args":[],"type":"{ id : Tree.Models.NodeId , nodeType : Tree.Models.NodeType , name : String , selected : Bool , childrenState : Tree.Models.ChildrenState , childNodes : Tree.Models.ChildNodes }"},"Players.Models.PlayerId":{"args":[],"type":"String"},"Http.Response":{"args":["body"],"type":"{ url : String , status : { code : Int, message : String } , headers : Dict.Dict String String , body : body }"},"Tree.Models.TempRoot":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , name : String , children : List Tree.Models.TempNode }"},"Content.Models.Folders":{"args":[],"type":"{ id : Tree.Models.NodeId , name : String , tree : Tree.Models.Tree , path : List Tree.Models.Node , files : List Content.Models.File , tableState : Table.State , query : String }"},"Tree.Models.TempNode":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , name : String , hasChildren : Bool }"},"Tree.Models.Tree":{"args":[],"type":"{ id : Tree.Models.NodeId , nodeType : Tree.Models.NodeType , name : String , children : List Tree.Models.Node , path : List Tree.Models.Node }"},"Header.Models.CustomerValues":{"args":[],"type":"{ name : Maybe.Maybe String , address1 : Maybe.Maybe String , address2 : Maybe.Maybe String , address3 : Maybe.Maybe String , address4 : Maybe.Maybe String , postcode : Maybe.Maybe String , contact : Maybe.Maybe String , tel : Maybe.Maybe String , email : Maybe.Maybe String , image : Maybe.Maybe String }"},"Teams.Models.Team":{"args":[],"type":"{ id : Teams.Models.TeamId, name : String, level : Int }"},"Header.Models.Customer":{"args":[],"type":"{ id : Tree.Models.NodeId , access : Header.Models.CustomerAccess , values : Header.Models.CustomerValues }"},"Players.Models.Player":{"args":[],"type":"{ id : Players.Models.PlayerId, name : String, level : Int }"},"Tree.Models.NodeId":{"args":[],"type":"String"},"Header.Models.Client":{"args":[],"type":"{ id : Tree.Models.NodeId , ref : String , name : String , address : String , contact : String , phone : String , email : String }"},"Header.Models.HeaderInfo":{"args":[],"type":"{ header : Header.Models.Header, tabs : List Header.Models.Tab }"},"Header.Models.Root":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Header.Models.Staff":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Tree.Models.TempChildren":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , children : List Tree.Models.TempNode }"},"Header.Models.Site":{"args":[],"type":"{ id : Tree.Models.NodeId , ref : String , name : String , address : String , contact : String , phone : String , email : String }"},"Header.Models.CustomerAccess":{"args":[],"type":"{ name : Header.Models.AccessType , image : Header.Models.AccessType , address : Header.Models.AccessType , contact : Header.Models.AccessType }"},"Content.Models.File":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String, datetime : Int }"},"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Messages.Msg"},"versions":{"elm":"0.18.0"}});
+	    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Messages.Msg":{"args":[],"tags":{"OnLocationChange":["Navigation.Location"],"TeamsMsg":["Teams.Messages.Msg"],"ContainerMsg":["Container.Messages.Msg"],"PlayersMsg":["Players.Messages.Msg"]}},"Dict.LeafColor":{"args":[],"tags":{"LBBlack":[],"LBlack":[]}},"Teams.Messages.Msg":{"args":[],"tags":{"OnSave":["Result.Result Http.Error Teams.Models.Team"],"OnFetchAll":["Result.Result Http.Error (List Teams.Models.Team)"],"ShowTeams":[],"ChangeLevel":["Teams.Models.TeamId","Int"],"ShowTeam":["Teams.Models.TeamId"]}},"Tree.Messages.Msg":{"args":[],"tags":{"ToggleNode":["String","Tree.Models.NodeId"],"OnFetchNode":["Tree.Models.NodeId","Result.Result Http.Error Tree.Models.TempChildren"],"SelectNode":["Tree.Models.NodeId"],"OnFetchRoot":["Result.Result Http.Error Tree.Models.TempRoot"],"SelectRoot":[]}},"Content.Messages.Msg":{"args":[],"tags":{"OnFetchFiles":["Tree.Models.NodeId","Result.Result Http.Error (List Content.Models.File)"],"SetTableState":["Table.State"],"OnFetchUsers":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Users"],"TreeMsg":["Tree.Messages.Msg"],"OnFetchCases":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Cases"],"SetQuery":["String"],"OnFetchFolders":["Tree.Models.NodeId","Result.Result Http.Error Content.Models.Folders"]}},"Dict.Dict":{"args":["k","v"],"tags":{"RBNode_elm_builtin":["Dict.NColor","k","v","Dict.Dict k v","Dict.Dict k v"],"RBEmpty_elm_builtin":["Dict.LeafColor"]}},"Tree.Models.ChildrenState":{"args":[],"tags":{"Expanded":[],"NoChildren":[],"Expanding":[],"Collapsed":[]}},"Maybe.Maybe":{"args":["a"],"tags":{"Just":["a"],"Nothing":[]}},"Container.Messages.Msg":{"args":[],"tags":{"SelectTab":["Header.Models.TabType"],"ShowContainer":[],"TreeMsg":["Tree.Messages.Msg"],"SelectPath":["Tree.Models.NodeId"],"ContentMsg":["Content.Messages.Msg"],"HeaderMsg":["Header.Messages.Msg"]}},"Header.Messages.Msg":{"args":[],"tags":{"OnFetchSite":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchClient":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchStaff":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchRoot":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"],"OnFetchCustomer":["Tree.Models.NodeId","Result.Result Http.Error Header.Models.HeaderInfo"]}},"Players.Messages.Msg":{"args":[],"tags":{"ShowPlayer":["Players.Models.PlayerId"],"OnSave":["Result.Result Http.Error Players.Models.Player"],"OnFetchAll":["Result.Result Http.Error (List Players.Models.Player)"],"ChangeLevel":["Players.Models.PlayerId","Int"],"ShowPlayers":[]}},"Header.Models.Header":{"args":[],"tags":{"SiteHeader":["Header.Models.Site"],"Empty":[],"CustomerHeader":["Header.Models.Customer"],"RootHeader":["Header.Models.Root"],"ClientHeader":["Header.Models.Client"],"StaffHeader":["Header.Models.Staff"]}},"Header.Models.TabType":{"args":[],"tags":{"EmptyTab":[],"CasesType":[],"UsersType":[],"FoldersType":[]}},"Header.Models.AccessType":{"args":[],"tags":{"Read":[],"None":[],"Write":[]}},"Table.State":{"args":[],"tags":{"State":["String","Bool"]}},"Dict.NColor":{"args":[],"tags":{"BBlack":[],"Red":[],"NBlack":[],"Black":[]}},"Tree.Models.NodeType":{"args":[],"tags":{"CustomerType":[],"SiteType":[],"StaffType":[],"ClientType":[],"RootType":[],"FolderType":[]}},"Tree.Models.ChildNodes":{"args":[],"tags":{"ChildNodes":["List Tree.Models.Node"]}},"Http.Error":{"args":[],"tags":{"BadUrl":["String"],"NetworkError":[],"Timeout":[],"BadStatus":["Http.Response String"],"BadPayload":["String","Http.Response String"]}},"Result.Result":{"args":["error","value"],"tags":{"Ok":["value"],"Err":["error"]}}},"aliases":{"Header.Models.Tab":{"args":[],"type":"{ tabType : Header.Models.TabType, name : String }"},"Content.Models.Users":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Content.Models.Cases":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Teams.Models.TeamId":{"args":[],"type":"String"},"Tree.Models.Node":{"args":[],"type":"{ id : Tree.Models.NodeId , nodeType : Tree.Models.NodeType , name : String , selected : Bool , childrenState : Tree.Models.ChildrenState , childNodes : Tree.Models.ChildNodes }"},"Players.Models.PlayerId":{"args":[],"type":"String"},"Http.Response":{"args":["body"],"type":"{ url : String , status : { code : Int, message : String } , headers : Dict.Dict String String , body : body }"},"Tree.Models.TempRoot":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , name : String , children : List Tree.Models.TempNode }"},"Content.Models.Folders":{"args":[],"type":"{ tree : Tree.Models.Tree , selected : Bool , path : List Tree.Models.Node , files : List Content.Models.File , tableState : Table.State , query : String }"},"Tree.Models.TempNode":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , name : String , hasChildren : Bool }"},"Header.Models.ClientAccess":{"args":[],"type":"{ name : Header.Models.AccessType , image : Header.Models.AccessType , address : Header.Models.AccessType , contact : Header.Models.AccessType }"},"Tree.Models.Tree":{"args":[],"type":"{ id : Tree.Models.NodeId , nodeType : Tree.Models.NodeType , name : String , selected : Bool , childrenState : Tree.Models.ChildrenState , childNodes : Tree.Models.ChildNodes , path : List Tree.Models.Node }"},"Header.Models.SiteAccess":{"args":[],"type":"{ name : Header.Models.AccessType , image : Header.Models.AccessType , address : Header.Models.AccessType , contact : Header.Models.AccessType , managers : Header.Models.AccessType }"},"Header.Models.CustomerValues":{"args":[],"type":"{ name : Maybe.Maybe String , image : Maybe.Maybe String , address1 : Maybe.Maybe String , address2 : Maybe.Maybe String , address3 : Maybe.Maybe String , address4 : Maybe.Maybe String , postcode : Maybe.Maybe String , contact : Maybe.Maybe String , tel : Maybe.Maybe String , email : Maybe.Maybe String }"},"Teams.Models.Team":{"args":[],"type":"{ id : Teams.Models.TeamId, name : String, level : Int }"},"Header.Models.Customer":{"args":[],"type":"{ id : Tree.Models.NodeId , access : Header.Models.CustomerAccess , values : Header.Models.CustomerValues }"},"Players.Models.Player":{"args":[],"type":"{ id : Players.Models.PlayerId, name : String, level : Int }"},"Tree.Models.NodeId":{"args":[],"type":"String"},"Header.Models.ClientValues":{"args":[],"type":"{ no : Maybe.Maybe String , name : Maybe.Maybe String , image : Maybe.Maybe String , address1 : Maybe.Maybe String , address2 : Maybe.Maybe String , address3 : Maybe.Maybe String , address4 : Maybe.Maybe String , postcode : Maybe.Maybe String , contact : Maybe.Maybe String , tel : Maybe.Maybe String , email : Maybe.Maybe String }"},"Header.Models.Client":{"args":[],"type":"{ id : Tree.Models.NodeId , access : Header.Models.ClientAccess , values : Header.Models.ClientValues }"},"Header.Models.HeaderInfo":{"args":[],"type":"{ header : Header.Models.Header, tabs : List Header.Models.Tab }"},"Header.Models.Root":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String }"},"Header.Models.Staff":{"args":[],"type":"{ id : Tree.Models.NodeId , access : Header.Models.StaffAccess , values : Header.Models.StaffValues }"},"Header.Models.StaffValues":{"args":[],"type":"{ no : Maybe.Maybe String , name : Maybe.Maybe String , image : Maybe.Maybe String , address1 : Maybe.Maybe String , address2 : Maybe.Maybe String , address3 : Maybe.Maybe String , address4 : Maybe.Maybe String , postcode : Maybe.Maybe String , tel : Maybe.Maybe String , mob : Maybe.Maybe String , email : Maybe.Maybe String }"},"Tree.Models.TempChildren":{"args":[],"type":"{ id : Tree.Models.NodeId , type_ : String , children : List Tree.Models.TempNode }"},"Header.Models.SiteValues":{"args":[],"type":"{ no : Maybe.Maybe String , name : Maybe.Maybe String , image : Maybe.Maybe String , address1 : Maybe.Maybe String , address2 : Maybe.Maybe String , address3 : Maybe.Maybe String , address4 : Maybe.Maybe String , postcode : Maybe.Maybe String , contact : Maybe.Maybe String , tel : Maybe.Maybe String , email : Maybe.Maybe String , divisionMgr : Maybe.Maybe String , areaMgr : Maybe.Maybe String , supervisor : Maybe.Maybe String }"},"Header.Models.Site":{"args":[],"type":"{ id : Tree.Models.NodeId , access : Header.Models.SiteAccess , values : Header.Models.SiteValues }"},"Header.Models.CustomerAccess":{"args":[],"type":"{ name : Header.Models.AccessType , image : Header.Models.AccessType , address : Header.Models.AccessType , contact : Header.Models.AccessType }"},"Content.Models.File":{"args":[],"type":"{ id : Tree.Models.NodeId, name : String, datetime : Int }"},"Header.Models.StaffAccess":{"args":[],"type":"{ name : Header.Models.AccessType , image : Header.Models.AccessType , address : Header.Models.AccessType , contact : Header.Models.AccessType }"},"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Messages.Msg"},"versions":{"elm":"0.18.0"}});
 	}
 
 	if (typeof define === "function" && define['amd'])

@@ -12,9 +12,8 @@ type Content
 
 
 type alias Folders =
-    { id : NodeId
-    , name : String
-    , tree : Tree
+    { tree : Tree
+    , selected : Bool
     , path : List Node
     , files : List File
     , tableState : Table.State

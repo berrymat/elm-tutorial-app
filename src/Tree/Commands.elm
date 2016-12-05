@@ -20,7 +20,7 @@ fetchNode origin nodeId =
 
 fetchNodeUrl : String -> NodeId -> String
 fetchNodeUrl origin nodeId =
-    origin ++ "/api/Node/" ++ nodeId
+    origin ++ "api/Node/" ++ nodeId
 
 
 

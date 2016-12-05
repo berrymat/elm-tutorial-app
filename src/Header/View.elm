@@ -44,7 +44,7 @@ headerItem title icon accessType maybeValue =
         ( style, textValue ) =
             case maybeValue of
                 Just value ->
-                    if accessType /= None then
+                    if accessType /= None && (String.length value) > 0 then
                         ( "display: block;", " " ++ value )
                     else
                         hidden
@@ -108,49 +108,122 @@ headerCustomer customer =
 
 headerClient : Client -> Html Msg
 headerClient client =
-    div [ class "body-header" ]
-        [ text "Client"
-        ]
+    let
+        access =
+            client.access
 
+        values =
+            client.values
 
+        address =
+            fullAddress values.address1 values.address2 values.address3 values.address4 values.postcode
 
-{-
-   div [ class "body-header-content clearfix pl2 pr2" ]
-       [ headerItem "Ref" "wrench" client.ref
-       , headerItem "Name" "globe" client.name
-       , headerItem "Address" "home" client.address
-       , headerItem "Contact" "user-o" client.contact
-       , headerItem "Phone" "phone" client.phone
-       , headerItem "Email" "envelope" client.email
-       ]
--}
+        backgroundImage =
+            case values.image of
+                Just image ->
+                    ( "background-image", "url('" ++ image ++ "')" )
+
+                Nothing ->
+                    ( "display", "none" )
+    in
+        div [ class "body-header" ]
+            [ div
+                [ class "body-header-image"
+                , style [ backgroundImage ]
+                ]
+                []
+            , div [ class "body-header-content clearfix pl2 pr2" ]
+                [ headerItem "Ref" "wrench" access.name values.no
+                , headerItem "Name" "globe" access.name values.name
+                , headerItem "Address" "home" access.address address
+                , headerItem "Contact" "user-o" access.contact values.contact
+                , headerItem "Phone" "phone" access.contact values.tel
+                , headerItem "Email" "envelope" access.contact values.email
+                ]
+            , div [ class "body-header-extra" ]
+                [ text "Extra" ]
+            ]
 
 
 headerSite : Site -> Html Msg
 headerSite site =
-    div [ class "body-header" ]
-        [ text "Site"
-        ]
+    let
+        access =
+            site.access
 
+        values =
+            site.values
 
+        address =
+            fullAddress values.address1 values.address2 values.address3 values.address4 values.postcode
 
-{-
-   div [ class "body-header-content clearfix pl2 pr2" ]
-       [ headerItem "Ref" "wrench" site.ref
-       , headerItem "Name" "globe" site.name
-       , headerItem "Address" "home" site.address
-       , headerItem "Contact" "user-o" site.contact
-       , headerItem "Phone" "phone" site.phone
-       , headerItem "Email" "envelope" site.email
-       ]
--}
+        backgroundImage =
+            case values.image of
+                Just image ->
+                    ( "background-image", "url('" ++ image ++ "')" )
+
+                Nothing ->
+                    ( "display", "none" )
+    in
+        div [ class "body-header" ]
+            [ div
+                [ class "body-header-image"
+                , style [ backgroundImage ]
+                ]
+                []
+            , div [ class "body-header-content clearfix pl2 pr2" ]
+                [ headerItem "Ref" "wrench" access.name values.no
+                , headerItem "Name" "globe" access.name values.name
+                , headerItem "Address" "home" access.address address
+                , headerItem "Contact" "user-o" access.contact values.contact
+                , headerItem "Phone" "phone" access.contact values.tel
+                , headerItem "Email" "envelope" access.contact values.email
+                , headerItem "Division Mgr" "user-o" access.managers values.divisionMgr
+                , headerItem "Area Mgr" "user-o" access.managers values.areaMgr
+                , headerItem "Supervisor" "user-o" access.managers values.supervisor
+                ]
+            , div [ class "body-header-extra" ]
+                [ text "Extra" ]
+            ]
 
 
 headerStaff : Staff -> Html Msg
 headerStaff staff =
-    div [ class "body-header" ]
-        [ text "Staff"
-        ]
+    let
+        access =
+            staff.access
+
+        values =
+            staff.values
+
+        address =
+            fullAddress values.address1 values.address2 values.address3 values.address4 values.postcode
+
+        backgroundImage =
+            case values.image of
+                Just image ->
+                    ( "background-image", "url('" ++ image ++ "')" )
+
+                Nothing ->
+                    ( "display", "none" )
+    in
+        div [ class "body-header" ]
+            [ div
+                [ class "body-header-image"
+                , style [ backgroundImage ]
+                ]
+                []
+            , div [ class "body-header-content clearfix pl2 pr2" ]
+                [ headerItem "Ref" "wrench" access.name values.no
+                , headerItem "Name" "globe" access.name values.name
+                , headerItem "Address" "home" access.address address
+                , headerItem "Tel" "phone" access.contact values.tel
+                , headerItem "Mob" "phone" access.contact values.mob
+                , headerItem "Email" "envelope" access.contact values.email
+                ]
+            , div [ class "body-header-extra" ]
+                [ text "Extra" ]
+            ]
 
 
 headerEmpty : Html Msg

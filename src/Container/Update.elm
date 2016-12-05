@@ -19,18 +19,25 @@ updatePathFromTree origin container updatedTree cmdTree path =
         maybeSelected =
             List.head path
 
-        cmdHeader =
+        ( headerId, headerType ) =
             case maybeSelected of
                 Just selected ->
-                    Header.Commands.fetchHeader origin selected.nodeType selected.id
+                    ( selected.id, selected.nodeType )
 
                 Nothing ->
-                    Header.Commands.fetchHeader origin container.tree.nodeType container.tree.id
+                    ( container.tree.id, container.tree.nodeType )
+
+        cmdHeader =
+            if headerId /= (Header.Models.headerId container.headerInfo) then
+                Header.Commands.fetchHeader origin headerType headerId
+                    |> Cmd.map HeaderMsg
+            else
+                Cmd.none
 
         cmdBatch =
             Cmd.batch
                 [ Cmd.map TreeMsg cmdTree
-                , Cmd.map HeaderMsg cmdHeader
+                , cmdHeader
                 ]
     in
         ( { container | tree = updatedTree, path = path }, cmdBatch )

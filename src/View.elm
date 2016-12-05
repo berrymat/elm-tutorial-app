@@ -4,7 +4,7 @@ import Html exposing (Html, div, text, button)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Messages exposing (Msg(..))
-import Models exposing (Model)
+import Models exposing (Model, baseUrl)
 import Players.Edit
 import Players.List
 import Players.Messages exposing (Msg(..))
@@ -82,7 +82,11 @@ page model =
             teamEditPage model id
 
         ContainerRoute type_ id ->
-            Html.map ContainerMsg (Container.View.view model.location.origin model.container)
+            Html.map ContainerMsg
+                (Container.View.view
+                    (baseUrl model.location)
+                    model.container
+                )
 
         NotFoundRoute ->
             notFoundView

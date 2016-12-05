@@ -24,3 +24,21 @@ initialModel route location =
     , route = route
     , location = location
     }
+
+
+baseUrl : Location -> String
+baseUrl location =
+    let
+        origin =
+            location.origin
+
+        parts =
+            location.pathname
+                |> String.split "/"
+
+        pathname =
+            parts
+                |> List.take ((List.length parts) - 2)
+                |> String.join "/"
+    in
+        (origin ++ pathname ++ "/")

@@ -62,7 +62,9 @@ type alias Tree =
     { id : NodeId
     , nodeType : NodeType
     , name : String
-    , children : List Node
+    , selected : Bool
+    , childrenState : ChildrenState
+    , childNodes : ChildNodes
     , path : List Node
     }
 
@@ -104,6 +106,8 @@ initialTree =
     { id = ""
     , nodeType = RootType
     , name = ""
-    , children = []
+    , selected = True
+    , childrenState = NoChildren
+    , childNodes = ChildNodes []
     , path = []
     }

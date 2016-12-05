@@ -8,4 +8,5 @@ type Msg
     = OnFetchRoot (Result Http.Error TempRoot)
     | OnFetchNode NodeId (Result Http.Error TempChildren)
     | ToggleNode String NodeId
+    | SelectRoot
     | SelectNode NodeId

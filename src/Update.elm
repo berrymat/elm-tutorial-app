@@ -1,7 +1,7 @@
 module Update exposing (..)
 
 import Messages exposing (Msg(..))
-import Models exposing (Model)
+import Models exposing (Model, baseUrl)
 import Players.Update
 import Teams.Update
 import Container.Update
@@ -40,7 +40,13 @@ fetchData model =
             in
                 case maybeNodeType of
                     Just nodeType ->
-                        Cmd.map ContainerMsg (Container.Commands.fetchAll model.location.origin nodeType id model.container)
+                        Cmd.map ContainerMsg
+                            (Container.Commands.fetchAll
+                                (baseUrl model.location)
+                                nodeType
+                                id
+                                model.container
+                            )
 
                     Nothing ->
                         Cmd.none
@@ -69,7 +75,10 @@ update msg model =
         ContainerMsg subMsg ->
             let
                 ( updatedContainer, cmd ) =
-                    Container.Update.update model.location.origin subMsg model.container
+                    Container.Update.update
+                        (baseUrl model.location)
+                        subMsg
+                        model.container
             in
                 ( { model | container = updatedContainer }, Cmd.map ContainerMsg cmd )
 
